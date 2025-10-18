@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mouseGradient = document.getElementById('mouseGradient');
     if (mouseGradient) {
         document.addEventListener('mousemove', (e) => {
-            // Use requestAnimationFrame for smoother animation
             window.requestAnimationFrame(() => {
                 mouseGradient.style.left = `${e.clientX}px`;
                 mouseGradient.style.top = `${e.clientY}px`;
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.forEach(link => {
         link.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default anchor behavior
+            event.preventDefault();
 
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
@@ -33,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (targetSection) {
                 targetSection.classList.add('active');
             }
+            
+            // Menu stays open - don't close it
         });
     });
 
@@ -42,17 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('closeModal');
 
     if (profilePhoto && photoModal && closeModal) {
-        // Open modal when profile photo is clicked
         profilePhoto.addEventListener('click', () => {
             photoModal.classList.add('active');
         });
 
-        // Close modal when the close button is clicked
         closeModal.addEventListener('click', () => {
             photoModal.classList.remove('active');
         });
 
-        // Close modal when clicking on the background (outside the image)
         photoModal.addEventListener('click', (event) => {
             if (event.target === photoModal) {
                 photoModal.classList.remove('active');
@@ -60,22 +58,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// --- Mobile Menu Toggle ---
+
+// --- Mobile Menu Toggle with Drawer Effect ---
 const menuToggle = document.getElementById('menuToggle');
 const topNav = document.getElementById('topNav');
+const menuOverlay = document.getElementById('menuOverlay');
+const menuCloseBtn = document.getElementById('menuCloseBtn');
+const rightContent = document.querySelector('.right-content');
+
+function openMenu() {
+    menuToggle.classList.add('active');
+    topNav.classList.add('open');
+    menuOverlay.classList.add('active');
+    rightContent.classList.add('menu-open');
+}
+
+function closeMenu() {
+    menuToggle.classList.remove('active');
+    topNav.classList.remove('open');
+    menuOverlay.classList.remove('active');
+    rightContent.classList.remove('menu-open');
+}
 
 if (menuToggle && topNav) {
+    // Toggle menu when hamburger is clicked
     menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        topNav.classList.toggle('open');
+        if (topNav.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
 
-    // Close menu when a nav link is clicked (optional)
-    const navLinks = topNav.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            topNav.classList.remove('open');
-        });
-    });
+    // Close menu only when close button is clicked
+    if (menuCloseBtn) {
+        menuCloseBtn.addEventListener('click', closeMenu);
+    }
+
+    // Close menu when overlay is clicked
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMenu);
+    }
 }
