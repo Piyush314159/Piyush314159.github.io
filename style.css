@@ -451,16 +451,18 @@ h1 {
     h1 { font-size: 2.2rem; }
     .section h2 { font-size: 1.8rem; }
 }
-/* --- Hamburger Menu Styles --- */
+/* --- Hamburger Menu Styles (Always Visible) --- */
 .menu-container {
     position: fixed;
     top: 2rem;
     right: 2rem;
     z-index: 1100;
+    display: flex;
+    align-items: center;
 }
 
 .menu-toggle {
-    display: none;
+    display: block; /* always visible */
     width: 30px;
     height: 22px;
     position: relative;
@@ -481,7 +483,7 @@ h1 {
 .menu-toggle span:nth-child(2) { top: 9px; }
 .menu-toggle span:nth-child(3) { top: 18px; }
 
-/* When active, turn into 'X' */
+/* Turn into X */
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg);
     top: 9px;
@@ -494,33 +496,34 @@ h1 {
     top: 9px;
 }
 
-/* Mobile Navigation */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
+/* Navigation Menu */
+.top-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    background: rgba(6, 18, 16, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+}
 
-    .top-nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 60%;
-        height: 100%;
-        background: rgba(6, 18, 16, 0.95);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        transition: right 0.4s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-    }
+.top-nav.open {
+    right: 0;
+}
 
+.nav-link {
+    font-size: 1.2rem;
+}
+
+/* Optional: Hide default nav on large screens when toggle menu is used */
+@media (min-width: 769px) {
     .top-nav.open {
-        right: 0;
-    }
-
-    .nav-link {
-        font-size: 1.2rem;
+        width: 300px; /* smaller slide-out menu on larger screens */
     }
 }
