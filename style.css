@@ -77,18 +77,18 @@ body::before {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-    opacity: 0.1;
+    opacity: 0.6;
 }
 
 .equation {
     position: absolute;
-    color: rgba(52, 94, 81, 0.85);
+    color: rgba(110, 190, 160, 0.9);
     font-family: 'Times New Roman', serif;
     font-style: italic;
     font-weight: 500;
     pointer-events: none;
     animation: floatEquation 25s infinite linear;
-    text-shadow: 0 0 8px rgba(52, 94, 81, 0.3);
+    text-shadow: 0 0 10px rgba(110, 190, 160, 0.6);
 }
 
 .equation:nth-child(1) { top: 10%; left: 15%; font-size: 18px; animation-delay: 0s; }
