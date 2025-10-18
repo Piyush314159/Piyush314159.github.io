@@ -451,23 +451,22 @@ h1 {
     h1 { font-size: 2.2rem; }
     .section h2 { font-size: 1.8rem; }
 }
-/* --- Hamburger Menu Styles (Always Visible) --- */
+/* --- Hamburger Menu Styles (Fixed Click Issue) --- */
 .menu-container {
     position: fixed;
     top: 2rem;
     right: 2rem;
-    z-index: 1100;
-    display: flex;
-    align-items: center;
+    z-index: 2000; /* higher than the nav */
 }
 
 .menu-toggle {
-    display: block; /* always visible */
+    display: block;
     width: 30px;
     height: 22px;
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    z-index: 2100; /* keep above sliding menu */
 }
 
 .menu-toggle span {
@@ -496,7 +495,7 @@ h1 {
     top: 9px;
 }
 
-/* Navigation Menu */
+/* Sliding Menu */
 .top-nav {
     position: fixed;
     top: 0;
@@ -511,6 +510,7 @@ h1 {
     gap: 2rem;
     transition: right 0.4s ease;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1500; /* lower than the toggle */
 }
 
 .top-nav.open {
@@ -519,11 +519,5 @@ h1 {
 
 .nav-link {
     font-size: 1.2rem;
-}
-
-/* Optional: Hide default nav on large screens when toggle menu is used */
-@media (min-width: 769px) {
-    .top-nav.open {
-        width: 300px; /* smaller slide-out menu on larger screens */
-    }
+    color: #e8eaed;
 }
