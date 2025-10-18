@@ -3,155 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piyush Maji - Portfolio</title>
+    <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-animation">
-        <div class="physics-overlay"></div>
-        <div class="mouse-gradient" id="mouseGradient"></div>
-        <div class="equation-doodles">
-            <div class="equation">∇²ψ + k²ψ = 0</div>
-            <div class="equation">E = mc²</div>
-            <div class="equation">∂²u/∂t² = c²∇²u</div>
-            <div class="equation">F = ma</div>
-            <div class="equation">∇ × B = μ₀J</div>
-            <div class="equation">ℏ∂ψ/∂t = Ĥψ</div>
-        </div>
-        <div class="floating-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-    </div>
+    <!-- Mouse Gradient Effect -->
+    <div id="mouseGradient" class="mouse-gradient"></div>
 
     <!-- Menu Overlay -->
-    <div class="menu-overlay" id="menuOverlay"></div>
+    <div id="menuOverlay" class="menu-overlay"></div>
 
-    <!-- Navigation Menu -->
-    <div class="menu-container">
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <!-- Mobile Menu Toggle -->
+            <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
 
-        <nav class="top-nav" id="topNav">
-            <button class="menu-close-btn" id="menuCloseBtn">&times;</button>
-            <a href="#about" class="nav-link active">About</a>
-            <a href="#projects" class="nav-link">Research</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <!-- Navigation Menu -->
+            <div id="topNav" class="top-nav">
+                <button id="menuCloseBtn" class="menu-close-btn" aria-label="Close menu">×</button>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
         </nav>
-    </div>
+    </header>
 
-    <div class="main-container">
-        <div class="left-sidebar">
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Left Content -->
+        <div class="left-content">
             <div class="profile-section">
-                <img src="profile_photo.jpg" 
-                     alt="Piyush Maji Profile Photo" 
-                     class="profile-photo" 
-                     id="profilePhoto">
-                <h1>Piyush Maji</h1>
-                <p class="subtitle">Master's Student at Indian Institute of Technology Hyderabad</p>
-                <p class="tagline">Quantum Computing • Physics • Programming</p>
-                <a href="Piyush_CV.pdf" class="download-cv" download>Download CV</a>
+                <img id="profilePhoto" src="https://via.placeholder.com/200x200" alt="Profile Photo" class="profile-photo">
+                <h1 class="profile-name">Your Name</h1>
+                <p class="profile-title">Web Developer</p>
+                <p class="profile-description">Passionate about creating beautiful and functional web experiences.</p>
             </div>
         </div>
 
-        <div class="right-content">
-            <div class="content-area">
-                <section id="about" class="section active">
-                    <h2>About</h2>
-                    <p>Hi, I'm Piyush Maji! I'm a passionate Master's student at IIT Hyderabad with a deep fascination for Quantum Computing, Physics, and Programming. My journey combines theoretical quantum mechanics with practical programming applications in C, C++, and Python.</p>
-                    <p>Currently pursuing my Master's degree, I'm actively exploring the fascinating world of quantum algorithms and quantum circuit design using Qiskit. My goal is to bridge the gap between quantum theory and practical quantum computing applications.</p>
-                    <p>When I'm not working on quantum gate simulations or coding console-based mini-games in C++, you can find me practicing algorithms, contributing to open-source projects, or diving deep into advanced STL and quantum computing concepts.</p>
-                </section>
+        <!-- Right Content -->
+        <div id="rightContent" class="right-content">
+            <!-- Sections -->
+            <section id="home" class="section active">
+                <h2>Welcome</h2>
+                <p>Welcome to my portfolio website. Explore my work and get to know me better.</p>
+            </section>
 
-                <section id="projects" class="section">
-                    <h2>Projects I'm Working On</h2>
-                    <div class="project-card">
-                        <h3>✅ 8-bit Computer</h3>
-                        <p>Designed and implemented core modules (Clock, RAM, Registers, ALU) for an 8-bit computer based on the SAP-1 architecture. Built a functional system using basic electronic components to demonstrate digital logic, memory architecture, and instruction execution. Programmed the system using Arduino for control and execution under Prof. Anurag Tripathi, Department of Physics, IIT Hyderabad.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>✅ Computational Modeling of Particle Motion in Brownian Systems</h3>
-                        <p>Developed a Python workflow using NumPy and Matplotlib to process 122,000 binary files, visualize particle trajectories, and compute Mean Squared Displacement (MSD) for time-series analysis. Applied log–log regression on MSD data to classify motion types (diffusive, sub-diffusive, super-diffusive), automating scientific interpretation and improving analysis efficiency under Prof. Anupam Gupta, Department of Physics, IIT Hyderabad.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>🧪 Python Algorithm Scripts</h3>
-                        <p>Developing Python scripts for algorithm practice and competitive programming. Focus on implementing classic algorithms, data structures, and optimization techniques with comprehensive documentation.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>📚 Quantum Algorithms Documentation</h3>
-                        <p>Creating detailed notes and code implementations for various quantum algorithms including Shor's algorithm, Grover's search, and quantum Fourier transform using Qiskit framework.</p>
-                    </div>
-                </section>
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <p>I'm a passionate developer with experience in modern web technologies.</p>
+            </section>
 
-                <section id="skills" class="section">
-                    <h2>Skills & Technologies</h2>
-                    <p>Here are the main programming languages and technologies I use for quantum computing and software development:</p>
-                    <h3 style="color: #e8eaed; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Programming Languages</h3>
-                    <div class="skills"><span class="skill-tag">C</span><span class="skill-tag">Python</span><span class="skill-tag">LaTeX</span></div>
-                    <h3 style="color: #e8eaed; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Libraries & Tools</h3>
-                    <div class="skills"><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">MS Office</span></div>
-                    <h3 style="color: #e8eaed; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Currently Learning</h3>
-                    <div class="skills"><span class="skill-tag">Qiskit</span><span class="skill-tag">Quantum Circuit Design</span><span class="skill-tag">Algorithms</span><span class="skill-tag">Git</span><span class="skill-tag">Open Source</span></div>
-                    <h3 style="color: #e8eaed; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Focus Areas</h3>
-                    <div class="skills"><span class="skill-tag">Quantum Computing</span><span class="skill-tag">Data Structures</span><span class="skill-tag">Communication</span><span class="skill-tag">Teamwork</span><span class="skill-tag">Problem-Solving</span><span class="skill-tag">Critical Thinking</span></div>
-                </section>
+            <section id="projects" class="section">
+                <h2>My Projects</h2>
+                <p>Here are some of my recent projects and accomplishments.</p>
+            </section>
 
-                <section id="experience" class="section">
-                    <h2>Academic & Experience</h2>
-                    <div class="project-card">
-                        <h3>Master's Student - IIT Hyderabad (2025-Present)</h3>
-                        <p>Currently pursuing Master's degree in Physics with focus on Quantum Computing. Engaged in advanced coursework covering quantum mechanics, quantum algorithms, and computational physics. Expected graduation: July 2027.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>B.Sc. in Physics - Hooghly Mohsin College (Completed August 2024)</h3>
-                        <p>Completed Bachelor of Science in Physics from West Bengal, India with CGPA: 7.28/10. Built strong foundation in theoretical physics and mathematical methods.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Coordinator (Inbound and Multimedia) - International Relations Cell, IIT Hyderabad</h3>
-                        <p>Guided exchange students (mainly from Japan and the US) by organizing orientation sessions, cultural events, and local school visits to promote cross-cultural understanding, and also arrange outbound tours.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Member - Infocus (Photography Club, IIT Hyderabad)</h3>
-                        <p>Managed logistics and promotion for campus-wide photography contests and exhibitions.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Certifications</h3>
-                        <p>Completed NPTEL course "Introduction to Quantum Computing: Quantum Algorithms and Qiskit" (IITs & IISc initiative).</p>
-                    </div>
-                </section>
-
-                <section id="contact" class="section">
-                    <h2>Connect With Me</h2>
-                    <p>I'm always interested in discussing quantum computing, programming challenges, and collaboration opportunities. Feel free to reach out!</p>
-                    <div class="contact-links">
-                        <a href="mailto:ph25mscst11019@iith.ac.in">📧 Email</a>
-                        <a href="tel:+919330966439">📞 +91 9330966439</a>
-                        <a href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
-                        <a href="https://github.com/Piyush314159" target="_blank" rel="noopener noreferrer">🐱 GitHub</a>
-                        <a href="https://www.instagram.com/pi_yush_314/" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-                        <a href="https://www.facebook.com/piyush.maji65" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
-                    </div>
-                    <p style="margin-top: 2rem; color: #95a5a6;">Currently pursuing Master's at IIT Hyderabad and available for programming internships, quantum computing projects, and open-source collaborations.</p>
-                </section>
-            </div>
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <p>Get in touch with me for collaborations or opportunities.</p>
+            </section>
         </div>
-    </div>
+    </main>
 
-    <div class="photo-modal" id="photoModal">
-        <span class="close-modal" id="closeModal">&times;</span>
-        <img src="profile_photo.jpg" alt="Piyush Maji Profile Photo Enlarged">
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <button id="closeModal" class="modal-close" aria-label="Close modal">×</button>
+            <img src="https://via.placeholder.com/400x400" alt="Profile Photo Large" class="modal-image">
+        </div>
     </div>
 
     <script src="script.js"></script>
