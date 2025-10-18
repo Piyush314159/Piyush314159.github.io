@@ -451,22 +451,22 @@ h1 {
     h1 { font-size: 2.2rem; }
     .section h2 { font-size: 1.8rem; }
 }
-/* --- Hamburger Menu Styles --- */
+/* --- Hamburger Menu Styles (Fixed Click Issue) --- */
 .menu-container {
     position: fixed;
     top: 2rem;
     right: 2rem;
-    z-index: 2000;
+    z-index: 2000; /* higher than the nav */
 }
 
 .menu-toggle {
-    display: none; /* Hidden on desktop */
+    display: block;
     width: 30px;
     height: 22px;
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    z-index: 2100;
+    z-index: 2100; /* keep above sliding menu */
 }
 
 .menu-toggle span {
@@ -482,7 +482,7 @@ h1 {
 .menu-toggle span:nth-child(2) { top: 9px; }
 .menu-toggle span:nth-child(3) { top: 18px; }
 
-/* Turn into X when active */
+/* Turn into X */
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg);
     top: 9px;
@@ -495,71 +495,29 @@ h1 {
     top: 9px;
 }
 
-/* Desktop Navigation */
+/* Sliding Menu */
 .top-nav {
     position: fixed;
-    top: 2rem;
-    right: 2rem;
-    z-index: 1000;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100%;
+    background: rgba(6, 18, 16, 0.95);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1500; /* lower than the toggle */
+}
+
+.top-nav.open {
+    right: 0;
 }
 
 .nav-link {
-    color: #95a5a6;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    border-bottom: 3px solid transparent;
-    cursor: pointer;
-}
-
-.nav-link:hover {
+    font-size: 1.2rem;
     color: #e8eaed;
-    border-bottom-color: rgba(34, 74, 61, 0.5);
-    transform: translateY(-2px);
-}
-
-.nav-link.active {
-    color: #e8eaed;
-    border-bottom-color: rgba(34, 74, 61, 0.8);
-    transform: translateY(-2px);
-}
-
-/* Mobile Navigation */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Show on mobile */
-    }
-
-    .top-nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 60%;
-        height: 100%;
-        background: rgba(6, 18, 16, 0.95);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        transition: right 0.4s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-        z-index: 1500;
-    }
-
-    .top-nav.open {
-        right: 0;
-    }
-
-    .nav-link {
-        font-size: 1.2rem;
-        color: #e8eaed;
-    }
 }
