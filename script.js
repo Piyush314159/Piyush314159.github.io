@@ -60,3 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// --- Mobile Menu Toggle ---
+const menuToggle = document.getElementById('menuToggle');
+const topNav = document.getElementById('topNav');
+
+if (menuToggle && topNav) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        topNav.classList.toggle('open');
+    });
+
+    // Close menu when a nav link is clicked (optional)
+    const navLinks = topNav.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            topNav.classList.remove('open');
+        });
+    });
+}
