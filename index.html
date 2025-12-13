@@ -1,17 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piyush Maji - Portfolio</title>
+    <title>Piyush Maji | Quantum Computing Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Piyush Maji - Quantum Computing researcher and Master's student at IIT Hyderabad specializing in quantum algorithms, machine learning, and computational physics">
+    <meta name="keywords" content="quantum computing, IIT Hyderabad, physics, quantum machine learning, Qiskit, Python, computational physics">
+    <meta name="author" content="Piyush Maji">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Piyush Maji | Quantum Computing Portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="profile_photo.jpg">
+    <meta property="og:description" content="Quantum Computing researcher specializing in quantum algorithms and machine learning">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Piyush Maji - Quantum Computing Portfolio">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="profile_photo.jpg" as="image">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+
     <div class="background-animation">
         <div class="physics-overlay"></div>
         <div class="mouse-gradient" id="mouseGradient"></div>
-        <div class="equation-doodles">
+        <div class="equation-doodles" aria-hidden="true">
             <div class="equation">∇²ψ + k²ψ = 0</div>
             <div class="equation">E = mc²</div>
             <div class="equation">∂²u/∂t² = c²∇²u</div>
@@ -19,7 +42,7 @@
             <div class="equation">∇ × B = μ₀J</div>
             <div class="equation">ℏ∂ψ/∂t = Ĥψ</div>
         </div>
-        <div class="floating-particles">
+        <div class="floating-particles" aria-hidden="true">
             <div class="particle"></div>
             <div class="particle"></div>
             <div class="particle"></div>
@@ -32,139 +55,359 @@
         </div>
     </div>
 
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Navigation Menu -->
-<div class="menu-container">
-    <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="menu-container">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="top-nav" id="topNav" aria-label="Main navigation">
+            <a href="#about" class="nav-link active">About</a>
+            <a href="#projects" class="nav-link">Research</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
     </div>
 
-   <!-- Navigation Menu -->
-<div class="menu-container">
-    <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <nav class="top-nav" id="topNav">
-        <a href="#about" class="nav-link active">About</a>
-        <a href="#projects" class="nav-link">Research</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-</div>
-
-</div>
-
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <span>↑</span>
+    </button>
 
     <div class="main-container">
         <div class="left-sidebar">
             <div class="profile-section">
-                <img src="profile_photo.jpg" 
-                     alt="Piyush Maji Profile Photo" 
-                     class="profile-photo" 
-                     id="profilePhoto">
-                <h1>Piyush Maji</h1>
-                <p class="subtitle">Master's Student at Indian Institute of Technology Hyderabad</p>
-                <p class="tagline">Quantum Computing • Physics • Programming</p>
-                <a href="Piyush_CV.pdf" class="download-cv" download>Download CV</a>
+                <div class="profile-photo-container">
+                    <img src="profile_photo.jpg" 
+                         alt="Piyush Maji Profile Photo" 
+                         class="profile-photo" 
+                         id="profilePhoto"
+                         loading="eager"
+                         decoding="async">
+                    <div class="photo-glow"></div>
+                </div>
+                <h1 class="fade-in-up">Piyush Maji</h1>
+                <p class="subtitle fade-in-up">Master's Student at IIT Hyderabad</p>
+                <p class="tagline fade-in-up">
+                    <span class="typing-text"></span>
+                </p>
+                <div class="cta-buttons fade-in-up">
+                    <a href="Piyush_CV.pdf" class="download-cv" download aria-label="Download CV">
+                        <span class="btn-icon">📄</span> Download CV
+                    </a>
+                    <a href="#contact" class="contact-cta">Let's Connect</a>
+                </div>
+                <div class="social-links-sidebar">
+                    <a href="https://github.com/Piyush314159" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="right-content">
+        <main class="right-content" id="main-content">
             <div class="content-area">
                 <section id="about" class="section active">
-                    <h2>About</h2>
-                    <p>I'm currently studying at IIT Hyderabad, where my interest in physics, especially quantum mechanics, really grew. Along the way, I began exploring the connection between programming and science, which led me to work with Python, C, and C++. I'm also learning data analysis and machine learning every day, and this naturally pushed me toward exploring quantum machine learning as well.I enjoy understanding things at a deeper level and using code to experiment, analyze data, and build ideas that connect physics with modern technology</p>
+                    <h2>About Me</h2>
+                    <div class="about-content">
+                        <p class="intro-highlight">I'm a Master's student at IIT Hyderabad passionate about bridging quantum mechanics and computational science.</p>
+                        
+                        <p>My journey into quantum computing began with a deep fascination for physics and evolved into exploring how programming can unlock new dimensions in scientific research. I work extensively with Python, C, and C++ to build tools that analyze data, simulate quantum systems, and explore the frontiers of quantum machine learning.</p>
+                        
+                        <p>I believe in understanding concepts at their core and using code as a medium to experiment with ideas that connect theoretical physics with cutting-edge technology. Currently, I'm focused on quantum algorithms, data analysis, and machine learning applications in quantum systems.</p>
+                        
+                        <div class="quick-facts">
+                            <div class="fact-item">
+                                <span class="fact-icon">🎓</span>
+                                <div>
+                                    <strong>Education</strong>
+                                    <p>M.Sc. Physics, IIT Hyderabad</p>
+                                </div>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-icon">📍</span>
+                                <div>
+                                    <strong>Location</strong>
+                                    <p>Hyderabad, India</p>
+                                </div>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-icon">💼</span>
+                                <div>
+                                    <strong>Status</strong>
+                                    <p>Open to Internships</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="projects" class="section">
-                    <h2>Projects I'm Working On</h2>
-                    <div class="project-card">
-                        <h3>✅ 8-bit Computer</h3>
-                        <p>Designed and implemented core modules (Clock, RAM, Registers, ALU) for an 8-bit computer based on the SAP-1 architecture. Built a functional system using basic electronic components to demonstrate digital logic, memory architecture, and instruction execution. Programmed the system using Arduino for control and execution under Prof. Anurag Tripathi, Department of Physics, IIT Hyderabad.</p>
+                    <h2>Research & Projects</h2>
+                    
+                    <div class="project-card completed">
+                        <div class="project-header">
+                            <h3>8-bit Computer Architecture</h3>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <p>Designed and implemented core modules (Clock, RAM, Registers, ALU) for an 8-bit computer based on the SAP-1 architecture. Built a functional system using basic electronic components to demonstrate digital logic, memory architecture, and instruction execution.</p>
+                        <div class="project-meta">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Digital Logic</span>
+                            <span class="tech-tag">Computer Architecture</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="supervisor">Under Prof. Anurag Tripathi, Dept. of Physics, IIT Hyderabad</span>
+                        </div>
                     </div>
-                    <div class="project-card">
-                        <h3>✅ Computational Modeling of Particle Motion in Brownian Systems</h3>
-                        <p>Developed a Python workflow using NumPy and Matplotlib to process 122,000 binary files, visualize particle trajectories, and compute Mean Squared Displacement (MSD) for time-series analysis. Applied log–log regression on MSD data to classify motion types (diffusive, sub-diffusive, super-diffusive), automating scientific interpretation and improving analysis efficiency under Prof. Anupam Gupta, Department of Physics, IIT Hyderabad.</p>
+
+                    <div class="project-card completed">
+                        <div class="project-header">
+                            <h3>Brownian Motion Analysis System</h3>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <p>Developed a Python workflow using NumPy and Matplotlib to process 122,000+ binary files, visualize particle trajectories, and compute Mean Squared Displacement (MSD) for time-series analysis. Applied log-log regression on MSD data to classify motion types (diffusive, sub-diffusive, super-diffusive), automating scientific interpretation.</p>
+                        <div class="project-meta">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="supervisor">Under Prof. Anupam Gupta, Dept. of Physics, IIT Hyderabad</span>
+                        </div>
                     </div>
-                    <div class="project-card">
-                        <h3>Voice Asistant - Friday</h3>
-                        <p> The Friday Voice Assistant is a Python-based speech-driven application utilizing speech recognition and text-to-speech technologies. It processes user commands to perform tasks such as web navigation, media playback, and time/date retrieval, with AI integration for handling complex or unsupported queries. The project employs a modular architecture and multithreading to ensure efficient, real-time interaction. It is available on my github.</p>
+
+                    <div class="project-card completed">
+                        <div class="project-header">
+                            <h3>Friday Voice Assistant</h3>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <p>A Python-based speech-driven application utilizing speech recognition and text-to-speech technologies. Processes user commands to perform tasks such as web navigation, media playback, and time/date retrieval, with AI integration for handling complex queries. Features modular architecture and multithreading for efficient, real-time interaction.</p>
+                        <div class="project-meta">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Speech Recognition</span>
+                            <span class="tech-tag">AI Integration</span>
+                            <span class="tech-tag">Multithreading</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/Piyush314159" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View on GitHub →
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-card">
-                        <h3>📚 Quantum Algorithms Documentation</h3>
-                        <p>Creating detailed notes and code implementations for various quantum algorithms including Shor's algorithm, Grover's search, and quantum Fourier transform using Qiskit framework.</p>
+
+                    <div class="project-card in-progress">
+                        <div class="project-header">
+                            <h3>Quantum Algorithms Documentation</h3>
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                        <p>Creating comprehensive notes and code implementations for various quantum algorithms including Shor's algorithm, Grover's search, and quantum Fourier transform using the Qiskit framework. Building a resource for understanding quantum computing fundamentals.</p>
+                        <div class="project-meta">
+                            <span class="tech-tag">Qiskit</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Quantum Computing</span>
+                        </div>
                     </div>
                 </section>
 
                 <section id="skills" class="section">
                     <h2>Skills & Technologies</h2>
-                    <p>Here are the main programming languages and technologies I use for quantum computing and software development:</p>
-                    <h3 style="color: #e8eaed; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Programming Languages</h3>
-                    <div class="skills"><span class="skill-tag">C</span><span class="skill-tag">Python</span><span class="skill-tag">LaTeX</span></div>
-                    <h3 style="color: #e8eaed; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Libraries & Tools</h3>
-                    <div class="skills"><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Pandas</span></div>
-                    <h3 style="color: #e8eaed; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Currently Learning</h3>
-                    <div class="skills"><span class="skill-tag">Qiskit</span><span class="skill-tag">Quantum Machine Learning</span><span class="skill-tag">Algorithms</span><span class="skill-tag">Git</span><span class="skill-tag">Open Source</span></div>
-                    <h3 style="color: #e8eaed; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">Focus Areas</h3>
-                    <div class="skills"><span class="skill-tag">Quantum Computing</span><span class="skill-tag">Data Structures</span><span class="skill-tag">Data Analysis</span><span class="skill-tag">Machine Learning</span><span class="skill-tag">Problem-Solving</span><span class="skill-tag">Critical Thinking</span></div>
+                    
+                    <div class="skills-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">C</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">C++</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">LaTeX</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Libraries & Tools</h3>
+                        <div class="skills">
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">SciPy</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Currently Learning</h3>
+                        <div class="skills">
+                            <span class="skill-tag learning">Qiskit</span>
+                            <span class="skill-tag learning">Quantum Machine Learning</span>
+                            <span class="skill-tag learning">Advanced Algorithms</span>
+                            <span class="skill-tag learning">Git & Version Control</span>
+                            <span class="skill-tag learning">Open Source</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3>Focus Areas</h3>
+                        <div class="skills">
+                            <span class="skill-tag focus">Quantum Computing</span>
+                            <span class="skill-tag focus">Data Structures</span>
+                            <span class="skill-tag focus">Data Analysis</span>
+                            <span class="skill-tag focus">Machine Learning</span>
+                            <span class="skill-tag focus">Problem-Solving</span>
+                            <span class="skill-tag focus">Critical Thinking</span>
+                        </div>
+                    </div>
                 </section>
 
                 <section id="experience" class="section">
-                    <h2>Academic & Experience</h2>
-                    <div class="project-card">
-                        <h3>Master's Student - IIT Hyderabad (2025-Present)</h3>
-                        <p>Currently pursuing Master's degree in Physics with focus on Quantum Computing and Machine Learning. Engaged in advanced coursework covering quantum mechanics, quantum algorithms, and computational physics,Data analysis and Machine Learning. Expected graduation: July 2027.</p>
+                    <h2>Experience & Activities</h2>
                     
-                    </div>
-                    <div class="project-card">
-                        <h3>Coordinator (Inbound and Multimedia) - International Relations Cell, IIT Hyderabad</h3>
-                        <p>Guided exchange students (mainly from Japan and the US) by organizing orientation sessions, cultural events, and local school visits to promote cross-cultural understanding, and also arrange outbound tours.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Member - Infocus (Photography Club, IIT Hyderabad)</h3>
-                        <p>Managed logistics and promotion for campus-wide photography contests and exhibitions.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Certifications</h3>
-                        <p>Completed NPTEL course "Introduction to Quantum Computing: Quantum Algorithms and Qiskit" (IITs & IISc initiative).</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Master's Student - IIT Hyderabad</h3>
+                                <p class="timeline-date">2025 - Present</p>
+                                <p>Pursuing Master's degree in Physics with focus on Quantum Computing and Machine Learning. Engaged in advanced coursework covering quantum mechanics, quantum algorithms, computational physics, data analysis and machine learning.</p>
+                                <p class="timeline-note">Expected graduation: July 2027</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Coordinator - International Relations Cell</h3>
+                                <p class="timeline-date">IIT Hyderabad</p>
+                                <p>Leading Inbound and Multimedia initiatives, guiding exchange students from Japan and the US through orientation sessions, cultural events, and local school visits to promote cross-cultural understanding. Also managing outbound tour arrangements.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Member - Infocus Photography Club</h3>
+                                <p class="timeline-date">IIT Hyderabad</p>
+                                <p>Managing logistics and promotion for campus-wide photography contests and exhibitions, contributing to the creative community at IIT Hyderabad.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>NPTEL Certification</h3>
+                                <p class="timeline-date">IITs & IISc Initiative</p>
+                                <p>Completed comprehensive course: "Introduction to Quantum Computing: Quantum Algorithms and Qiskit"</p>
+                                <span class="cert-badge">Certified</span>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 <section id="contact" class="section">
-                    <h2>Connect With Me</h2>
-                    <p>I'm always interested in discussing quantum computing, programming challenges, and collaboration opportunities. Feel free to reach out!</p>
-                    <div class="contact-links">
-                        <a href="mailto:ph25mscst11019@iith.ac.in">📧 Email</a>
-                        <a href="tel:+919330966439">📞 +91 9330966439</a>
-                        <a href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
-                        <a href="https://github.com/Piyush314159" target="_blank" rel="noopener noreferrer">🐱 GitHub</a>
-                        <a href="https://www.instagram.com/pi_yush_314/" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-                        <a href="https://www.facebook.com/piyush.maji65" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+                    <h2>Let's Connect</h2>
+                    <p class="contact-intro">I'm always interested in discussing quantum computing, programming challenges, and collaboration opportunities. Feel free to reach out!</p>
+                    
+                    <div class="contact-grid">
+                        <a href="mailto:ph25mscst11019@iith.ac.in" class="contact-card email">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-info">
+                                <h4>Email</h4>
+                                <p>ph25mscst11019@iith.ac.in</p>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:+919330966439" class="contact-card phone">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-info">
+                                <h4>Phone</h4>
+                                <p>+91 9330966439</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank" rel="noopener noreferrer" class="contact-card linkedin">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-info">
+                                <h4>LinkedIn</h4>
+                                <p>Connect with me</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/Piyush314159" target="_blank" rel="noopener noreferrer" class="contact-card github">
+                            <div class="contact-icon">🐱</div>
+                            <div class="contact-info">
+                                <h4>GitHub</h4>
+                                <p>View my projects</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.instagram.com/pi_yush_314/" target="_blank" rel="noopener noreferrer" class="contact-card instagram">
+                            <div class="contact-icon">📸</div>
+                            <div class="contact-info">
+                                <h4>Instagram</h4>
+                                <p>@pi_yush_314</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.facebook.com/piyush.maji65" target="_blank" rel="noopener noreferrer" class="contact-card facebook">
+                            <div class="contact-icon">📘</div>
+                            <div class="contact-info">
+                                <h4>Facebook</h4>
+                                <p>Follow me</p>
+                            </div>
+                        </a>
                     </div>
-                    <p style="margin-top: 2rem; color: #95a5a6;">Currently pursuing Master's at IIT Hyderabad and available for programming internships, quantum computing projects, and open-source collaborations.</p>
+                    
+                    <div class="availability-notice">
+                        <p><strong>Currently Available</strong></p>
+                        <p>Open for programming internships, quantum computing projects, and open-source collaborations</p>
+                    </div>
                 </section>
             </div>
-        </div>
+            
+            <footer class="site-footer">
+                <p>&copy; 2025 Piyush Maji. All rights reserved.</p>
+                <p class="footer-note">Last updated: December 2025</p>
+            </footer>
+        </main>
     </div>
 
-    <div class="photo-modal" id="photoModal">
-        <span class="close-modal" id="closeModal">&times;</span>
+    <div class="photo-modal" id="photoModal" role="dialog" aria-modal="true" aria-label="Profile photo enlarged">
+        <span class="close-modal" id="closeModal" aria-label="Close modal">&times;</span>
         <img src="profile_photo.jpg" alt="Piyush Maji Profile Photo Enlarged">
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
