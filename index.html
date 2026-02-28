@@ -7,39 +7,26 @@
   <title>Piyush Maji | Data Analysis & ML in Physics</title>
 
   <!-- SEO -->
-  <meta name="description" content="Piyush Maji is an MSc Physics student at IIT Hyderabad working on data analysis, computational physics, and machine learning for high-energy physics.">
-  <meta name="keywords" content="data analysis, machine learning, computational physics, high energy physics, time series analysis, IIT Hyderabad">
+  <meta name="description" content="Piyush Maji is an MSc Physics student at IIT Hyderabad working on data analysis, computational physics, and machine learning for physics systems.">
+  <meta name="keywords" content="data analysis, machine learning, computational physics, time series, IIT Hyderabad">
   <meta name="author" content="Piyush Maji">
 
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- Loading Screen -->
-<div class="loading-screen" id="loadingScreen">
-  <div class="loader"></div>
-</div>
+<div class="loading-screen" id="loadingScreen"><div class="loader"></div></div>
 
 <!-- Background -->
 <div class="background-animation">
   <div class="physics-overlay"></div>
   <div class="mouse-gradient" id="mouseGradient"></div>
-
-  <div class="equation-doodles" aria-hidden="true">
-    <div class="equation">∂ρ/∂t = D∇²ρ</div>
-    <div class="equation">⟨x²(t)⟩ ∝ tᵅ</div>
-    <div class="equation">χ² = Σ (yᵢ − fᵢ)²</div>
-    <div class="equation">p(signal | data)</div>
-  </div>
 </div>
 
 <!-- Navigation -->
 <div class="menu-container">
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <nav class="top-nav" id="topNav">
     <a href="#about" class="nav-link active">About</a>
     <a href="#projects" class="nav-link">Projects</a>
@@ -73,12 +60,13 @@
     <div class="social-links-sidebar">
       <a href="https://github.com/Piyush314159" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank">LinkedIn</a>
+      <a href="mailto:ph25mscst11019@iith.ac.in">Email</a>
     </div>
   </div>
 </div>
 
 <!-- RIGHT CONTENT -->
-<main class="right-content" id="main-content">
+<main class="right-content">
 <div class="content-area">
 
 <!-- ABOUT -->
@@ -86,15 +74,23 @@
   <h2>About Me</h2>
 
   <p class="intro-highlight">
-    I am an MSc Physics student at IIT Hyderabad focused on data analysis,
-    computational modeling, and machine learning for physical and high-energy systems.
+    I am an MSc Physics student at IIT Hyderabad with a strong focus on data analysis,
+    computational modeling, and machine learning applied to modern physics experiments.
   </p>
 
   <p>
-    My interests lie in extracting physical insight from large and noisy datasets
-    using statistical inference, numerical modeling, and data-driven techniques.
-    I am particularly motivated by applications in high-energy physics,
-    where modern experiments rely heavily on advanced data analysis pipelines.
+    My work lies at the intersection of physics and computation, where I develop and apply
+    numerical simulations, statistical inference, and machine learning models to extract
+    physical insight from complex, high-dimensional, and noisy datasets.
+  </p>
+
+  <p>
+    Recently, my interests have expanded strongly toward high-energy physics (HEP),
+    particularly the use of graph neural networks and data-driven reconstruction techniques
+    in collider experiments. Through exposure to contemporary HEP literature and
+    ongoing project work, I am developing familiarity with detector-level data,
+    event reconstruction pipelines, and ML-based inference methods used in experiments
+    such as Belle II.
   </p>
 </section>
 
@@ -104,25 +100,18 @@
 
   <div class="project-card completed">
     <div class="project-header">
-      <h3>Epidemic Modelling Using Public Data</h3>
+      <h3>Voice Assistant with AI Integration (Friday)</h3>
       <span class="status-badge completed">Completed</span>
     </div>
-
     <p>
-      Performed data-driven modeling of epidemic spread using real-world public datasets.
-      Focused on data cleaning, smoothing noisy time-series, parameter estimation,
-      and sensitivity analysis.
+      Built a modular Python-based voice assistant featuring wake-word detection,
+      speech recognition, text-to-speech, and AI-based conversational fallback.
     </p>
-
     <div class="project-meta">
       <span class="tech-tag">Python</span>
-      <span class="tech-tag">Time-Series Analysis</span>
-      <span class="tech-tag">Parameter Estimation</span>
-      <span class="tech-tag">Statistical Modeling</span>
-    </div>
-
-    <div class="project-footer">
-      <span class="supervisor">Under Prof. Anupam Gupta, IIT Hyderabad</span>
+      <span class="tech-tag">SpeechRecognition</span>
+      <span class="tech-tag">pyttsx3</span>
+      <span class="tech-tag">Multithreading</span>
     </div>
   </div>
 
@@ -131,74 +120,84 @@
       <h3>Computational Modeling of Brownian Motion</h3>
       <span class="status-badge completed">Completed</span>
     </div>
-
     <p>
-      Developed Python-based analysis pipelines to compute Mean Squared Displacement (MSD)
-      and classify stochastic motion regimes using regression techniques.
+      Simulated stochastic particle trajectories and computed Mean Squared Displacement (MSD)
+      to classify diffusive regimes using log–log regression.
     </p>
-
     <div class="project-meta">
       <span class="tech-tag">Python</span>
       <span class="tech-tag">NumPy</span>
       <span class="tech-tag">Pandas</span>
-      <span class="tech-tag">Regression Analysis</span>
+      <span class="tech-tag">Regression</span>
     </div>
+    <div class="project-footer">
+      <span class="supervisor">Under Prof. Anupam Gupta, IIT Hyderabad</span>
+    </div>
+  </div>
 
+  <div class="project-card completed">
+    <div class="project-header">
+      <h3>Epidemic Modeling Using Compartmental Dynamics</h3>
+      <span class="status-badge completed">Completed</span>
+    </div>
+    <p>
+      Implemented SIR and SIRS epidemic models using systems of ODEs and analyzed
+      transmission thresholds and equilibrium stability via numerical simulations.
+    </p>
+    <div class="project-meta">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">ODE Solvers</span>
+      <span class="tech-tag">Numerical Analysis</span>
+    </div>
     <div class="project-footer">
       <span class="supervisor">Under Prof. Anupam Gupta, IIT Hyderabad</span>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- SKILLS WITH BARS -->
 <section id="skills" class="section">
   <h2>Skills</h2>
 
   <div class="skills-category">
-    <h3>Technical</h3>
+    <h3>Programming & Data</h3>
+    <div class="skills-grid">
+      <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">NumPy / Pandas</span><div class="skill-bar"><div class="skill-progress" style="width:80%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Scientific Computing</span><div class="skill-bar"><div class="skill-progress" style="width:78%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">Machine Learning</span><div class="skill-bar"><div class="skill-progress" style="width:65%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">C</span><div class="skill-bar"><div class="skill-progress" style="width:55%"></div></div></div>
+      <div class="skill-item"><span class="skill-name">LaTeX</span><div class="skill-bar"><div class="skill-progress" style="width:75%"></div></div></div>
+    </div>
+  </div>
+
+  <div class="skills-category">
+    <h3>Certifications & Professional Skills</h3>
     <div class="skills">
-      <span class="skill-tag">Python</span>
-      <span class="skill-tag">NumPy</span>
-      <span class="skill-tag">Pandas</span>
-      <span class="skill-tag">Matplotlib</span>
-      <span class="skill-tag">Statistical Analysis</span>
-      <span class="skill-tag">Time-Series Analysis</span>
-      <span class="skill-tag">Machine Learning</span>
-      <span class="skill-tag">C / C++</span>
-      <span class="skill-tag">LaTeX</span>
+      <span class="skill-tag focus">Machine Learning Fundamentals (DataCamp)</span>
+      <span class="skill-tag">Statistical Inference</span>
+      <span class="skill-tag">Scientific Writing</span>
+      <span class="skill-tag">Research Documentation</span>
+      <span class="skill-tag">Version Control (Git)</span>
+      <span class="skill-tag">Collaborative Research</span>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- EXPERIENCE + LEADERSHIP -->
 <section id="experience" class="section">
   <h2>Experience</h2>
-
   <div class="timeline">
 
     <div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
-        <h3>M.Sc. Physics — Indian Institute of Technology Hyderabad</h3>
+        <h3>M.Sc. Physics — IIT Hyderabad</h3>
         <p class="timeline-date">2025 – Present</p>
         <p>
-          Graduate training in physics with strong emphasis on
-          data-intensive analysis, statistical modeling, and computational methods,
-          aligned with modern high-energy physics workflows.
-        </p>
-        <p class="timeline-note">Expected graduation: July 2027</p>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <h3>Research Projects — Data Analysis & Physics Modelling</h3>
-        <p class="timeline-date">Under Prof. Anupam Gupta, IIT Hyderabad</p>
-        <p>
-          Worked on data-driven physics projects involving time-series analysis,
-          model fitting, parameter estimation, and uncertainty quantification
-          using real-world datasets.
+          Advanced coursework and research-oriented training with emphasis on
+          data analysis, computational modeling, statistical mechanics,
+          and data-intensive physics workflows.
         </p>
       </div>
     </div>
@@ -206,39 +205,56 @@
     <div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
-        <h3>High-Energy Physics & Machine Learning</h3>
+        <h3>High-Energy Physics & Machine Learning Project</h3>
         <p class="timeline-date">Under Prof. Sourav Sandilya, IIT Hyderabad</p>
         <p>
-          Engaged with modern high-energy physics analysis techniques,
-          focusing on the role of machine learning in event reconstruction
-          and classification. Studied detector-level data representations,
-          feature engineering, and data-driven inference methods used in
-          contemporary HEP experiments.
+          Studying modern event reconstruction techniques in high-energy physics with
+          emphasis on machine learning approaches such as graph neural networks.
+          Focused on understanding detector-level representations, decay topology
+          reconstruction, and ML-driven full event interpretation frameworks inspired
+          by Belle II analyses.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3>Coordinator — International Relations Cell, IIT Hyderabad</h3>
+        <p class="timeline-date">Leadership & Management</p>
+        <p>
+          Coordinated orientations, cultural programs, multimedia outreach,
+          and outbound academic tours for international exchange students,
+          primarily from Japan and the United States.
         </p>
       </div>
     </div>
 
   </div>
+
+  </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT WITH ICON CARDS -->
 <section id="contact" class="section">
   <h2>Contact</h2>
-  <p>Email: ph25mscst11019@iith.ac.in</p>
-  <p>Phone: +91 9330966439</p>
-  <p>GitHub: github.com/Piyush314159</p>
-  <p>LinkedIn: linkedin.com/in/piyush-maji-769aa4228</p>
+  <p class="contact-intro">
+    I am open to academic collaborations, research internships, and discussions
+    related to data analysis, machine learning, and high-energy physics.
+    Feel free to reach out through any of the platforms below.
+  </p>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:ph25mscst11019@iith.ac.in"><div class="contact-icon">✉️</div><div class="contact-info"><h4>Email</h4><p>ph25mscst11019@iith.ac.in</p></div></a>
+    <a class="contact-card" href="tel:+919330966439"><div class="contact-icon">📞</div><div class="contact-info"><h4>Phone</h4><p>+91 9330966439</p></div></a>
+    <a class="contact-card" href="https://github.com/Piyush314159" target="_blank"><div class="contact-icon">💻</div><div class="contact-info"><h4>GitHub</h4><p>Piyush314159</p></div></a>
+    <a class="contact-card" href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank"><div class="contact-icon">🔗</div><div class="contact-info"><h4>LinkedIn</h4><p>Piyush Maji</p></div></a>
+  </div>
 </section>
 
 </div>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> Piyush Maji</p>
-</footer>
-
+<footer class="site-footer"><p>© <span id="year"></span> Piyush Maji</p></footer>
 </main>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
