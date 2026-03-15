@@ -1,224 +1,141 @@
-// ========================================
-// WAIT FOR DOM
-// ========================================
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ========================================
-    // LOADING SCREEN
-    // ========================================
-    const loadingScreen = document.getElementById('loadingScreen');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loadingScreen.classList.add('hidden');
-        }, 500);
+  // ─── LOADING SCREEN ────────────────────────────────────
+  const loadingScreen = document.getElementById('loadingScreen');
+  window.addEventListener('load', () => {
+    setTimeout(() => loadingScreen.classList.add('hidden'), 600);
+  });
+
+  // ─── YEAR ──────────────────────────────────────────────
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ─── TYPING ANIMATION ──────────────────────────────────
+  const typingEl = document.querySelector('.typing-text');
+  const words = [
+    'Data Analysis in Physics',
+    'Machine Learning',
+    'Computational Modeling',
+    'Time-Series Analysis',
+    'Scientific Programming'
+  ];
+  let wi = 0, ci = 0, deleting = false, speed = 100;
+
+  function type() {
+    if (!typingEl) return;
+    const word = words[wi];
+    typingEl.textContent = deleting
+      ? word.slice(0, --ci)
+      : word.slice(0, ++ci);
+
+    speed = deleting ? 45 : 100;
+    if (!deleting && ci === word.length) { speed = 2000; deleting = true; }
+    else if (deleting && ci === 0) { deleting = false; wi = (wi + 1) % words.length; speed = 400; }
+    setTimeout(type, speed);
+  }
+  setTimeout(type, 1000);
+
+  // ─── HEADER SCROLL ─────────────────────────────────────
+  const header = document.getElementById('siteHeader');
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+    const btt = document.getElementById('backToTop');
+    if (btt) btt.classList.toggle('visible', window.scrollY > 400);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ─── BACK TO TOP ───────────────────────────────────────
+  const btt = document.getElementById('backToTop');
+  if (btt) btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ─── NAVIGATION (scroll-based active state) ────────────
+  const navItems   = document.querySelectorAll('.nav-item');
+  const sectionIds = ['about','projects','skills','experience','contact'];
+
+  function updateActiveNav() {
+    let current = 'about';
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (window.scrollY >= el.offsetTop - 140) current = id;
     });
+    navItems.forEach(n => n.classList.toggle('active', n.dataset.nav === current));
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
 
-    // ========================================
-    // TYPING ANIMATION (UPDATED)
-    // ========================================
-    const typingElement = document.querySelector('.typing-text');
-    const textArray = [
-        'Data Analysis in Physics',
-        'Machine Learning',
-        'Computational Modeling',
-        'Time-Series Analysis',
-        'Scientific Programming'
-    ];
-
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
-
-    function typeText() {
-        if (!typingElement) return;
-
-        const currentText = textArray[textIndex];
-
-        if (isDeleting) {
-            typingElement.textContent = currentText.substring(0, charIndex--);
-            typingSpeed = 50;
-        } else {
-            typingElement.textContent = currentText.substring(0, charIndex++);
-            typingSpeed = 100;
-        }
-
-        if (!isDeleting && charIndex === currentText.length) {
-            typingSpeed = 1800;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            textIndex = (textIndex + 1) % textArray.length;
-            typingSpeed = 400;
-        }
-
-        setTimeout(typeText, typingSpeed);
-    }
-
-    setTimeout(typeText, 800);
-
-    // ========================================
-    // MOUSE GRADIENT EFFECT (THROTTLED)
-    // ========================================
-    const mouseGradient = document.getElementById('mouseGradient');
-    let lastMove = 0;
-
-    if (mouseGradient) {
-        document.addEventListener('mousemove', (e) => {
-            const now = Date.now();
-            if (now - lastMove > 16) {
-                mouseGradient.style.left = `${e.clientX}px`;
-                mouseGradient.style.top = `${e.clientY}px`;
-                lastMove = now;
-            }
-        });
-    }
-
-    // ========================================
-    // NAVIGATION & SECTION SWITCHING
-    // ========================================
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-
-            navLinks.forEach(l => l.classList.remove('active'));
-            sections.forEach(s => s.classList.remove('active'));
-
-            link.classList.add('active');
-            targetSection?.classList.add('active');
-
-            // Mobile scroll fix
-            if (window.innerWidth <= 1024) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            // Close mobile menu
-            if (window.innerWidth <= 768) {
-                menuToggle.classList.remove('active');
-                topNav.classList.remove('open');
-                document.body.style.overflow = '';
-            }
-        });
+  // Smooth-scroll clicks on nav links
+  document.querySelectorAll('[data-nav], [data-nav-btn]').forEach(el => {
+    el.addEventListener('click', e => {
+      const target = el.dataset.nav || el.dataset.navBtn;
+      const section = document.getElementById(target);
+      if (!section) return;
+      e.preventDefault();
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // close mobile menu
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
     });
+  });
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (!['ArrowLeft', 'ArrowRight'].includes(e.key)) return;
+  // ─── MOBILE MENU ───────────────────────────────────────
+  const hamburger   = document.getElementById('hamburger');
+  const mobileMenu  = document.getElementById('mobileMenu');
 
-        const active = document.querySelector('.nav-link.active');
-        const index = [...navLinks].indexOf(active);
-        const nextIndex = e.key === 'ArrowRight'
-            ? (index + 1) % navLinks.length
-            : (index - 1 + navLinks.length) % navLinks.length;
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
 
-        navLinks[nextIndex].click();
+  document.querySelectorAll('.mob-nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
     });
+  });
 
-    // ========================================
-    // MOBILE MENU
-    // ========================================
-    const menuToggle = document.getElementById('menuToggle');
-    const topNav = document.getElementById('topNav');
+  // ─── SCROLL REVEAL ─────────────────────────────────────
+  const revealEls = document.querySelectorAll(
+    '.project-card, .tl-item, .skill-row, .contact-card, .stat-item, .interest-item'
+  );
+  revealEls.forEach((el, i) => {
+    el.classList.add('reveal');
+    if (i % 3 === 1) el.classList.add('reveal-delay-1');
+    if (i % 3 === 2) el.classList.add('reveal-delay-2');
+  });
 
-    if (menuToggle && topNav) {
-        menuToggle.addEventListener('click', () => {
-            const isOpen = menuToggle.classList.toggle('active');
-            topNav.classList.toggle('open');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // ─── SKILL BAR ANIMATION ───────────────────────────────
+  const skillSection = document.getElementById('skills');
+  let skillsAnimated = false;
+  const skillObs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !skillsAnimated) {
+      skillsAnimated = true;
+      document.querySelectorAll('.skill-fill').forEach((el, i) => {
+        setTimeout(() => el.classList.add('animated'), i * 100);
+      });
     }
+  }, { threshold: 0.3 });
+  if (skillSection) skillObs.observe(skillSection);
 
-    // ========================================
-    // BACK TO TOP
-    // ========================================
-    const backToTop = document.getElementById('backToTop');
+  // ─── REDUCED MOTION ────────────────────────────────────
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('[style*="animation"]').forEach(el => {
+      el.style.animation = 'none';
+    });
+  }
 
-    if (backToTop) {
-        window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 300);
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-
-    // ========================================
-    // PROFILE PHOTO MODAL
-    // ========================================
-    const profilePhoto = document.getElementById('profilePhoto');
-    const photoModal = document.getElementById('photoModal');
-    const closeModal = document.getElementById('closeModal');
-
-    if (profilePhoto && photoModal && closeModal) {
-        profilePhoto.addEventListener('click', () => {
-            photoModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeModal.addEventListener('click', closePhotoModal);
-
-        photoModal.addEventListener('click', (e) => {
-            if (e.target === photoModal) closePhotoModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && photoModal.classList.contains('active')) {
-                closePhotoModal();
-            }
-        });
-    }
-
-    function closePhotoModal() {
-        photoModal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    // ========================================
-    // SCROLL ANIMATIONS
-    // ========================================
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.project-card, .timeline-item, .fact-item')
-        .forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = '0.6s ease';
-            observer.observe(el);
-        });
-
-    // ========================================
-    // FOOTER YEAR
-    // ========================================
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-
-    // ========================================
-    // REDUCED MOTION SUPPORT
-    // ========================================
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelectorAll('.particle, .equation, .mouse-gradient')
-            .forEach(el => el.style.animation = 'none');
-    }
-
-    // ========================================
-    // CONSOLE SIGNATURE
-    // ========================================
-    console.log('%cPiyush Maji', 'font-size:20px;color:#224a3d;font-weight:bold');
-    console.log('%cData Analysis & ML in Physics', 'color:#95a5a6');
+  console.log('%c PM ', 'background:#7FBA9E;color:#0C0F0E;font-size:14px;padding:4px 8px;border-radius:4px;font-weight:700');
+  console.log('%cPiyush Maji — Physics & ML Research', 'color:#7FBA9E');
 });
