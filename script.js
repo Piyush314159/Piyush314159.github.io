@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // YEAR
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // TYPING ANIMATION
   var typingEl = document.querySelector('.typing-text');
   var words = ['Data Analysis in Physics','Machine Learning','Computational Modeling','Time-Series Analysis','Scientific Programming'];
   var wi = 0, ci = 0, deleting = false, speed = 100;
@@ -19,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   setTimeout(type, 800);
 
-  // HEADER SCROLL + BACK TO TOP
   var header = document.getElementById('siteHeader');
   var btt = document.getElementById('backToTop');
   window.addEventListener('scroll', function() {
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { passive: true });
   if (btt) btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-  // ACTIVE NAV ON SCROLL
   var navItems = document.querySelectorAll('.nav-item');
   var sectionIds = ['about','projects','skills','experience','journeys','contact'];
   function updateNav() {
@@ -41,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   window.addEventListener('scroll', updateNav, { passive: true });
 
-  // SMOOTH SCROLL NAV LINKS
   document.querySelectorAll('[data-nav]').forEach(function(el) {
     el.addEventListener('click', function(e) {
       var id = el.dataset.nav;
@@ -55,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // HERO BUTTONS
   document.querySelectorAll('.btn-primary, .btn-ghost').forEach(function(btn) {
     btn.addEventListener('click', function(e) {
       var href = btn.getAttribute('href');
@@ -67,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // MOBILE MENU
   var hamburger = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobileMenu');
   if (hamburger && mobileMenu) {
@@ -85,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // JOURNEY TABS
   document.querySelectorAll('.journey-tab').forEach(function(tab) {
     tab.addEventListener('click', function() {
       document.querySelectorAll('.journey-tab').forEach(function(t) { t.classList.remove('active'); });
@@ -98,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// MODULE ACCORDION (global for onclick)
 function toggleModule(btn) {
   var body = btn.nextElementSibling;
   var isOpen = body.classList.contains('is-open');
