@@ -452,3 +452,31 @@ p:last-child { margin-bottom:0; }
   .site-header,.back-to-top,.hamburger { display:none !important; }
   .hero { min-height:auto; }
 }
+/* ── Coding Profiles ── */
+.coding-profiles { display:flex; flex-direction:column; gap:0.65rem; }
+.coding-profile-card {
+  display:flex; align-items:center; gap:1rem;
+  padding:0.75rem 1rem;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--surface);
+  text-decoration:none;
+  transition:border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.coding-profile-card:hover {
+  border-color:var(--accent);
+  box-shadow:0 2px 12px rgba(0,0,0,0.07);
+  transform:translateX(3px);
+}
+.cp-icon {
+  width:34px; height:34px; border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.cp-lc  { background:#fff7ed; color:#f97316; }
+.cp-cf  { background:#eff6ff; color:#2563eb; }
+.cp-gfg { background:#f0fdf4; color:#16a34a; }
+.cp-gh  { background:#f8fafc; color:#1e293b; }
+.cp-info { flex:1; display:flex; flex-direction:column; gap:1px; }
+.cp-name { font-size:0.85rem; font-weight:600; color:var(--ink-1); }
+.cp-stat { font-size:0.78rem; color:var(--ink-3); }
