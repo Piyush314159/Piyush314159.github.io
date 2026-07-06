@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush Maji — Physics & ML Research</title>
-  <meta name="description" content="Piyush Maji is an MSc Physics student at IIT Hyderabad working on data analysis, computational physics, and machine learning for physics systems.">
+  <title>Piyush Maji — Physics &amp; ML Research</title>
+  <meta name="description" content="Piyush Maji is an MSc Physics student at IIT Hyderabad working on GNN-based event reconstruction at Belle II, graph neural networks for fraud detection, and computational physics.">
   <meta name="author" content="Piyush Maji">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,13 +18,20 @@
     <a href="#about" class="wordmark">PM</a>
     <nav class="main-nav">
       <a href="#about" class="nav-item active" data-nav="about">About</a>
+      <a href="#research" class="nav-item" data-nav="research">Research</a>
       <a href="#projects" class="nav-item" data-nav="projects">Projects</a>
       <a href="#skills" class="nav-item" data-nav="skills">Skills</a>
       <a href="#experience" class="nav-item" data-nav="experience">Experience</a>
       <a href="#journeys" class="nav-item" data-nav="journeys">Journeys</a>
       <a href="#contact" class="nav-item" data-nav="contact">Contact</a>
     </nav>
-    <a href="Piyush_CV.pdf" class="nav-cta" download>Download CV</a>
+    <div class="cv-dropdown" id="cvDropdown">
+      <button class="nav-cta" id="cvDropdownBtn">CV <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="margin-left:4px"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="cv-dropdown-menu" id="cvDropdownMenu">
+        <button class="cv-dropdown-item" id="viewCvBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View CV</button>
+        <a href="Piyush_CV.pdf" class="cv-dropdown-item" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download CV</a>
+      </div>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span></button>
   </div>
 </header>
@@ -32,24 +39,28 @@
 <div class="mobile-menu" id="mobileMenu">
   <nav>
     <a href="#about" class="mob-nav-item" data-nav="about">About</a>
+    <a href="#research" class="mob-nav-item" data-nav="research">Research</a>
     <a href="#projects" class="mob-nav-item" data-nav="projects">Projects</a>
     <a href="#skills" class="mob-nav-item" data-nav="skills">Skills</a>
     <a href="#experience" class="mob-nav-item" data-nav="experience">Experience</a>
     <a href="#journeys" class="mob-nav-item" data-nav="journeys">Journeys</a>
     <a href="#contact" class="mob-nav-item" data-nav="contact">Contact</a>
   </nav>
-  <a href="Piyush_CV.pdf" class="mob-cv" download>Download CV →</a>
+  <div class="mob-cv-actions">
+    <button class="mob-cv" id="mobViewCvBtn">View CV →</button>
+    <a href="Piyush_CV.pdf" class="mob-cv" download>Download CV →</a>
+  </div>
 </div>
 
 <!-- ABOUT -->
 <section class="hero" id="about">
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge">MSc Physics · IIT Hyderabad</div>
+      <div class="hero-badge">MSc Physics · IIT Hyderabad · Expected 2027</div>
       <h1 class="hero-name">Piyush<br><em>Maji</em></h1>
       <p class="hero-tagline"><span class="typing-text"></span></p>
-      <p class="hero-desc">I work at the intersection of high-energy physics and machine learning — training graph neural networks for event reconstruction at the Belle II experiment, while sharpening my DSA and ML fundamentals from the ground up.</p>
-      <p class="hero-desc">Currently: GNN-based full event interpretation at IIT Hyderabad · Striver A2Z DSA sheet in Python · ML roadmap with Scikit-Learn, PyTorch &amp; Gymnasium.</p>
+      <p class="hero-desc">I work at the intersection of high-energy physics and machine learning — training graph neural networks for full event reconstruction at the Belle II experiment using the GraFEI framework, while building practical ML systems from fraud detection to NLP classifiers.</p>
+      <p class="hero-desc">Currently: GraFEI model training with PyTorch Geometric at IIT Hyderabad · GNN-based fraud detection pipelines · Striver A2Z DSA sheet in Python · ML roadmap with Scikit-Learn, PyTorch &amp; Gymnasium.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
@@ -67,6 +78,10 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
           Email
         </a>
+        <a href="https://piyush314159.github.io" target="_blank" rel="noopener" class="social-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          Portfolio
+        </a>
       </div>
     </div>
     <div class="hero-right">
@@ -75,35 +90,88 @@
         <div class="photo-accent"></div>
       </div>
       <div class="hero-stats">
-        <div class="stat-item"><span class="stat-number">Belle</span><span class="stat-label">II · HEP</span></div>
+        <div class="stat-item"><span class="stat-number">GraFEI</span><span class="stat-label">Belle II · HEP</span></div>
         <div class="stat-divider"></div>
         <div class="stat-item"><span class="stat-number">GNN</span><span class="stat-label">ML Research</span></div>
         <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-number">A2Z</span><span class="stat-label">DSA Sheet</span></div>
+        <div class="stat-item"><span class="stat-number">7.5</span><span class="stat-label">CGPA · IIT-H</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- RESEARCH -->
+<section class="content-section" id="research">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Research</span>
+      <h2 class="section-title">Ongoing Research</h2>
+    </div>
+    <div class="research-card">
+      <div class="research-badge-row">
+        <span class="badge badge-active">Ongoing</span>
+        <span class="research-advisor"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Sourav Sandilya, Department of Physics, IIT Hyderabad</span>
+      </div>
+      <h3 class="research-title">GNN-Based Full Event Interpretation (GraFEI) — Belle II</h3>
+      <div class="research-body">
+        <div class="research-block">
+          <h4>Overview</h4>
+          <p>Studying ML-driven inclusive event reconstruction for the Belle II experiment at KEK using the GraFEI framework, which applies deep GNNs to reconstruct full decay topologies from final state particles alone, without prior assumptions on decay chain structure.</p>
+        </div>
+        <div class="research-block">
+          <h4>Methodology</h4>
+          <p>Building detector-level graph representations using PyTorch Geometric — modelling each reconstructed particle as a graph node with kinematic features (momentum, DOCA, cos θ) and learning the Lowest Common Ancestor Stage (LCAS) matrix encoding the decay hierarchy (Υ(4S) → B → D* → ...).</p>
+        </div>
+        <div class="research-block">
+          <h4>Training &amp; Evaluation</h4>
+          <p>Training the GraFEI model (stacked MetaLayers with EdgeLayer, NodeLayer, GlobalLayer) to jointly predict particle mass hypotheses and the LCAS matrix via a combined cross-entropy loss L = L<sub>LCA</sub> + αL<sub>Masses</sub>; evaluating with Perfect LCA, Perfect Masses, and Perfect Event metrics within the basf2 analysis framework.</p>
+        </div>
+      </div>
+      <div class="project-stack"><span>Python</span><span>PyTorch Geometric</span><span>GNN</span><span>basf2</span><span>HEP</span><span>Belle II</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
-<section class="content-section" id="projects">
+<section class="content-section alt-section" id="projects">
   <div class="section-inner">
     <div class="section-header">
       <span class="section-label">Work</span>
-      <h2 class="section-title">Selected Projects</h2>
+      <h2 class="section-title">Projects</h2>
     </div>
     <div class="projects-grid">
-      <article class="project-card featured">
+      <article class="project-card">
         <div class="project-number">01</div>
         <div class="project-body">
-          <div class="project-top"><h3>GNN-Based Full Event Interpretation — Belle II</h3><span class="badge badge-active">Ongoing</span></div>
-          <p>Studying ML-driven event reconstruction for the Belle II experiment at KEK. Focus on graph neural networks for decay topology reconstruction at the detector level, inspired by the Full Event Interpretation (FEI) algorithm and modern GNN approaches to high-energy physics.</p>
-          <div class="project-stack"><span>Python</span><span>Graph Neural Networks</span><span>PyTorch</span><span>HEP</span><span>Belle II</span></div>
-          <div class="project-supervisor"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Sourav Sandilya, IIT Hyderabad</div>
+          <div class="project-top"><h3>GNN-FraudNet — Transaction Fraud Detection</h3><span class="badge badge-done">Completed</span></div>
+          <p>Built a Graph Neural Network pipeline on the Elliptic Bitcoin Dataset (203K nodes, 234K edges) to classify illicit transactions; modelled the transaction graph with 166-dimensional node features and temporal edge structure, framing fraud detection as a node classification task under severe class imbalance (2% illicit).</p>
+          <p>Implemented and benchmarked GCN, GraphSAGE, and GAT architectures in PyTorch Geometric; applied class-weighted cross-entropy and SMOTE-based oversampling to handle imbalance; evaluated with precision, recall, F1, and AUC-ROC, achieving competitive illicit-class F1 on the held-out test set.</p>
+          <div class="project-stack"><span>Python</span><span>PyTorch Geometric</span><span>GCN</span><span>GraphSAGE</span><span>GAT</span><span>SMOTE</span></div>
+          <a href="https://github.com/Piyush314159/GNN-FraudNet" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159/GNN-FraudNet →</a>
         </div>
       </article>
       <article class="project-card">
         <div class="project-number">02</div>
+        <div class="project-body">
+          <div class="project-top"><h3>Spam Classifier from Scratch</h3><span class="badge badge-done">Completed</span></div>
+          <p>Built Multinomial Naive Bayes (MLE + Laplace smoothing) and Logistic Regression (gradient descent) entirely from scratch in NumPy on the UCI SMS Spam Collection; implemented both TF-IDF and Bag-of-Words feature pipelines without sklearn, with vocabulary built strictly on the train split to prevent data leakage.</p>
+          <p>Implemented binary cross-entropy loss and hand-coded gradient descent, visualising real-time loss convergence; evaluated both models with precision, recall, F1, and ROC/AUC computed via the trapezoidal rule; analysed threshold sensitivity (0.3–0.7) to explore the precision-recall tradeoff on an 86.6% class-imbalanced dataset.</p>
+          <div class="project-stack"><span>Python</span><span>NumPy</span><span>NLP</span><span>Naive Bayes</span><span>Logistic Regression</span><span>TF-IDF</span></div>
+          <a href="https://github.com/Piyush314159" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159 →</a>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-number">03</div>
+        <div class="project-body">
+          <div class="project-top"><h3>COVID-19 Epidemic Modeling — SIR / SEIR / SUTRA</h3><span class="badge badge-done">Completed</span></div>
+          <p>Implemented and compared SIR, SEIR, and the SUTRA compartmental model (which explicitly tracks undetected/asymptomatic carriers) on US national COVID-19 data (Feb 2020 – Mar 2021). Used NNLS regression for automatic per-phase parameter estimation of contact rate β̃ and reach ρ̃, with a product-R² fallback for collinear phases, achieving MAPE as low as ~4% on individual phases. Ensembled all three models via linear regression for improved overall fit.</p>
+          <div class="project-stack"><span>Python</span><span>ODE Solvers</span><span>NNLS Regression</span><span>Nelder-Mead</span><span>Pandas</span></div>
+          <a href="https://github.com/Piyush314159/epidemicModeling_SUTRA_Model" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159/epidemicModeling_SUTRA_Model →</a>
+          <div class="project-supervisor" style="margin-top:0.75rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Anupam Gupta, IIT Hyderabad</div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-number">04</div>
         <div class="project-body">
           <div class="project-top"><h3>Diffraction Pattern Analysis for Wavelength Estimation</h3><span class="badge badge-done">Completed</span></div>
           <p>Built a two-script Python pipeline to extract laser wavelength from camera images of diffraction gratings — preprocessing raw frames into 1D intensity profiles and fitting the full Fraunhofer grating model via non-linear least squares to obtain λ = 524 ± 6 nm.</p>
@@ -113,7 +181,7 @@
         </div>
       </article>
       <article class="project-card">
-        <div class="project-number">03</div>
+        <div class="project-number">05</div>
         <div class="project-body">
           <div class="project-top"><h3>Brownian Motion Computational Modeling</h3><span class="badge badge-done">Completed</span></div>
           <p>Simulated stochastic particle trajectories and computed Mean Squared Displacement (MSD) to classify diffusive regimes using log–log regression. Validated results against theoretical predictions.</p>
@@ -121,22 +189,12 @@
           <div class="project-supervisor"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Anupam Gupta, IIT Hyderabad</div>
         </div>
       </article>
-      <article class="project-card">
-        <div class="project-number">04</div>
-        <div class="project-body">
-          <div class="project-top"><h3>COVID-19 Epidemic Modeling — SIR / SEIR / SUTRA</h3><span class="badge badge-done">Completed</span></div>
-          <p>Implemented and compared SIR, SEIR, and the SUTRA compartmental model (which explicitly tracks undetected/asymptomatic carriers) on US national COVID-19 data (Feb 2020 – Mar 2021). Used NNLS regression for automatic per-phase parameter estimation of contact rate β̃ and reach ρ̃, with a product-R² fallback for collinear phases, achieving MAPE as low as ~4% on individual phases. Ensembled all three models via linear regression for improved overall fit.</p>
-          <div class="project-stack"><span>Python</span><span>ODE Solvers</span><span>NNLS Regression</span><span>Nelder-Mead</span><span>Pandas</span></div>
-          <a href="https://github.com/Piyush314159/epidemicModeling_SUTRA_Model" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159/epidemicModeling_SUTRA_Model →</a>
-          <div class="project-supervisor" style="margin-top:0.75rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Anupam Gupta, IIT Hyderabad</div>
-        </div>
-      </article>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section class="content-section alt-section" id="skills">
+<section class="content-section" id="skills">
   <div class="section-inner">
     <div class="section-header">
       <span class="section-label">Expertise</span>
@@ -144,33 +202,46 @@
     </div>
     <div class="skills-layout">
       <div class="skills-col">
-        <h3 class="skills-heading">Technical Proficiency</h3>
+        <h3 class="skills-heading">Languages &amp; Tools</h3>
         <div class="skill-bars">
           <div class="skill-row"><div class="skill-info"><span>Python</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
           <div class="skill-row"><div class="skill-info"><span>NumPy / Pandas</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>Scientific Computing</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill" style="width:78%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>Machine Learning</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill" style="width:65%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>DSA</span><span class="skill-pct">30%</span></div><div class="skill-track"><div class="skill-fill" style="width:55%"></div></div></div>
+          <div class="skill-row"><div class="skill-info"><span>PyTorch / PyTorch Geometric</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div></div>
+          <div class="skill-row"><div class="skill-info"><span>Scientific Computing (SciPy, basf2)</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill" style="width:78%"></div></div></div>
+          <div class="skill-row"><div class="skill-info"><span>Git / Version Control</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" style="width:70%"></div></div></div>
+          <div class="skill-row"><div class="skill-info"><span>DSA (Striver A2Z)</span><span class="skill-pct">55%</span></div><div class="skill-track"><div class="skill-fill" style="width:55%"></div></div></div>
         </div>
       </div>
       <div class="skills-col">
-        <h3 class="skills-heading">Certifications &amp; Competencies</h3>
+        <h3 class="skills-heading">Domain Expertise</h3>
         <div class="tag-cloud">
-          <span class="skill-chip highlight">ML Fundamentals — DataCamp</span>
           <span class="skill-chip highlight2">Graph Neural Networks</span>
+          <span class="skill-chip highlight">Machine Learning</span>
+          <span class="skill-chip highlight">Data Science</span>
+          <span class="skill-chip">Scientific Computing</span>
+          <span class="skill-chip">High-Energy Physics</span>
           <span class="skill-chip">Statistical Inference</span>
           <span class="skill-chip">ODE / PDE Modeling</span>
+          <span class="skill-chip">Data Structures &amp; Algorithms</span>
           <span class="skill-chip">Scientific Writing</span>
-          <span class="skill-chip">Git / Version Control</span>
           <span class="skill-chip">Research Documentation</span>
-          <span class="skill-chip">Collaborative Research</span>
+        </div>
+        <h3 class="skills-heading" style="margin-top:2.5rem">Relevant Courses</h3>
+        <div class="tag-cloud">
+          <span class="skill-chip highlight">ML for Physical Sciences</span>
+          <span class="skill-chip highlight">ML for High Energy Physics</span>
+          <span class="skill-chip">Statistical Mechanics</span>
+          <span class="skill-chip">Linear Algebra</span>
+          <span class="skill-chip">Computational Physics</span>
+          <span class="skill-chip">Data Science Analysis</span>
         </div>
         <h3 class="skills-heading" style="margin-top:2.5rem">Research Interests</h3>
         <div class="interest-list">
-          <div class="interest-item"><span class="interest-dot"></span><span>Belle II — Full Event Interpretation</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>Belle II — GraFEI Full Event Interpretation</span></div>
           <div class="interest-item"><span class="interest-dot"></span><span>GNN-based Decay Topology Reconstruction</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>Graph Neural Networks for Fraud Detection</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>NLP &amp; Text Classification from Scratch</span></div>
           <div class="interest-item"><span class="interest-dot"></span><span>DSA &amp; Algorithmic Problem Solving</span></div>
-          <div class="interest-item"><span class="interest-dot"></span><span>Time-Series &amp; Stochastic Analysis</span></div>
         </div>
       </div>
     </div>
@@ -182,43 +253,61 @@
   <div class="section-inner">
     <div class="section-header">
       <span class="section-label">Background</span>
-      <h2 class="section-title">Experience</h2>
+      <h2 class="section-title">Education &amp; Experience</h2>
     </div>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">2025 — Present</span></div>
+          <div class="tl-meta"><span class="tl-year">2025 — 2027 (Expected)</span><span class="tl-badge">CGPA: 7.5/10</span></div>
           <h3>M.Sc. Physics</h3>
           <p class="tl-org">Indian Institute of Technology, Hyderabad</p>
-          <p>Advanced coursework and research-oriented training with emphasis on data analysis, computational modeling, statistical mechanics, and data-intensive physics workflows.</p>
+          <p>Advanced coursework in Machine Learning for Physical Sciences, ML for HEP, Statistical Mechanics, Linear Algebra, Computational Physics, and Data Science Analysis. Research-focused training with emphasis on GNN-based event reconstruction at Belle II.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-year">2021 — 2024</span><span class="tl-badge">CGPA: 7.28/10</span></div>
+          <h3>B.Sc. in Physics</h3>
+          <p class="tl-org">Hooghly Mohsin College (Est. 1836), West Bengal</p>
+          <p>Undergraduate studies in Physics with strong foundations in mathematical physics, computational methods, and laboratory practice. Developed early interest in data-driven approaches to physical science problems.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-content">
           <div class="tl-meta"><span class="tl-year">2025 — Present</span><span class="tl-badge">Ongoing Research</span></div>
-          <h3>High-Energy Physics &amp; Machine Learning</h3>
+          <h3>GraFEI — High-Energy Physics &amp; Machine Learning</h3>
           <p class="tl-org">Under Prof. Sourav Sandilya, IIT Hyderabad</p>
-          <p>Studying modern event reconstruction in HEP with emphasis on GNNs and ML approaches. Focused on detector-level representations, decay topology reconstruction, and ML-driven full event interpretation inspired by Belle II analyses.</p>
+          <p>Studying modern event reconstruction in HEP using the Graph-based Full Event Interpretation (GraFEI) framework. Building detector-level graph representations with PyTorch Geometric, training stacked MetaLayer GNNs for joint mass hypothesis and LCAS matrix prediction, and evaluating within the basf2 analysis framework.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">May 2025 — Present</span><span class="tl-badge">Leadership</span></div>
+          <div class="tl-meta"><span class="tl-year">May 2026 — Present</span><span class="tl-badge">Leadership</span></div>
           <h3>Placement Coordinator</h3>
           <p class="tl-org">Office of Career Services, IIT Hyderabad</p>
-          <p>Managing placement operations, liaising with recruiting companies, and overseeing end-to-end coordination of campus recruitment drives for students at IIT Hyderabad.</p>
+          <p>Managing end-to-end campus recruitment drives, liaising with recruiting companies, and overseeing placement operations for the student body. Onboarded companies like IBM, Licious, HCL, and others.</p>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">2026 — Present</span><span class="tl-badge">Leadership</span></div>
-          <h3>Coordinator — International Relations Cell</h3>
+          <div class="tl-meta"><span class="tl-year">Sep 2025 — Present</span><span class="tl-badge">Leadership</span></div>
+          <h3>Inbound &amp; Logistics Management — International Relations Cell</h3>
           <p class="tl-org">IIT Hyderabad</p>
-          <p>Coordinated orientations, cultural programs, multimedia outreach, and outbound academic tours for international exchange students from Japan and the United States.</p>
+          <p>Coordinating orientations, cultural programs, and academic tours for international exchange students from Japan and the United States; managing logistics for visiting international guests.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-meta"><span class="tl-year">May 2026 — Present</span><span class="tl-badge">Design &amp; Outreach</span></div>
+          <h3>Design Core — Extra Mural Lectures (EML)</h3>
+          <p class="tl-org">IIT Hyderabad</p>
+          <p>Leading visual design and multimedia outreach for EML; creating promotional content, event branding, and design assets for club initiatives and student entrepreneurship programs. Hosted NASA Axiom Mission Pilot Subhanshu Shukla.</p>
         </div>
       </div>
     </div>
@@ -246,7 +335,7 @@
       </div>
       <div class="journey-block">
         <p class="journey-block-label">What I'm learning</p>
-        <p class="journey-simple-text">Following a structured ML roadmap covering supervised and unsupervised learning, deep learning with PyTorch, and reinforcement learning with Gymnasium. Currently working through classification, regression, model evaluation, and data preprocessing — building towards applying these techniques in physics-motivated problems.</p>
+        <p class="journey-simple-text">Following a structured ML roadmap covering supervised and unsupervised learning, deep learning with PyTorch, and reinforcement learning with Gymnasium. Currently working through classification, regression, model evaluation, and data preprocessing — building towards applying these techniques in physics-motivated problems and real-world systems like fraud detection and NLP.</p>
       </div>
       <div class="journey-block">
         <p class="journey-block-label">Topics</p>
@@ -254,14 +343,16 @@
           <span class="jtool">Supervised Learning</span>
           <span class="jtool">Unsupervised Learning</span>
           <span class="jtool">Deep Learning</span>
+          <span class="jtool">Graph Neural Networks</span>
           <span class="jtool">Reinforcement Learning</span>
           <span class="jtool">Model Evaluation</span>
           <span class="jtool">Hyperparameter Tuning</span>
+          <span class="jtool">NLP / Text Classification</span>
         </div>
       </div>
       <div class="journey-block">
         <p class="journey-block-label">Libraries &amp; Tools</p>
-        <div class="jtools"><span class="jtool">Python</span><span class="jtool">NumPy</span><span class="jtool">Pandas</span><span class="jtool">Scikit-Learn</span><span class="jtool">Matplotlib</span><span class="jtool">PyTorch</span><span class="jtool">Gymnasium</span></div>
+        <div class="jtools"><span class="jtool">Python</span><span class="jtool">NumPy</span><span class="jtool">Pandas</span><span class="jtool">Scikit-Learn</span><span class="jtool">Matplotlib</span><span class="jtool">PyTorch</span><span class="jtool">PyTorch Geometric</span><span class="jtool">Gymnasium</span><span class="jtool">basf2</span></div>
       </div>
     </div>
 
@@ -310,7 +401,7 @@
             </div>
             <div class="cp-info">
               <span class="cp-name">Codeforces</span>
-              <span class="cp-stat">Max Rating 1000 </span>
+              <span class="cp-stat">Max Rating 1000</span>
             </div>
             <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -356,7 +447,7 @@
       <span class="section-label">Connect</span>
       <h2 class="section-title">Get In Touch</h2>
     </div>
-    <p class="contact-intro">Open to academic collaborations, research internships, and conversations about data analysis, machine learning, and high-energy physics.</p>
+    <p class="contact-intro">Open to academic collaborations, research internships, and conversations about GNN-based event reconstruction, machine learning for physics, data science, and high-energy physics.</p>
     <div class="contact-row">
       <a class="contact-card" href="mailto:ph25mscst11019@iith.ac.in">
         <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
@@ -392,6 +483,22 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
+
+<!-- CV VIEWER MODAL -->
+<div class="cv-modal-overlay" id="cvModalOverlay">
+  <div class="cv-modal">
+    <div class="cv-modal-header">
+      <h3>Piyush Maji — CV</h3>
+      <div class="cv-modal-actions">
+        <a href="Piyush_CV.pdf" class="cv-modal-download" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download</a>
+        <button class="cv-modal-close" id="cvModalClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+    </div>
+    <div class="cv-modal-body">
+      <iframe src="" id="cvIframe" title="Piyush Maji CV"></iframe>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

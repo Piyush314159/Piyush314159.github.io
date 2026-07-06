@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (yr) yr.textContent = new Date().getFullYear();
 
   var typingEl = document.querySelector('.typing-text');
-  var words = ['Data Analysis in Physics','Machine Learning','Computational Modeling','Time-Series Analysis','Scientific Programming'];
+  var words = ['GNN-Based Event Reconstruction','Machine Learning for Physics','Graph Neural Networks','Computational Modeling','Data Science & Analysis','Scientific Programming'];
   var wi = 0, ci = 0, deleting = false, speed = 100;
   function type() {
     if (!typingEl) return;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (btt) btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
   var navItems = document.querySelectorAll('.nav-item');
-  var sectionIds = ['about','projects','skills','experience','journeys','contact'];
+  var sectionIds = ['about','research','projects','skills','experience','journeys','contact'];
   function updateNav() {
     var current = 'about';
     sectionIds.forEach(function(id) {
@@ -86,6 +86,57 @@ document.addEventListener('DOMContentLoaded', function() {
       var panel = document.getElementById('journey-' + tab.dataset.journey);
       if (panel) panel.style.display = 'block';
     });
+  });
+
+  // CV Dropdown
+  var cvDropdown = document.getElementById('cvDropdown');
+  var cvDropdownBtn = document.getElementById('cvDropdownBtn');
+  if (cvDropdownBtn && cvDropdown) {
+    cvDropdownBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      cvDropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', function(e) {
+      if (!cvDropdown.contains(e.target)) cvDropdown.classList.remove('open');
+    });
+  }
+
+  // CV Modal
+  var cvOverlay = document.getElementById('cvModalOverlay');
+  var cvIframe = document.getElementById('cvIframe');
+  var cvCloseBtn = document.getElementById('cvModalClose');
+
+  function openCvModal() {
+    if (!cvOverlay || !cvIframe) return;
+    cvIframe.src = 'Piyush_CV.pdf';
+    cvOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (cvDropdown) cvDropdown.classList.remove('open');
+    // Close mobile menu if open
+    if (hamburger) hamburger.classList.remove('open');
+    if (mobileMenu) mobileMenu.classList.remove('open');
+  }
+
+  function closeCvModal() {
+    if (!cvOverlay || !cvIframe) return;
+    cvOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(function() { cvIframe.src = ''; }, 300);
+  }
+
+  var viewCvBtn = document.getElementById('viewCvBtn');
+  if (viewCvBtn) viewCvBtn.addEventListener('click', openCvModal);
+
+  var mobViewCvBtn = document.getElementById('mobViewCvBtn');
+  if (mobViewCvBtn) mobViewCvBtn.addEventListener('click', openCvModal);
+
+  if (cvCloseBtn) cvCloseBtn.addEventListener('click', closeCvModal);
+  if (cvOverlay) cvOverlay.addEventListener('click', function(e) {
+    if (e.target === cvOverlay) closeCvModal();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && cvOverlay && cvOverlay.classList.contains('open')) closeCvModal();
   });
 
 });
