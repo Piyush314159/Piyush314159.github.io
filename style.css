@@ -333,8 +333,9 @@ p:last-child { margin-bottom:0; }
 }
 .skill-chip:hover { border-color:var(--border-hover); color:var(--ink); }
 .skill-chip.highlight { background:#f5f3ff; border-color:#c4b5fd; color:#5b21b6; font-weight:500; }
-.interest-list { display:flex; flex-direction:column; gap:0.75rem; }
-.interest-item { display:flex; align-items:center; gap:0.75rem; font-size:0.9rem; color:var(--ink-2); }
+.interest-list { display:flex; flex-wrap:wrap; gap:0.5rem; }
+.interest-item { display:inline-flex; align-items:center; gap:0.5rem; font-size:0.85rem; color:var(--ink-2); padding:0.4rem 1rem; border:1px solid var(--border); border-radius:999px; background:var(--surface); transition:border-color 0.2s, background 0.2s; }
+.interest-item:hover { border-color:#6b5ecd; background:rgba(107,94,205,0.06); }
 .interest-dot { width:6px; height:6px; border-radius:50%; background:#6b5ecd; flex-shrink:0; }
 
 /* TIMELINE */
