@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (btt) btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
   var navItems = document.querySelectorAll('.nav-item');
-  var sectionIds = ['about','research','projects','skills','experience','journeys','events','contact'];
+  var sectionIds = ['about','gallery','research','projects','skills','experience','journeys','por','contact'];
   function updateNav() {
     var current = 'about';
     sectionIds.forEach(function(id) {
