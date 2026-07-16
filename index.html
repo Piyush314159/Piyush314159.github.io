@@ -219,16 +219,27 @@
       <article class="project-card">
         <div class="project-number">01</div>
         <div class="project-body">
-          <div class="project-top"><h3>GNN-FraudNet — Transaction Fraud Detection</h3><span class="badge badge-done">Completed</span></div>
-          <p>Built an end-to-end Graph Neural Network pipeline on the <em>Elliptic Bitcoin Dataset</em> (203K nodes, 234K edges) to classify illicit blockchain transactions. Modelled the transaction graph with 166-dimensional node features (local &amp; aggregated) and temporal edge structure, framing fraud detection as a node classification task under severe class imbalance (only 2% illicit).</p>
-          <p>Implemented and benchmarked <em>GCN, GraphSAGE, and GAT</em> architectures in PyTorch Geometric. Addressed class imbalance via class-weighted cross-entropy loss and SMOTE-based oversampling on node embeddings. Evaluated comprehensively with precision, recall, F1-score, and AUC-ROC, achieving competitive illicit-class F1 on the held-out temporal test set.</p>
-          <div class="project-stack"><span>Python</span><span>PyTorch Geometric</span><span>GCN</span><span>GraphSAGE</span><span>GAT</span><span>SMOTE</span><span>Elliptic Dataset</span></div>
+          <div class="project-top"><h3>GNN-FraudNet — Graph-based Financial Fraud Detection</h3><span class="badge badge-done">Completed</span></div>
+          <p>Addressed the challenge of detecting <em>fraudulent Bitcoin transactions</em>, where traditional ML models ignore transaction relationships, by developing a <em>Graph Neural Network</em> pipeline that leverages graph connectivity for node classification. Engineered a graph learning workflow on the <em>Elliptic Bitcoin Dataset</em> (203K+ transactions, 234K+ edges) using <em>GraphSAGE</em> and <em>Graph Attention Networks (GAT)</em>, with preprocessing, class balancing, and explainability through <em>SHAP</em> and <em>GNNExplainer</em>.</p>
+          <p>Built a production-ready inference pipeline by exposing fraud predictions through a <em>FastAPI</em> REST API and containerizing the application with <em>Docker</em> for scalable deployment.</p>
+          <div class="project-stack"><span>Python</span><span>PyTorch Geometric</span><span>GraphSAGE</span><span>GAT</span><span>FastAPI</span><span>XGBoost</span><span>Docker</span><span>SHAP</span><span>GNNExplainer</span></div>
           <a href="https://github.com/Piyush314159/GNN-FraudNet" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159/GNN-FraudNet →</a>
         </div>
       </article>
 
       <article class="project-card">
         <div class="project-number">02</div>
+        <div class="project-body">
+          <div class="project-top"><h3>Retail Demand Forecasting &amp; Inventory Optimization</h3><span class="badge badge-done">Completed</span></div>
+          <p>Solved the problem of <em>retail demand forecasting</em> by building a scalable <em>SKU-level sales prediction pipeline</em> using <em>LightGBM</em>, enabling accurate inventory planning across multiple stores. Designed advanced time-series features including <em>lag, rolling-window, calendar, promotion</em>, and <em>holiday</em> variables, and benchmarked the model against <em>SARIMA</em> and <em>Prophet</em> baselines using time-aware cross-validation.</p>
+          <p>Implemented <em>hierarchical forecast reconciliation</em> to maintain consistency across SKU, store, and regional forecasts — improving the usability of predictions for supply chain and inventory decision-making.</p>
+          <div class="project-stack"><span>Python</span><span>LightGBM</span><span>SARIMA</span><span>Prophet</span><span>Time Series Forecasting</span><span>Feature Engineering</span><span>Hierarchical Reconciliation</span></div>
+          <a href="https://github.com/Piyush314159" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159 →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-number">03</div>
         <div class="project-body">
           <div class="project-top"><h3>Spam Classifier from Scratch — NLP &amp; ML</h3><span class="badge badge-done">Completed</span></div>
           <p>Implemented <em>Multinomial Naive Bayes</em> (MLE + Laplace smoothing) and <em>Logistic Regression</em> (gradient descent) entirely from scratch in NumPy on the UCI SMS Spam Collection (5,574 messages). Built both TF-IDF and Bag-of-Words feature pipelines without sklearn, with vocabulary constructed strictly on the train split to prevent data leakage on an 86.6% class-imbalanced dataset.</p>
@@ -239,7 +250,7 @@
       </article>
 
       <article class="project-card">
-        <div class="project-number">03</div>
+        <div class="project-number">04</div>
         <div class="project-body">
           <div class="project-top"><h3>COVID-19 Epidemic Modeling — SIR / SEIR / SUTRA</h3><span class="badge badge-done">Completed</span></div>
           <p>Implemented and compared three compartmental epidemic models — <em>SIR, SEIR</em>, and the <em>SUTRA</em> model (which explicitly tracks undetected/asymptomatic carriers via a 'Unreported' compartment) — on US national COVID-19 data from Feb 2020 to Mar 2021. Used <em>NNLS regression</em> for automatic per-phase parameter estimation of contact rate β̃ and reach ρ̃, with a product-R² fallback for collinear phases, achieving MAPE as low as ~4% on individual phases.</p>
@@ -251,7 +262,7 @@
       </article>
 
       <article class="project-card">
-        <div class="project-number">04</div>
+        <div class="project-number">05</div>
         <div class="project-body">
           <div class="project-top"><h3>Diffraction Pattern Analysis — Wavelength Estimation</h3><span class="badge badge-done">Completed</span></div>
           <p>Built a two-script Python pipeline to extract laser wavelength from camera images of diffraction gratings. Stage 1 preprocesses raw frame stacks into 1D intensity profiles via row-wise averaging and background subtraction. Stage 2 fits the full <em>Fraunhofer grating equation</em> to the resolved diffraction peaks via non-linear least squares (scipy.optimize.curve_fit), yielding λ = 524 ± 6 nm — consistent with the known green laser standard.</p>
@@ -262,7 +273,7 @@
       </article>
 
       <article class="project-card">
-        <div class="project-number">05</div>
+        <div class="project-number">06</div>
         <div class="project-body">
           <div class="project-top"><h3>Brownian Motion — Stochastic Simulation &amp; MSD Analysis</h3><span class="badge badge-done">Completed</span></div>
           <p>Simulated 2D stochastic particle trajectories under Brownian dynamics using the Langevin equation with Gaussian noise. Computed the <em>Mean Squared Displacement (MSD)</em> ensemble average across thousands of trajectories and fitted MSD ~ t<sup>α</sup> via log-log regression to classify diffusive regimes: sub-diffusion (α &lt; 1), normal diffusion (α = 1), and super-diffusion (α &gt; 1). Validated against Einstein's analytical MSD prediction (MSD = 2dDt), confirming the diffusion coefficient D within numerical precision.</p>
