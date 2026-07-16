@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (btt) btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
   var navItems = document.querySelectorAll('.nav-item');
-  var sectionIds = ['about','research','projects','skills','experience','journeys','contact'];
+  var sectionIds = ['about','research','projects','skills','experience','journeys','events','contact'];
   function updateNav() {
     var current = 'about';
     sectionIds.forEach(function(id) {
@@ -147,3 +147,62 @@ function toggleModule(btn) {
   body.classList.toggle('is-open', !isOpen);
   btn.classList.toggle('is-open', !isOpen);
 }
+
+// ── Photo Slider ──
+(function() {
+  var track = document.getElementById('sliderTrack');
+  var counter = document.getElementById('sliderCounter');
+  var dots = document.querySelectorAll('.slider-dot');
+  var prevBtn = document.getElementById('sliderPrev');
+  var nextBtn = document.getElementById('sliderNext');
+  if (!track) return;
+
+  var slides = track.querySelectorAll('.slider-slide');
+  var total = slides.length;
+  var current = 0;
+  var autoTimer = null;
+  var touchStartX = 0;
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    if (counter) counter.textContent = (current + 1) + ' / ' + total;
+    dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+  }
+
+  function startAuto() {
+    stopAuto();
+    autoTimer = setInterval(function() { goTo(current + 1); }, 4500);
+  }
+
+  function stopAuto() {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); stopAuto(); startAuto(); });
+  if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); stopAuto(); startAuto(); });
+
+  dots.forEach(function(d) {
+    d.addEventListener('click', function() { goTo(parseInt(d.dataset.index)); stopAuto(); startAuto(); });
+  });
+
+  // Touch / swipe support
+  var sliderEl = document.getElementById('eventSlider');
+  if (sliderEl) {
+    sliderEl.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+    sliderEl.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); stopAuto(); startAuto(); }
+    }, { passive: true });
+  }
+
+  // Pause on hover
+  var wrap = document.querySelector('.event-slider-wrap');
+  if (wrap) {
+    wrap.addEventListener('mouseenter', stopAuto);
+    wrap.addEventListener('mouseleave', startAuto);
+  }
+
+  goTo(0);
+  startAuto();
+}());
