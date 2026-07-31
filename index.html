@@ -1,727 +1,1057 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Piyush Maji — Physics &amp; ML Research · IIT Hyderabad</title>
-  <meta name="description" content="Piyush Maji — MSc Physics student at IIT Hyderabad, working on GNN-based full event reconstruction at Belle II (GraFEI), graph neural networks for fraud detection, and computational physics.">
+  <meta name="description"
+    content="Piyush Maji — MSc Physics student at IIT Hyderabad, working on GNN-based full event reconstruction at Belle II (GraFEI), graph neural networks for fraud detection, and computational physics.">
   <meta name="author" content="Piyush Maji">
   <meta property="og:title" content="Piyush Maji — Physics &amp; ML Research">
   <meta property="og:description" content="MSc Physics · IIT Hyderabad · GraFEI · GNN · Belle II">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <a href="#about" class="wordmark">PM</a>
-    <nav class="main-nav">
-      <a href="#about" class="nav-item active" data-nav="about">About</a>
-      <a href="#gallery" class="nav-item" data-nav="gallery">Gallery</a>
-      <a href="#research" class="nav-item" data-nav="research">Research</a>
-      <a href="#projects" class="nav-item" data-nav="projects">Projects</a>
-      <a href="#skills" class="nav-item" data-nav="skills">Skills</a>
-      <a href="#experience" class="nav-item" data-nav="experience">Experience</a>
-      <a href="#journeys" class="nav-item" data-nav="journeys">Journeys</a>
-      <a href="#por" class="nav-item" data-nav="por">POR</a>
-      <a href="#contact" class="nav-item" data-nav="contact">Contact</a>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#about" class="wordmark">PM</a>
+      <nav class="main-nav">
+        <a href="#about" class="nav-item active" data-nav="about">About</a>
+        <a href="#gallery" class="nav-item" data-nav="gallery">Gallery</a>
+        <a href="#research" class="nav-item" data-nav="research">Research</a>
+        <a href="#projects" class="nav-item" data-nav="projects">Projects</a>
+        <a href="#skills" class="nav-item" data-nav="skills">Skills</a>
+        <a href="#experience" class="nav-item" data-nav="experience">Experience</a>
+        <a href="#journeys" class="nav-item" data-nav="journeys">Journeys</a>
+        <a href="#por" class="nav-item" data-nav="por">POR</a>
+        <a href="#contact" class="nav-item" data-nav="contact">Contact</a>
+      </nav>
+      <div class="cv-dropdown" id="cvDropdown">
+        <button class="nav-cta" id="cvDropdownBtn">CV <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="3" style="margin-left:4px">
+            <path d="M6 9l6 6 6-6" />
+          </svg></button>
+        <div class="cv-dropdown-menu" id="cvDropdownMenu">
+          <button class="cv-dropdown-item" id="viewCvBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg> View CV</button>
+          <a href="Piyush_CV.pdf" class="cv-dropdown-item" download><svg width="14" height="14" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </svg> Download CV</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="#about" class="mob-nav-item" data-nav="about">About</a>
+      <a href="#gallery" class="mob-nav-item" data-nav="gallery">Gallery</a>
+      <a href="#research" class="mob-nav-item" data-nav="research">Research</a>
+      <a href="#projects" class="mob-nav-item" data-nav="projects">Projects</a>
+      <a href="#skills" class="mob-nav-item" data-nav="skills">Skills</a>
+      <a href="#experience" class="mob-nav-item" data-nav="experience">Experience</a>
+      <a href="#journeys" class="mob-nav-item" data-nav="journeys">Journeys</a>
+      <a href="#por" class="mob-nav-item" data-nav="por">POR</a>
+      <a href="#contact" class="mob-nav-item" data-nav="contact">Contact</a>
     </nav>
-    <div class="cv-dropdown" id="cvDropdown">
-      <button class="nav-cta" id="cvDropdownBtn">CV <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="margin-left:4px"><path d="M6 9l6 6 6-6"/></svg></button>
-      <div class="cv-dropdown-menu" id="cvDropdownMenu">
-        <button class="cv-dropdown-item" id="viewCvBtn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> View CV</button>
-        <a href="Piyush_CV.pdf" class="cv-dropdown-item" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download CV</a>
-      </div>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-  <nav>
-    <a href="#about" class="mob-nav-item" data-nav="about">About</a>
-    <a href="#gallery" class="mob-nav-item" data-nav="gallery">Gallery</a>
-    <a href="#research" class="mob-nav-item" data-nav="research">Research</a>
-    <a href="#projects" class="mob-nav-item" data-nav="projects">Projects</a>
-    <a href="#skills" class="mob-nav-item" data-nav="skills">Skills</a>
-    <a href="#experience" class="mob-nav-item" data-nav="experience">Experience</a>
-    <a href="#journeys" class="mob-nav-item" data-nav="journeys">Journeys</a>
-    <a href="#por" class="mob-nav-item" data-nav="por">POR</a>
-    <a href="#contact" class="mob-nav-item" data-nav="contact">Contact</a>
-  </nav>
-  <div class="mob-cv-actions">
-    <button class="mob-cv" id="mobViewCvBtn">View CV →</button>
-    <a href="Piyush_CV.pdf" class="mob-cv" download>Download CV →</a>
-  </div>
-</div>
-
-<!-- ═══════════════════ ABOUT ═══════════════════ -->
-<section class="hero" id="about">
-  <div class="hero-inner">
-    <div class="hero-intro">
-      <div class="hero-badge">MSc Physics · IIT Hyderabad · Expected 2027</div>
-      <h1 class="hero-name">Piyush<br><em>Maji</em></h1>
-      <p class="hero-tagline"><span class="typing-text"></span></p>
-    </div>
-    <div class="hero-right">
-      <div class="photo-frame">
-        <img src="profile_photo.jpg" alt="Piyush Maji" class="profile-photo">
-        <div class="photo-accent"></div>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item"><span class="stat-number">GraFEI</span><span class="stat-label">Belle II · HEP</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-number">GNN</span><span class="stat-label">ML Research</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat-item"><span class="stat-number">3 POR</span><span class="stat-label">Campus Leadership</span></div>
-      </div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-desc">I work at the intersection of <strong>high-energy physics</strong> and <strong>machine learning</strong> — training graph neural networks for inclusive full event reconstruction at the Belle II experiment (KEK, Japan) using the GraFEI framework, while building practical ML systems spanning fraud detection, NLP, and epidemic modeling.</p>
-      <p class="hero-desc">Currently pursuing an MSc in Physics at IIT Hyderabad under Prof. Sourav Sandilya, with active coursework in ML for Physical Sciences, ML for High-Energy Physics, Statistical Mechanics, and Computational Physics.</p>
-      <div class="hero-actions">
-        <a href="#research" class="btn-primary">View Research</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
-      </div>
-      <div class="hero-social">
-        <a href="https://github.com/Piyush314159" target="_blank" rel="noopener" class="social-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-          GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank" rel="noopener" class="social-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <a href="mailto:ph25mscst11019@iith.ac.in" class="social-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          Email
-        </a>
-        <a href="https://piyush314159.github.io" target="_blank" rel="noopener" class="social-link">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          Portfolio
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ GALLERY — Cinematic Fullwidth Slider ═══════════════════ -->
-<section class="content-section alt-section" id="gallery">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Moments</span>
-      <h2 class="section-title">Gallery</h2>
-      <p class="gallery-intro">A visual chronicle — from scientific events at IIT Hyderabad to hosting India's space hero.</p>
+    <div class="mob-cv-actions">
+      <button class="mob-cv" id="mobViewCvBtn">View CV →</button>
+      <a href="Piyush_CV.pdf" class="mob-cv" download>Download CV →</a>
     </div>
   </div>
 
-  <!-- Full-width cinematic slider -->
-  <div class="cin-slider-wrap" id="cinSliderWrap">
-    <div class="cin-slider-track" id="cinSliderTrack">
-
-      <div class="cin-slide" data-caption="Gp. Capt. Shubhanshu Shukla delivering &ldquo;India in Orbit&rdquo; keynote · EML, IIT Hyderabad · July 13, 2026">
-        <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.28.jpeg" alt="Gp. Capt. Shubhanshu Shukla keynote at IIT Hyderabad" loading="lazy">
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section class="hero" id="about">
+    <div class="hero-inner">
+      <div class="hero-intro">
+        <div class="hero-badge">MSc Physics · IIT Hyderabad · Expected 2027</div>
+        <h1 class="hero-name">Piyush<br><em>Maji</em></h1>
+        <p class="hero-tagline"><span class="typing-text"></span></p>
       </div>
-      <div class="cin-slide" data-caption="Packed auditorium at IIT Hyderabad for the Extra Mural Lecture — India's astronaut addressing the next generation">
-        <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.29.jpeg" alt="Packed auditorium at IIT Hyderabad" loading="lazy">
-      </div>
-      <div class="cin-slide" data-caption="An inspiring evening — moments with Gp. Capt. Shubhanshu Shukla, Axiom-4 Mission Pilot &amp; India's first private astronaut">
-        <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.29%20(1).jpeg" alt="Moments with India's space hero" loading="lazy">
-      </div>
-      <div class="cin-slide" data-caption="Discussion on India's space ambitions — Bharatiya Antariksh Station and the Moon landing roadmap by 2040">
-        <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.29%20(2).jpeg" alt="Discussion on India's space future" loading="lazy">
-      </div>
-      <div class="cin-slide" data-caption="Student Q&amp;A session — Gp. Capt. Shukla engaging with IIT Hyderabad students on careers in space science">
-        <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.29%20(3).jpeg" alt="Q&A session with students" loading="lazy">
-      </div>
-      <div class="cin-slide" data-caption="A historic evening at IIT Hyderabad — India's astronaut meets the next generation of space scientists and engineers">
-        <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.30.jpeg" alt="Final moments at the EML event" loading="lazy">
-      </div>
-
-    </div>
-
-    <!-- Overlay UI -->
-    <div class="cin-overlay">
-      <div class="cin-top-bar">
-        <div class="cin-album-info">
-          <span class="cin-album-badge">🎤 EML — Extra Mural Lecture · July 13, 2026</span>
+      <div class="hero-right">
+        <div class="photo-frame">
+          <img src="profile_photo.jpg" alt="Piyush Maji" class="profile-photo">
+          <div class="photo-accent"></div>
         </div>
-        <div class="cin-counter" id="cinCounter">1 / 6</div>
-      </div>
-
-      <button class="cin-nav cin-nav--prev" id="cinPrev" aria-label="Previous">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button class="cin-nav cin-nav--next" id="cinNext" aria-label="Next">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-
-      <div class="cin-bottom-bar">
-        <p class="cin-caption" id="cinCaption">Gp. Capt. Shubhanshu Shukla delivering &ldquo;India in Orbit&rdquo; keynote · EML, IIT Hyderabad · July 13, 2026</p>
-        <div class="cin-dots" id="cinDots">
-          <button class="cin-dot active" data-index="0" aria-label="Photo 1"></button>
-          <button class="cin-dot" data-index="1" aria-label="Photo 2"></button>
-          <button class="cin-dot" data-index="2" aria-label="Photo 3"></button>
-          <button class="cin-dot" data-index="3" aria-label="Photo 4"></button>
-          <button class="cin-dot" data-index="4" aria-label="Photo 5"></button>
-          <button class="cin-dot" data-index="5" aria-label="Photo 6"></button>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-number">GraFEI</span><span class="stat-label">Belle II · HEP</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-number">GNN</span><span class="stat-label">ML Research</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-number">DSA</span><span class="stat-label">Campus Leadership</span>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- ═══════════════════ RESEARCH ═══════════════════ -->
-<section class="content-section" id="research">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Research</span>
-      <h2 class="section-title">Ongoing Research</h2>
-    </div>
-    <div class="research-card">
-      <div class="research-badge-row">
-        <span class="badge badge-active">Ongoing · 2025 — Present</span>
-        <span class="research-advisor"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Sourav Sandilya, Dept. of Physics, IIT Hyderabad</span>
-      </div>
-      <h3 class="research-title">GNN-Based Full Event Interpretation (GraFEI) at Belle II, KEK</h3>
-      <div class="research-body">
-        <div class="research-block">
-          <h4>Overview</h4>
-          <p>Studying ML-driven <em>inclusive</em> event reconstruction for the Belle II experiment at KEK, Japan, using the GraFEI framework — a graph neural network approach that reconstructs full decay topologies from final-state particles alone, without prior assumptions on decay chain structure. Belle II probes CP violation and rare decays from Υ(4S) → BB̄ collisions.</p>
+      <div class="hero-content">
+        <p class="hero-desc">I work at the intersection of <strong>high-energy physics</strong> and <strong>machine
+            learning</strong> — training graph neural networks for inclusive full event reconstruction at the Belle II
+          experiment (KEK, Japan) using the GraFEI framework, while building practical ML systems spanning fraud
+          detection, NLP, and epidemic modeling.</p>
+        <p class="hero-desc">Currently pursuing an MSc in Physics at IIT Hyderabad under Prof. Sourav Sandilya, with
+          active coursework in ML for Physical Sciences, ML for High-Energy Physics, Statistical Mechanics, and
+          Computational Physics.</p>
+        <div class="hero-actions">
+          <a href="#research" class="btn-primary">View Research</a>
+          <a href="#contact" class="btn-ghost">Get in Touch</a>
         </div>
-        <div class="research-block">
-          <h4>Methodology</h4>
-          <p>Building detector-level graph representations with <em>PyTorch Geometric</em> — each reconstructed particle is a graph node with kinematic features (momentum, DOCA, cos θ, particle ID). The model learns the Lowest Common Ancestor Stage (LCAS) matrix encoding the full decay hierarchy: Υ(4S) → B → D* → K π π, etc., from data alone.</p>
-        </div>
-        <div class="research-block">
-          <h4>Training &amp; Evaluation</h4>
-          <p>Training stacked MetaLayer GNNs (EdgeLayer + NodeLayer + GlobalLayer) to jointly predict particle mass hypotheses and the LCAS matrix via combined cross-entropy loss L = L<sub>LCA</sub> + αL<sub>Masses</sub>. Evaluating with Perfect LCA, Perfect Masses, and Perfect Event metrics within the <em>basf2</em> analysis software framework used at Belle II.</p>
-        </div>
-      </div>
-      <div class="project-stack"><span>Python</span><span>PyTorch Geometric</span><span>GNN</span><span>basf2</span><span>HEP</span><span>Belle II</span><span>LCAS</span><span>MetaLayer</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ PROJECTS ═══════════════════ -->
-<section class="content-section alt-section" id="projects">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Work</span>
-      <h2 class="section-title">Projects</h2>
-    </div>
-    <div class="projects-grid">
-
-      <article class="project-card">
-        <div class="project-number">01</div>
-        <div class="project-body">
-          <div class="project-top"><h3>GNN-FraudNet — Graph-based Financial Fraud Detection</h3><span class="badge badge-done">Completed</span></div>
-          <p>Addressed the challenge of detecting <em>fraudulent Bitcoin transactions</em>, where traditional ML models ignore transaction relationships, by developing a <em>Graph Neural Network</em> pipeline that leverages graph connectivity for node classification. Engineered a graph learning workflow on the <em>Elliptic Bitcoin Dataset</em> (203K+ transactions, 234K+ edges) using <em>GraphSAGE</em> and <em>Graph Attention Networks (GAT)</em>, with preprocessing, class balancing, and explainability through <em>SHAP</em> and <em>GNNExplainer</em>.</p>
-          <p>Built a production-ready inference pipeline by exposing fraud predictions through a <em>FastAPI</em> REST API and containerizing the application with <em>Docker</em> for scalable deployment.</p>
-          <div class="project-stack"><span>Python</span><span>PyTorch Geometric</span><span>GraphSAGE</span><span>GAT</span><span>FastAPI</span><span>XGBoost</span><span>Docker</span><span>SHAP</span><span>GNNExplainer</span></div>
-          <a href="https://github.com/Piyush314159/GNN-FraudNet" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159/GNN-FraudNet →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-number">02</div>
-        <div class="project-body">
-          <div class="project-top"><h3>Retail Demand Forecasting &amp; Inventory Optimization</h3><span class="badge badge-done">Completed</span></div>
-          <p>Solved the problem of <em>retail demand forecasting</em> by building a scalable <em>SKU-level sales prediction pipeline</em> using <em>LightGBM</em>, enabling accurate inventory planning across multiple stores. Designed advanced time-series features including <em>lag, rolling-window, calendar, promotion</em>, and <em>holiday</em> variables, and benchmarked the model against <em>SARIMA</em> and <em>Prophet</em> baselines using time-aware cross-validation.</p>
-          <p>Implemented <em>hierarchical forecast reconciliation</em> to maintain consistency across SKU, store, and regional forecasts — improving the usability of predictions for supply chain and inventory decision-making.</p>
-          <div class="project-stack"><span>Python</span><span>LightGBM</span><span>SARIMA</span><span>Prophet</span><span>Time Series Forecasting</span><span>Feature Engineering</span><span>Hierarchical Reconciliation</span></div>
-          <a href="https://github.com/Piyush314159" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159 →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-number">03</div>
-        <div class="project-body">
-          <div class="project-top"><h3>Spam Classifier from Scratch — NLP &amp; ML</h3><span class="badge badge-done">Completed</span></div>
-          <p>Implemented <em>Multinomial Naive Bayes</em> (MLE + Laplace smoothing) and <em>Logistic Regression</em> (gradient descent) entirely from scratch in NumPy on the UCI SMS Spam Collection (5,574 messages). Built both TF-IDF and Bag-of-Words feature pipelines without sklearn, with vocabulary constructed strictly on the train split to prevent data leakage on an 86.6% class-imbalanced dataset.</p>
-          <p>Hand-coded binary cross-entropy loss and gradient descent with real-time loss convergence plots. Evaluated both models via precision, recall, F1, and ROC/AUC (computed using the trapezoidal rule). Performed threshold sensitivity analysis (0.3–0.7) to map out the full precision-recall tradeoff curve.</p>
-          <div class="project-stack"><span>Python</span><span>NumPy</span><span>NLP</span><span>Naive Bayes</span><span>Logistic Regression</span><span>TF-IDF</span><span>BoW</span></div>
-          <a href="https://github.com/Piyush314159" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159 →</a>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-number">04</div>
-        <div class="project-body">
-          <div class="project-top"><h3>COVID-19 Epidemic Modeling — SIR / SEIR / SUTRA</h3><span class="badge badge-done">Completed</span></div>
-          <p>Implemented and compared three compartmental epidemic models — <em>SIR, SEIR</em>, and the <em>SUTRA</em> model (which explicitly tracks undetected/asymptomatic carriers via a 'Unreported' compartment) — on US national COVID-19 data from Feb 2020 to Mar 2021. Used <em>NNLS regression</em> for automatic per-phase parameter estimation of contact rate β̃ and reach ρ̃, with a product-R² fallback for collinear phases, achieving MAPE as low as ~4% on individual phases.</p>
-          <p>Ensembled all three models via linear regression for improved overall fit. ODE systems solved with scipy's RK45 integrator. Visualised phase transitions, reproduction numbers, and ensemble predictions across the full pandemic timeline.</p>
-          <div class="project-stack"><span>Python</span><span>ODE Solvers</span><span>NNLS Regression</span><span>Nelder-Mead</span><span>SciPy</span><span>Pandas</span><span>Matplotlib</span></div>
-          <a href="https://github.com/Piyush314159/epidemicModeling_SUTRA_Model" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159/epidemicModeling_SUTRA_Model →</a>
-          <div class="project-supervisor" style="margin-top:0.75rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Anupam Gupta, IIT Hyderabad</div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-number">05</div>
-        <div class="project-body">
-          <div class="project-top"><h3>Diffraction Pattern Analysis — Wavelength Estimation</h3><span class="badge badge-done">Completed</span></div>
-          <p>Built a two-script Python pipeline to extract laser wavelength from camera images of diffraction gratings. Stage 1 preprocesses raw frame stacks into 1D intensity profiles via row-wise averaging and background subtraction. Stage 2 fits the full <em>Fraunhofer grating equation</em> to the resolved diffraction peaks via non-linear least squares (scipy.optimize.curve_fit), yielding λ = 524 ± 6 nm — consistent with the known green laser standard.</p>
-          <div class="project-stack"><span>Python</span><span>SciPy</span><span>OpenCV</span><span>Image Analysis</span><span>Curve Fitting</span><span>Optics</span></div>
-          <a href="https://github.com/Piyush314159/Diffraction_Pattern_Analyzer" target="_blank" rel="noopener" class="project-link">github.com/Piyush314159/Diffraction_Pattern_Analyzer →</a>
-          <div class="project-supervisor" style="margin-top:0.75rem"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Bhuvanesh Ramakrishna, IIT Hyderabad</div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-number">06</div>
-        <div class="project-body">
-          <div class="project-top"><h3>Brownian Motion — Stochastic Simulation &amp; MSD Analysis</h3><span class="badge badge-done">Completed</span></div>
-          <p>Simulated 2D stochastic particle trajectories under Brownian dynamics using the Langevin equation with Gaussian noise. Computed the <em>Mean Squared Displacement (MSD)</em> ensemble average across thousands of trajectories and fitted MSD ~ t<sup>α</sup> via log-log regression to classify diffusive regimes: sub-diffusion (α &lt; 1), normal diffusion (α = 1), and super-diffusion (α &gt; 1). Validated against Einstein's analytical MSD prediction (MSD = 2dDt), confirming the diffusion coefficient D within numerical precision.</p>
-          <div class="project-stack"><span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Langevin Dynamics</span><span>Statistical Physics</span></div>
-          <div class="project-supervisor"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Anupam Gupta, IIT Hyderabad</div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ SKILLS ═══════════════════ -->
-<section class="content-section" id="skills">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Expertise</span>
-      <h2 class="section-title">Skills &amp; Tools</h2>
-    </div>
-    <div class="skills-layout">
-      <div class="skills-col">
-        <h3 class="skills-heading">Languages &amp; Frameworks</h3>
-        <div class="skill-bars">
-          <div class="skill-row"><div class="skill-info"><span>Python</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>NumPy / Pandas / Matplotlib</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill" style="width:82%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>PyTorch / PyTorch Geometric</span><span class="skill-pct">76%</span></div><div class="skill-track"><div class="skill-fill" style="width:76%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>Scikit-Learn</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill" style="width:78%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>SciPy / basf2 (Belle II)</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>Git / GitHub</span><span class="skill-pct">72%</span></div><div class="skill-track"><div class="skill-fill" style="width:72%"></div></div></div>
-          <div class="skill-row"><div class="skill-info"><span>DSA — Striver A2Z (Python)</span><span class="skill-pct">55%</span></div><div class="skill-track"><div class="skill-fill" style="width:55%"></div></div></div>
-        </div>
-      </div>
-      <div class="skills-col">
-        <h3 class="skills-heading">Domain Expertise</h3>
-        <div class="tag-cloud">
-          <span class="skill-chip highlight2">Graph Neural Networks</span>
-          <span class="skill-chip highlight">Machine Learning</span>
-          <span class="skill-chip highlight">High-Energy Physics</span>
-          <span class="skill-chip highlight">Data Science</span>
-          <span class="skill-chip">Scientific Computing</span>
-          <span class="skill-chip">Statistical Inference</span>
-          <span class="skill-chip">ODE / PDE Modeling</span>
-          <span class="skill-chip">Stochastic Simulation</span>
-          <span class="skill-chip">NLP &amp; Text Classification</span>
-          <span class="skill-chip">Data Structures &amp; Algorithms</span>
-          <span class="skill-chip">Scientific Writing</span>
-          <span class="skill-chip">Research Documentation</span>
-        </div>
-        <h3 class="skills-heading" style="margin-top:2.5rem">Relevant Courses</h3>
-        <div class="tag-cloud">
-          <span class="skill-chip highlight">ML for Physical Sciences</span>
-          <span class="skill-chip highlight">ML for High-Energy Physics</span>
-          <span class="skill-chip">Statistical Mechanics</span>
-          <span class="skill-chip">Linear Algebra</span>
-          <span class="skill-chip">Computational Physics</span>
-          <span class="skill-chip">Data Science &amp; Analysis</span>
-          <span class="skill-chip">Classical Mechanics</span>
-          <span class="skill-chip">Quantum Mechanics</span>
-        </div>
-      </div>
-    </div>
-    <div class="research-interests-full">
-      <h3 class="skills-heading" style="margin-top:2.5rem">Research Interests</h3>
-      <div class="interest-list">
-          <div class="interest-item"><span class="interest-dot"></span><span>Belle II — GraFEI Full Event Interpretation &amp; Inclusive Reconstruction</span></div>
-          <div class="interest-item"><span class="interest-dot"></span><span>GNN-based Decay Topology Reconstruction in High-Energy Physics</span></div>
-          <div class="interest-item"><span class="interest-dot"></span><span>Graph Neural Networks for Fraud Detection &amp; Anomaly Detection</span></div>
-          <div class="interest-item"><span class="interest-dot"></span><span>NLP &amp; Text Classification from Mathematical First Principles</span></div>
-          <div class="interest-item"><span class="interest-dot"></span><span>Computational &amp; Statistical Physics — Stochastic Processes, ODE/PDE Modeling</span></div>
-          <div class="interest-item"><span class="interest-dot"></span><span>Reinforcement Learning &amp; ML for Physical System Optimization</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
-<section class="content-section" id="experience">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Background</span>
-      <h2 class="section-title">Education &amp; Experience</h2>
-    </div>
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">2025 — 2027 (Expected)</span><span class="tl-badge">CGPA: 7.5 / 10</span></div>
-          <h3>M.Sc. Physics</h3>
-          <p class="tl-org">Indian Institute of Technology, Hyderabad (IIT Hyderabad)</p>
-          <p>Rigorous postgraduate program in physics with a strong research orientation. Key coursework includes <em>ML for Physical Sciences, ML for High-Energy Physics, Statistical Mechanics, Linear Algebra, Computational Physics,</em> and <em>Data Science Analysis</em>. Research project on GNN-based event reconstruction at the Belle II experiment under Prof. Sourav Sandilya forms the core of the degree.</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">2025 — Present</span><span class="tl-badge">Active Research</span></div>
-          <h3>GraFEI Research — HEP &amp; Machine Learning</h3>
-          <p class="tl-org">Under Prof. Sourav Sandilya, Dept. of Physics, IIT Hyderabad</p>
-          <p>Studying state-of-the-art inclusive event reconstruction in high-energy physics using the Graph-based Full Event Interpretation (GraFEI) framework at Belle II (KEK, Japan). Building detector-level graph representations with PyTorch Geometric, training stacked MetaLayer GNNs for joint mass hypothesis and LCAS matrix prediction, and benchmarking evaluation metrics (Perfect LCA, Perfect Masses, Perfect Event) within the <em>basf2</em> framework.</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">May 2026 — Present</span><span class="tl-badge">Leadership</span></div>
-          <h3>Placement Coordinator</h3>
-          <p class="tl-org">Office of Career Services (OCS), IIT Hyderabad</p>
-          <p>Managing end-to-end campus recruitment operations as part of the OCS team — reaching out to and onboarding industry recruiters, coordinating pre-placement talks, managing job descriptions, scheduling aptitude tests and interview drives, and handling student query resolution. Successfully onboarded companies including <em>IBM, Licious, HCL</em>, and several others to the IIT Hyderabad placement ecosystem.</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">Sep 2025 — Present</span><span class="tl-badge">Leadership</span></div>
-          <h3>Inbound &amp; Logistics Management — International Relations Cell</h3>
-          <p class="tl-org">IIT Hyderabad</p>
-          <p>Coordinating orientations, cultural programs, and academic tours for international exchange students from partner universities in <em>Japan and the United States</em>. Managing end-to-end logistics for visiting international guests and faculty delegations. Acting as a primary bridge between international scholars and the IITH administration.</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">May 2026 — Present</span><span class="tl-badge">Design &amp; Outreach</span></div>
-          <h3>Design Core — Extra Mural Lectures (EML)</h3>
-          <p class="tl-org">Student Activities Cell, IIT Hyderabad</p>
-          <p>Leading visual design and multimedia outreach for IIT Hyderabad's prestigious Extra Mural Lectures series — creating promotional posters, event branding, and social media content for high-profile speaker events. Defining highlight: co-hosted the EML event featuring <em>Gp. Capt. Shubhanshu Shukla</em> (Axiom-4 Mission Pilot &amp; India's first private astronaut) on July 13, 2026, drawing packed audiences from across campus.</p>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-meta"><span class="tl-year">2021 — 2024</span><span class="tl-badge">CGPA: 7.28 / 10</span></div>
-          <h3>B.Sc. in Physics (Honours)</h3>
-          <p class="tl-org">Hooghly Mohsin College (Est. 1836), University of Burdwan, West Bengal</p>
-          <p>Three-year undergraduate honours program in Physics with strong foundations in mathematical physics, classical &amp; quantum mechanics, electrodynamics, thermodynamics, optics, and laboratory instrumentation. Developed an early interest in data-driven and computational approaches to physical problems — the foundation for current research in GNN-based HEP reconstruction.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ JOURNEYS ═══════════════════ -->
-<section class="content-section alt-section" id="journeys">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Learning</span>
-      <h2 class="section-title">Journeys</h2>
-    </div>
-    <div class="journeys-tabs">
-      <button class="journey-tab active" data-journey="ml">🤖 ML Journey</button>
-      <button class="journey-tab" data-journey="dsa">⚡ DSA Journey</button>
-    </div>
-
-    <div class="journey-panel" id="journey-ml">
-      <div class="journey-meta">
-        <div class="journey-chips">
-          <span class="jchip jchip-blue">Python</span><span class="jchip jchip-orange">Scikit-Learn</span><span class="jchip jchip-red">PyTorch</span><span class="jchip jchip-green">Active</span>
-        </div>
-        <p class="journey-desc">Machine Learning structured roadmap · theory + implementation · physics-motivated applications</p>
-      </div>
-      <div class="journey-block">
-        <p class="journey-block-label">What I'm learning</p>
-        <p class="journey-simple-text">Following a structured ML roadmap from mathematical fundamentals to production-grade systems — covering supervised and unsupervised learning, deep learning with PyTorch, graph neural networks, and reinforcement learning with Gymnasium. Currently working through classification, regression, ensemble methods, model evaluation, and feature engineering. The goal is to apply these rigorously to physics-motivated problems: from GNN-based event reconstruction at Belle II to practical systems like fraud detection pipelines and NLP classifiers built from mathematical first principles.</p>
-      </div>
-      <div class="journey-block">
-        <p class="journey-block-label">Topics &amp; Modules</p>
-        <div class="jtools">
-          <span class="jtool">Supervised Learning</span>
-          <span class="jtool">Unsupervised Learning</span>
-          <span class="jtool">Deep Learning (PyTorch)</span>
-          <span class="jtool">Graph Neural Networks</span>
-          <span class="jtool">Reinforcement Learning</span>
-          <span class="jtool">Model Evaluation &amp; Metrics</span>
-          <span class="jtool">Hyperparameter Tuning</span>
-          <span class="jtool">NLP / Text Classification</span>
-          <span class="jtool">Feature Engineering</span>
-          <span class="jtool">Ensemble Methods</span>
-        </div>
-      </div>
-      <div class="journey-block">
-        <p class="journey-block-label">Libraries &amp; Tools</p>
-        <div class="jtools"><span class="jtool">Python</span><span class="jtool">NumPy</span><span class="jtool">Pandas</span><span class="jtool">Scikit-Learn</span><span class="jtool">Matplotlib</span><span class="jtool">Seaborn</span><span class="jtool">PyTorch</span><span class="jtool">PyTorch Geometric</span><span class="jtool">Gymnasium</span><span class="jtool">basf2</span></div>
-      </div>
-    </div>
-
-    <div class="journey-panel" id="journey-dsa" style="display:none">
-      <div class="journey-meta">
-        <div class="journey-chips">
-          <span class="jchip jchip-blue">Python</span><span class="jchip jchip-green">DSA Practice</span><span class="jchip jchip-orange">Interview Prep</span>
-        </div>
-        <p class="journey-desc">Striver A2Z DSA Sheet · structured roadmap in Python · 455 problems</p>
-      </div>
-      <div class="journey-block">
-        <p class="journey-block-label">What I'm learning</p>
-        <p class="journey-simple-text">Working through the Striver A2Z DSA sheet — a comprehensive structured 455-problem roadmap covering all major data structures and algorithms, practised in Python. Progressing from basics (arrays, strings, sorting) through intermediate topics (recursion, trees, heaps) to advanced areas (graphs, dynamic programming, bit manipulation). The goal is to build rigorous algorithmic thinking for both research-level problem solving and software engineering interviews.</p>
-      </div>
-      <div class="journey-block">
-        <p class="journey-block-label">Topics</p>
-        <div class="jtools">
-          <span class="jtool">Arrays &amp; Strings</span>
-          <span class="jtool">Sorting Algorithms</span>
-          <span class="jtool">Binary Search</span>
-          <span class="jtool">Recursion &amp; Backtracking</span>
-          <span class="jtool">Linked Lists</span>
-          <span class="jtool">Stacks &amp; Queues</span>
-          <span class="jtool">Trees &amp; BST</span>
-          <span class="jtool">Heaps &amp; Priority Queues</span>
-          <span class="jtool">Graphs (BFS/DFS/Topo)</span>
-          <span class="jtool">Dynamic Programming</span>
-          <span class="jtool">Bit Manipulation</span>
-          <span class="jtool">Two Pointers / Sliding Window</span>
-        </div>
-      </div>
-      <div class="journey-block">
-        <p class="journey-block-label">Coding Profiles</p>
-        <div class="coding-profiles">
-          <a class="coding-profile-card" href="https://leetcode.com" target="_blank" rel="noopener">
-            <div class="cp-icon cp-lc">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.519c-.569-.569-1.244-.95-1.99-1.12l2.087-2.085c.539-.54.539-1.417 0-1.956-.54-.54-1.417-.54-1.956 0l-11.51 11.51c-.985.985-1.497 2.315-1.497 3.645.002 1.33.515 2.66 1.5 3.645l4.319 4.363c.985.985 2.286 1.498 3.615 1.498 1.33 0 2.63-.513 3.615-1.498l2.697-2.607c.515-.515.497-1.366-.038-1.901-.535-.535-1.386-.553-1.902-.038z"/></svg>
-            </div>
-            <div class="cp-info">
-              <span class="cp-name">LeetCode</span>
-              <span class="cp-stat">100+ problems solved</span>
-            </div>
-            <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="hero-social">
+          <a href="https://github.com/Piyush314159" target="_blank" rel="noopener" class="social-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            </svg>
+            GitHub
           </a>
-          <a class="coding-profile-card" href="https://codeforces.com" target="_blank" rel="noopener">
-            <div class="cp-icon cp-cf">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9.5-5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V4c0-.828.672-1.5 1.5-1.5h3zm9.5 8c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V12c0-.828.672-1.5 1.5-1.5h3z"/></svg>
-            </div>
-            <div class="cp-info">
-              <span class="cp-name">Codeforces</span>
-              <span class="cp-stat">Max Rating 1000</span>
-            </div>
-            <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank" rel="noopener"
+            class="social-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            LinkedIn
           </a>
-          <a class="coding-profile-card" href="https://geeksforgeeks.org" target="_blank" rel="noopener">
-            <div class="cp-icon cp-gfg">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.691 3.691 0 0 1-1.104.695 4.51 4.51 0 0 1-3.116-.016 3.79 3.79 0 0 1-1.106-.705 3.882 3.882 0 0 1-.894-1.405H9.47c-.16.5-.43.97-.79 1.36-.36.39-.8.7-1.29.91a4.39 4.39 0 0 1-3.02.07 3.87 3.87 0 0 1-1.18-.67 3.514 3.514 0 0 1-.79-.99 4.343 4.343 0 0 1-.39-1.4H0v-1.24h2.01a4.11 4.11 0 0 1 .49-1.51 3.86 3.86 0 0 1 .99-1.12 4.21 4.21 0 0 1 1.31-.68 4.86 4.86 0 0 1 1.51-.23c.57 0 1.12.1 1.63.29.51.19.97.47 1.36.83.39.36.7.8.92 1.28h4.93c.22-.49.53-.93.93-1.3a4 4 0 0 1 1.36-.83 4.79 4.79 0 0 1 1.6-.27c.55 0 1.08.09 1.58.27.5.18.96.45 1.35.8.39.35.71.78.94 1.27.23.49.37 1.02.4 1.57H24v1.24h-2.01a4.4 4.4 0 0 1-.54 1.51z"/></svg>
-            </div>
-            <div class="cp-info">
-              <span class="cp-name">GeeksforGeeks</span>
-              <span class="cp-stat">Active DSA practice</span>
-            </div>
-            <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="mailto:ph25mscst11019@iith.ac.in" class="social-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m2 7 10 7 10-7" />
+            </svg>
+            Email
           </a>
-          <a class="coding-profile-card" href="https://github.com/Piyush314159" target="_blank" rel="noopener">
-            <div class="cp-icon cp-gh">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            </div>
-            <div class="cp-info">
-              <span class="cp-name">Striver A2Z Sheet</span>
-              <span class="cp-stat">GitHub · Python solutions</span>
-            </div>
-            <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="https://piyush314159.github.io" target="_blank" rel="noopener" class="social-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+            </svg>
+            Portfolio
           </a>
         </div>
       </div>
-      <div class="journey-block">
-        <p class="journey-block-label">Goals</p>
-        <div class="jtools">
-          <span class="jtool">Solve 200+ problems on Striver A2Z</span>
-          <span class="jtool">Master core DS&amp;A patterns</span>
-          <span class="jtool">Crack software engineering interviews</span>
-          <span class="jtool">Sharpen algorithmic intuition for research</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ GALLERY — Cinematic Fullwidth Slider ═══════════════════ -->
+  <section class="content-section alt-section" id="gallery">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Moments</span>
+        <h2 class="section-title">Gallery</h2>
+        <p class="gallery-intro">A visual chronicle — from scientific events at IIT Hyderabad to hosting India's space
+          hero.</p>
+      </div>
+    </div>
+
+    <!-- Full-width cinematic slider -->
+    <div class="cin-slider-wrap" id="cinSliderWrap">
+      <div class="cin-slider-track" id="cinSliderTrack">
+
+        <div class="cin-slide"
+          data-caption="Gp. Capt. Shubhanshu Shukla delivering &ldquo;India in Orbit&rdquo; keynote · EML, IIT Hyderabad · July 13, 2026">
+          <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.28.jpeg"
+            alt="Gp. Capt. Shubhanshu Shukla keynote at IIT Hyderabad" loading="lazy">
+        </div>
+        <div class="cin-slide"
+          data-caption="Packed auditorium at IIT Hyderabad for the Extra Mural Lecture — India's astronaut addressing the next generation">
+          <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.29.jpeg"
+            alt="Packed auditorium at IIT Hyderabad" loading="lazy">
+        </div>
+        <div class="cin-slide"
+          data-caption="An inspiring evening — moments with Gp. Capt. Shubhanshu Shukla, Axiom-4 Mission Pilot &amp; India's first private astronaut">
+          <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.29%20(1).jpeg"
+            alt="Moments with India's space hero" loading="lazy">
+        </div>
+        <div class="cin-slide"
+          data-caption="Discussion on India's space ambitions — Bharatiya Antariksh Station and the Moon landing roadmap by 2040">
+          <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.29%20(2).jpeg"
+            alt="Discussion on India's space future" loading="lazy">
+        </div>
+        <div class="cin-slide"
+          data-caption="Student Q&amp;A session — Gp. Capt. Shukla engaging with IIT Hyderabad students on careers in space science">
+          <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.29%20(3).jpeg"
+            alt="Q&A session with students" loading="lazy">
+        </div>
+        <div class="cin-slide"
+          data-caption="A historic evening at IIT Hyderabad — India's astronaut meets the next generation of space scientists and engineers">
+          <img src="Photos/Subhanshu%20Shukla%20Event/WhatsApp%20Image%202026-07-15%20at%2019.07.30.jpeg"
+            alt="Final moments at the EML event" loading="lazy">
+        </div>
+
+      </div>
+
+      <!-- Overlay UI -->
+      <div class="cin-overlay">
+        <div class="cin-top-bar">
+          <div class="cin-album-info">
+            <span class="cin-album-badge">🎤 EML — Extra Mural Lecture · July 13, 2026</span>
+          </div>
+          <div class="cin-counter" id="cinCounter">1 / 6</div>
+        </div>
+
+        <button class="cin-nav cin-nav--prev" id="cinPrev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <button class="cin-nav cin-nav--next" id="cinNext" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+
+        <div class="cin-bottom-bar">
+          <p class="cin-caption" id="cinCaption">Gp. Capt. Shubhanshu Shukla delivering &ldquo;India in Orbit&rdquo;
+            keynote · EML, IIT Hyderabad · July 13, 2026</p>
+          <div class="cin-dots" id="cinDots">
+            <button class="cin-dot active" data-index="0" aria-label="Photo 1"></button>
+            <button class="cin-dot" data-index="1" aria-label="Photo 2"></button>
+            <button class="cin-dot" data-index="2" aria-label="Photo 3"></button>
+            <button class="cin-dot" data-index="3" aria-label="Photo 4"></button>
+            <button class="cin-dot" data-index="4" aria-label="Photo 5"></button>
+            <button class="cin-dot" data-index="5" aria-label="Photo 6"></button>
+          </div>
         </div>
       </div>
     </div>
 
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════ POR ═══════════════════ -->
-<section class="content-section" id="por">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Leadership</span>
-      <h2 class="section-title">Positions of Responsibility</h2>
-      <p class="por-intro">Beyond research and coursework, I actively contribute to campus life — leading recruitment drives, coordinating international relations, and driving creative outreach as part of IIT Hyderabad's Extra Mural Lectures committee.</p>
+  <!-- ═══════════════════ RESEARCH ═══════════════════ -->
+  <section class="content-section" id="research">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Research</span>
+        <h2 class="section-title">Ongoing Research</h2>
+      </div>
+      <div class="research-card">
+        <div class="research-badge-row">
+          <span class="badge badge-active">Ongoing · 2025 — Present</span>
+          <span class="research-advisor"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>Prof. Sourav Sandilya, Dept. of Physics, IIT Hyderabad</span>
+        </div>
+        <h3 class="research-title">GNN-Based Full Event Interpretation (GraFEI) at Belle II, KEK</h3>
+        <div class="research-body">
+          <div class="research-block">
+            <h4>Overview</h4>
+            <p>Studying ML-driven <em>inclusive</em> event reconstruction for the Belle II experiment at KEK, Japan,
+              using the GraFEI framework — a graph neural network approach that reconstructs full decay topologies from
+              final-state particles alone, without prior assumptions on decay chain structure. Belle II probes CP
+              violation and rare decays from Υ(4S) → BB̄ collisions.</p>
+          </div>
+          <div class="research-block">
+            <h4>Methodology</h4>
+            <p>Building detector-level graph representations with <em>PyTorch Geometric</em> — each reconstructed
+              particle is a graph node with kinematic features (momentum, DOCA, cos θ, particle ID). The model learns
+              the Lowest Common Ancestor Stage (LCAS) matrix encoding the full decay hierarchy: Υ(4S) → B → D* → K π π,
+              etc., from data alone.</p>
+          </div>
+          <div class="research-block">
+            <h4>Training &amp; Evaluation</h4>
+            <p>Training stacked MetaLayer GNNs (EdgeLayer + NodeLayer + GlobalLayer) to jointly predict particle mass
+              hypotheses and the LCAS matrix via combined cross-entropy loss L = L<sub>LCA</sub> + αL<sub>Masses</sub>.
+              Evaluating with Perfect LCA, Perfect Masses, and Perfect Event metrics within the <em>basf2</em> analysis
+              software framework used at Belle II.</p>
+          </div>
+        </div>
+        <div class="project-stack"><span>Python</span><span>PyTorch
+            Geometric</span><span>GNN</span><span>basf2</span><span>HEP</span><span>Belle
+            II</span><span>LCAS</span><span>MetaLayer</span></div>
+      </div>
     </div>
+  </section>
 
-    <div class="por-grid">
+  <!-- ═══════════════════ PROJECTS ═══════════════════ -->
+  <section class="content-section alt-section" id="projects">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Work</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-grid">
 
-      <!-- POR 1: Placement Coordinator -->
-      <div class="por-card">
-        <div class="por-card-header">
-          <div class="por-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        <article class="project-card">
+          <div class="project-number">01</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>GNN-FraudNet — Graph-based Financial Fraud Detection</h3><span
+                class="badge badge-done">Completed</span>
+            </div>
+            <p>Addressed the challenge of detecting <em>fraudulent Bitcoin transactions</em>, where traditional ML
+              models ignore transaction relationships, by developing a <em>Graph Neural Network</em> pipeline that
+              leverages graph connectivity for node classification. Engineered a graph learning workflow on the
+              <em>Elliptic Bitcoin Dataset</em> (203K+ transactions, 234K+ edges) using <em>GraphSAGE</em> and <em>Graph
+                Attention Networks (GAT)</em>, with preprocessing, class balancing, and explainability through
+              <em>SHAP</em> and <em>GNNExplainer</em>.</p>
+            <p>Built a production-ready inference pipeline by exposing fraud predictions through a <em>FastAPI</em> REST
+              API and containerizing the application with <em>Docker</em> for scalable deployment.</p>
+            <div class="project-stack"><span>Python</span><span>PyTorch
+                Geometric</span><span>GraphSAGE</span><span>GAT</span><span>FastAPI</span><span>XGBoost</span><span>Docker</span><span>SHAP</span><span>GNNExplainer</span>
+            </div>
+            <a href="https://github.com/Piyush314159/GNN-FraudNet" target="_blank" rel="noopener"
+              class="project-link">github.com/Piyush314159/GNN-FraudNet →</a>
           </div>
-          <div class="por-header-meta">
-            <span class="por-tenure">May 2026 — Present</span>
-            <span class="badge badge-active">Ongoing</span>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">02</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>Retail Demand Forecasting &amp; Inventory Optimization</h3><span
+                class="badge badge-done">Completed</span>
+            </div>
+            <p>Solved the problem of <em>retail demand forecasting</em> by building a scalable <em>SKU-level sales
+                prediction pipeline</em> using <em>LightGBM</em>, enabling accurate inventory planning across multiple
+              stores. Designed advanced time-series features including <em>lag, rolling-window, calendar,
+                promotion</em>, and <em>holiday</em> variables, and benchmarked the model against <em>SARIMA</em> and
+              <em>Prophet</em> baselines using time-aware cross-validation.</p>
+            <p>Implemented <em>hierarchical forecast reconciliation</em> to maintain consistency across SKU, store, and
+              regional forecasts — improving the usability of predictions for supply chain and inventory
+              decision-making.</p>
+            <div class="project-stack">
+              <span>Python</span><span>LightGBM</span><span>SARIMA</span><span>Prophet</span><span>Time Series
+                Forecasting</span><span>Feature Engineering</span><span>Hierarchical Reconciliation</span></div>
+            <a href="https://github.com/Piyush314159" target="_blank" rel="noopener"
+              class="project-link">github.com/Piyush314159 →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">03</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>Spam Classifier from Scratch — NLP &amp; ML</h3><span class="badge badge-done">Completed</span>
+            </div>
+            <p>Implemented <em>Multinomial Naive Bayes</em> (MLE + Laplace smoothing) and <em>Logistic Regression</em>
+              (gradient descent) entirely from scratch in NumPy on the UCI SMS Spam Collection (5,574 messages). Built
+              both TF-IDF and Bag-of-Words feature pipelines without sklearn, with vocabulary constructed strictly on
+              the train split to prevent data leakage on an 86.6% class-imbalanced dataset.</p>
+            <p>Hand-coded binary cross-entropy loss and gradient descent with real-time loss convergence plots.
+              Evaluated both models via precision, recall, F1, and ROC/AUC (computed using the trapezoidal rule).
+              Performed threshold sensitivity analysis (0.3–0.7) to map out the full precision-recall tradeoff curve.
+            </p>
+            <div class="project-stack"><span>Python</span><span>NumPy</span><span>NLP</span><span>Naive
+                Bayes</span><span>Logistic Regression</span><span>TF-IDF</span><span>BoW</span></div>
+            <a href="https://github.com/Piyush314159" target="_blank" rel="noopener"
+              class="project-link">github.com/Piyush314159 →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">04</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>COVID-19 Epidemic Modeling — SIR / SEIR / SUTRA</h3><span class="badge badge-done">Completed</span>
+            </div>
+            <p>Implemented and compared three compartmental epidemic models — <em>SIR, SEIR</em>, and the <em>SUTRA</em>
+              model (which explicitly tracks undetected/asymptomatic carriers via a 'Unreported' compartment) — on US
+              national COVID-19 data from Feb 2020 to Mar 2021. Used <em>NNLS regression</em> for automatic per-phase
+              parameter estimation of contact rate β̃ and reach ρ̃, with a product-R² fallback for collinear phases,
+              achieving MAPE as low as ~4% on individual phases.</p>
+            <p>Ensembled all three models via linear regression for improved overall fit. ODE systems solved with
+              scipy's RK45 integrator. Visualised phase transitions, reproduction numbers, and ensemble predictions
+              across the full pandemic timeline.</p>
+            <div class="project-stack"><span>Python</span><span>ODE Solvers</span><span>NNLS
+                Regression</span><span>Nelder-Mead</span><span>SciPy</span><span>Pandas</span><span>Matplotlib</span>
+            </div>
+            <a href="https://github.com/Piyush314159/epidemicModeling_SUTRA_Model" target="_blank" rel="noopener"
+              class="project-link">github.com/Piyush314159/epidemicModeling_SUTRA_Model →</a>
+            <div class="project-supervisor" style="margin-top:0.75rem"><svg width="13" height="13" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>Prof. Anupam Gupta, IIT Hyderabad</div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">05</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>Diffraction Pattern Analysis — Wavelength Estimation</h3><span
+                class="badge badge-done">Completed</span>
+            </div>
+            <p>Built a two-script Python pipeline to extract laser wavelength from camera images of diffraction
+              gratings. Stage 1 preprocesses raw frame stacks into 1D intensity profiles via row-wise averaging and
+              background subtraction. Stage 2 fits the full <em>Fraunhofer grating equation</em> to the resolved
+              diffraction peaks via non-linear least squares (scipy.optimize.curve_fit), yielding λ = 524 ± 6 nm —
+              consistent with the known green laser standard.</p>
+            <div class="project-stack"><span>Python</span><span>SciPy</span><span>OpenCV</span><span>Image
+                Analysis</span><span>Curve Fitting</span><span>Optics</span></div>
+            <a href="https://github.com/Piyush314159/Diffraction_Pattern_Analyzer" target="_blank" rel="noopener"
+              class="project-link">github.com/Piyush314159/Diffraction_Pattern_Analyzer →</a>
+            <div class="project-supervisor" style="margin-top:0.75rem"><svg width="13" height="13" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>Prof. Bhuvanesh Ramakrishna, IIT Hyderabad</div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">06</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>Brownian Motion — Stochastic Simulation &amp; MSD Analysis</h3><span
+                class="badge badge-done">Completed</span>
+            </div>
+            <p>Simulated 2D stochastic particle trajectories under Brownian dynamics using the Langevin equation with
+              Gaussian noise. Computed the <em>Mean Squared Displacement (MSD)</em> ensemble average across thousands of
+              trajectories and fitted MSD ~ t<sup>α</sup> via log-log regression to classify diffusive regimes:
+              sub-diffusion (α &lt; 1), normal diffusion (α = 1), and super-diffusion (α &gt; 1). Validated against
+              Einstein's analytical MSD prediction (MSD = 2dDt), confirming the diffusion coefficient D within numerical
+              precision.</p>
+            <div class="project-stack">
+              <span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Langevin
+                Dynamics</span><span>Statistical Physics</span></div>
+            <div class="project-supervisor"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>Prof. Anupam Gupta, IIT Hyderabad</div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SKILLS ═══════════════════ -->
+  <section class="content-section" id="skills">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Expertise</span>
+        <h2 class="section-title">Skills &amp; Tools</h2>
+      </div>
+      <div class="skills-layout">
+        <div class="skills-col">
+          <h3 class="skills-heading">Languages &amp; Frameworks</h3>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <div class="skill-info"><span>Python</span><span class="skill-pct">85%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" style="width:85%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info"><span>NumPy / Pandas / Matplotlib</span><span class="skill-pct">82%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" style="width:82%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info"><span>PyTorch / PyTorch Geometric</span><span class="skill-pct">76%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" style="width:76%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info"><span>Scikit-Learn</span><span class="skill-pct">78%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" style="width:78%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info"><span>SciPy / basf2 (Belle II)</span><span class="skill-pct">75%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" style="width:75%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info"><span>Git / GitHub</span><span class="skill-pct">72%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" style="width:72%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info"><span>DSA — Striver A2Z (Python)</span><span class="skill-pct">55%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" style="width:55%"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <h3 class="por-title">Placement Coordinator</h3>
-        <p class="por-org">Office of Career Services (OCS), IIT Hyderabad</p>
-        <p class="por-desc">Managing end-to-end campus recruitment drives as part of the OCS team — liaising with recruiters, coordinating pre-placement talks, scheduling drives, and overseeing logistics for the student body. Actively onboarded companies including <strong>IBM, Licious, HCL</strong>, and others to the IIT Hyderabad placement portal.</p>
-        <div class="por-responsibilities">
-          <p class="por-resp-label">Key Responsibilities</p>
-          <ul class="por-resp-list">
-            <li>Industry liaison — reaching out to and onboarding new recruiting companies</li>
-            <li>Coordinating pre-placement talks, job description sharing, and test scheduling</li>
-            <li>Overseeing placement day logistics for both on-campus and virtual drives</li>
-            <li>Student communication and query resolution throughout the placement cycle</li>
-            <li>Maintaining placement data records and reports for the OCS committee</li>
-          </ul>
+        <div class="skills-col">
+          <h3 class="skills-heading">Domain Expertise</h3>
+          <div class="tag-cloud">
+            <span class="skill-chip highlight2">Graph Neural Networks</span>
+            <span class="skill-chip highlight">Machine Learning</span>
+            <span class="skill-chip highlight">High-Energy Physics</span>
+            <span class="skill-chip highlight">Data Science</span>
+            <span class="skill-chip">Scientific Computing</span>
+            <span class="skill-chip">Statistical Inference</span>
+            <span class="skill-chip">ODE / PDE Modeling</span>
+            <span class="skill-chip">Stochastic Simulation</span>
+            <span class="skill-chip">NLP &amp; Text Classification</span>
+            <span class="skill-chip">Data Structures &amp; Algorithms</span>
+            <span class="skill-chip">Scientific Writing</span>
+            <span class="skill-chip">Research Documentation</span>
+          </div>
+          <h3 class="skills-heading" style="margin-top:2.5rem">Relevant Courses</h3>
+          <div class="tag-cloud">
+            <span class="skill-chip highlight">ML for Physical Sciences</span>
+            <span class="skill-chip highlight">ML for High-Energy Physics</span>
+            <span class="skill-chip">Statistical Mechanics</span>
+            <span class="skill-chip">Linear Algebra</span>
+            <span class="skill-chip">Computational Physics</span>
+            <span class="skill-chip">Data Science &amp; Analysis</span>
+            <span class="skill-chip">Classical Mechanics</span>
+            <span class="skill-chip">Quantum Mechanics</span>
+          </div>
         </div>
-        <div class="por-tags">
-          <span>Recruitment</span><span>Stakeholder Management</span><span>Event Coordination</span><span>Leadership</span>
+      </div>
+      <div class="research-interests-full">
+        <h3 class="skills-heading" style="margin-top:2.5rem">Research Interests</h3>
+        <div class="interest-list">
+          <div class="interest-item"><span class="interest-dot"></span><span>Belle II — GraFEI Full Event Interpretation
+              &amp; Inclusive Reconstruction</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>GNN-based Decay Topology Reconstruction in
+              High-Energy Physics</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>Graph Neural Networks for Fraud Detection
+              &amp; Anomaly Detection</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>NLP &amp; Text Classification from
+              Mathematical First Principles</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>Computational &amp; Statistical Physics —
+              Stochastic Processes, ODE/PDE Modeling</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>Reinforcement Learning &amp; ML for
+              Physical System Optimization</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
+  <section class="content-section" id="experience">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Background</span>
+        <h2 class="section-title">Education &amp; Experience</h2>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-year">2025 — 2027 (Expected)</span><span class="tl-badge">CGPA: 7.5 /
+                10</span></div>
+            <h3>M.Sc. Physics</h3>
+            <p class="tl-org">Indian Institute of Technology, Hyderabad (IIT Hyderabad)</p>
+            <p>Rigorous postgraduate program in physics with a strong research orientation. Key coursework includes
+              <em>ML for Physical Sciences, ML for High-Energy Physics, Statistical Mechanics, Linear Algebra,
+                Computational Physics,</em> and <em>Data Science Analysis</em>. Research project on GNN-based event
+              reconstruction at the Belle II experiment under Prof. Sourav Sandilya forms the core of the degree.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-year">2025 — Present</span><span class="tl-badge">Active
+                Research</span></div>
+            <h3>GraFEI Research — HEP &amp; Machine Learning</h3>
+            <p class="tl-org">Under Prof. Sourav Sandilya, Dept. of Physics, IIT Hyderabad</p>
+            <p>Studying state-of-the-art inclusive event reconstruction in high-energy physics using the Graph-based
+              Full Event Interpretation (GraFEI) framework at Belle II (KEK, Japan). Building detector-level graph
+              representations with PyTorch Geometric, training stacked MetaLayer GNNs for joint mass hypothesis and LCAS
+              matrix prediction, and benchmarking evaluation metrics (Perfect LCA, Perfect Masses, Perfect Event) within
+              the <em>basf2</em> framework.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-year">May 2026 — Present</span><span class="tl-badge">Leadership</span>
+            </div>
+            <h3>Placement Coordinator</h3>
+            <p class="tl-org">Office of Career Services (OCS), IIT Hyderabad</p>
+            <p>Managing end-to-end campus recruitment operations as part of the OCS team — reaching out to and
+              onboarding industry recruiters, coordinating pre-placement talks, managing job descriptions, scheduling
+              aptitude tests and interview drives, and handling student query resolution. Successfully onboarded
+              companies including <em>IBM, Licious, HCL</em>, and several others to the IIT Hyderabad placement
+              ecosystem.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-year">Sep 2025 — Present</span><span class="tl-badge">Leadership</span>
+            </div>
+            <h3>Inbound &amp; Logistics Management — International Relations Cell</h3>
+            <p class="tl-org">IIT Hyderabad</p>
+            <p>Coordinating orientations, cultural programs, and academic tours for international exchange students from
+              partner universities in <em>Japan and the United States</em>. Managing end-to-end logistics for visiting
+              international guests and faculty delegations. Acting as a primary bridge between international scholars
+              and the IITH administration.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-year">May 2026 — Present</span><span class="tl-badge">Design &amp;
+                Outreach</span></div>
+            <h3>Design Core — Extra Mural Lectures (EML)</h3>
+            <p class="tl-org">Student Activities Cell, IIT Hyderabad</p>
+            <p>Leading visual design and multimedia outreach for IIT Hyderabad's prestigious Extra Mural Lectures series
+              — creating promotional posters, event branding, and social media content for high-profile speaker events.
+              Defining highlight: co-hosted the EML event featuring <em>Gp. Capt. Shubhanshu Shukla</em> (Axiom-4
+              Mission Pilot &amp; India's first private astronaut) on July 13, 2026, drawing packed audiences from
+              across campus.</p>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <div class="tl-meta"><span class="tl-year">2021 — 2024</span><span class="tl-badge">CGPA: 7.28 / 10</span>
+            </div>
+            <h3>B.Sc. in Physics (Honours)</h3>
+            <p class="tl-org">Hooghly Mohsin College (Est. 1836), University of Burdwan, West Bengal</p>
+            <p>Three-year undergraduate honours program in Physics with strong foundations in mathematical physics,
+              classical &amp; quantum mechanics, electrodynamics, thermodynamics, optics, and laboratory
+              instrumentation. Developed an early interest in data-driven and computational approaches to physical
+              problems — the foundation for current research in GNN-based HEP reconstruction.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ JOURNEYS ═══════════════════ -->
+  <section class="content-section alt-section" id="journeys">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Learning</span>
+        <h2 class="section-title">Journeys</h2>
+      </div>
+      <div class="journeys-tabs">
+        <button class="journey-tab active" data-journey="ml">🤖 ML Journey</button>
+        <button class="journey-tab" data-journey="dsa">⚡ DSA Journey</button>
+      </div>
+
+      <div class="journey-panel" id="journey-ml">
+        <div class="journey-meta">
+          <div class="journey-chips">
+            <span class="jchip jchip-blue">Python</span><span class="jchip jchip-orange">Scikit-Learn</span><span
+              class="jchip jchip-red">PyTorch</span><span class="jchip jchip-green">Active</span>
+          </div>
+          <p class="journey-desc">Machine Learning structured roadmap · theory + implementation · physics-motivated
+            applications</p>
+        </div>
+        <div class="journey-block">
+          <p class="journey-block-label">What I'm learning</p>
+          <p class="journey-simple-text">Following a structured ML roadmap from mathematical fundamentals to
+            production-grade systems — covering supervised and unsupervised learning, deep learning with PyTorch, graph
+            neural networks, and reinforcement learning with Gymnasium. Currently working through classification,
+            regression, ensemble methods, model evaluation, and feature engineering. The goal is to apply these
+            rigorously to physics-motivated problems: from GNN-based event reconstruction at Belle II to practical
+            systems like fraud detection pipelines and NLP classifiers built from mathematical first principles.</p>
+        </div>
+        <div class="journey-block">
+          <p class="journey-block-label">Topics &amp; Modules</p>
+          <div class="jtools">
+            <span class="jtool">Supervised Learning</span>
+            <span class="jtool">Unsupervised Learning</span>
+            <span class="jtool">Deep Learning (PyTorch)</span>
+            <span class="jtool">Graph Neural Networks</span>
+            <span class="jtool">Reinforcement Learning</span>
+            <span class="jtool">Model Evaluation &amp; Metrics</span>
+            <span class="jtool">Hyperparameter Tuning</span>
+            <span class="jtool">NLP / Text Classification</span>
+            <span class="jtool">Feature Engineering</span>
+            <span class="jtool">Ensemble Methods</span>
+          </div>
+        </div>
+        <div class="journey-block">
+          <p class="journey-block-label">Libraries &amp; Tools</p>
+          <div class="jtools"><span class="jtool">Python</span><span class="jtool">NumPy</span><span
+              class="jtool">Pandas</span><span class="jtool">Scikit-Learn</span><span
+              class="jtool">Matplotlib</span><span class="jtool">Seaborn</span><span class="jtool">PyTorch</span><span
+              class="jtool">PyTorch Geometric</span><span class="jtool">Gymnasium</span><span class="jtool">basf2</span>
+          </div>
         </div>
       </div>
 
-      <!-- POR 2: EML Design Core -->
-      <div class="por-card por-card--highlight">
-        <div class="por-card-header">
-          <div class="por-icon-wrap por-icon-wrap--purple">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <div class="journey-panel" id="journey-dsa" style="display:none">
+        <div class="journey-meta">
+          <div class="journey-chips">
+            <span class="jchip jchip-blue">Python</span><span class="jchip jchip-green">DSA Practice</span><span
+              class="jchip jchip-orange">Interview Prep</span>
           </div>
-          <div class="por-header-meta">
-            <span class="por-tenure">May 2026 — Present</span>
-            <span class="badge badge-active">Ongoing</span>
+          <p class="journey-desc">Striver A2Z DSA Sheet · structured roadmap in Python · 455 problems</p>
+        </div>
+        <div class="journey-block">
+          <p class="journey-block-label">What I'm learning</p>
+          <p class="journey-simple-text">Working through the Striver A2Z DSA sheet — a comprehensive structured
+            455-problem roadmap covering all major data structures and algorithms, practised in Python. Progressing from
+            basics (arrays, strings, sorting) through intermediate topics (recursion, trees, heaps) to advanced areas
+            (graphs, dynamic programming, bit manipulation). The goal is to build rigorous algorithmic thinking for both
+            research-level problem solving and software engineering interviews.</p>
+        </div>
+        <div class="journey-block">
+          <p class="journey-block-label">Topics</p>
+          <div class="jtools">
+            <span class="jtool">Arrays &amp; Strings</span>
+            <span class="jtool">Sorting Algorithms</span>
+            <span class="jtool">Binary Search</span>
+            <span class="jtool">Recursion &amp; Backtracking</span>
+            <span class="jtool">Linked Lists</span>
+            <span class="jtool">Stacks &amp; Queues</span>
+            <span class="jtool">Trees &amp; BST</span>
+            <span class="jtool">Heaps &amp; Priority Queues</span>
+            <span class="jtool">Graphs (BFS/DFS/Topo)</span>
+            <span class="jtool">Dynamic Programming</span>
+            <span class="jtool">Bit Manipulation</span>
+            <span class="jtool">Two Pointers / Sliding Window</span>
           </div>
         </div>
-        <h3 class="por-title">Design Core — Extra Mural Lectures (EML)</h3>
-        <p class="por-org">Student Activities Cell, IIT Hyderabad</p>
-        <p class="por-desc">Leading visual design and multimedia outreach for IIT Hyderabad's prestigious Extra Mural Lectures series — creating promotional content, event branding, posters, and digital assets. A defining highlight was co-hosting the EML event featuring <strong>Gp. Capt. Shubhanshu Shukla</strong>, Axiom-4 Mission Pilot &amp; India's first private astronaut, on July 13, 2026.</p>
-        <div class="por-responsibilities">
-          <p class="por-resp-label">Key Responsibilities</p>
-          <ul class="por-resp-list">
-            <li>Designing all promotional materials — posters, banners, and digital assets for EML events</li>
-            <li>Creating event branding identities for individual lectures and speaker campaigns</li>
-            <li>Managing social media outreach and content strategy for EML promotions</li>
-            <li>Coordinating with faculty, student clubs, and external guest liaison teams</li>
-            <li>Event day support — stage setup, AV coordination, and audience management</li>
-          </ul>
+        <div class="journey-block">
+          <p class="journey-block-label">Coding Profiles</p>
+          <div class="coding-profiles">
+            <a class="coding-profile-card" href="https://leetcode.com" target="_blank" rel="noopener">
+              <div class="cp-icon cp-lc">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.519c-.569-.569-1.244-.95-1.99-1.12l2.087-2.085c.539-.54.539-1.417 0-1.956-.54-.54-1.417-.54-1.956 0l-11.51 11.51c-.985.985-1.497 2.315-1.497 3.645.002 1.33.515 2.66 1.5 3.645l4.319 4.363c.985.985 2.286 1.498 3.615 1.498 1.33 0 2.63-.513 3.615-1.498l2.697-2.607c.515-.515.497-1.366-.038-1.901-.535-.535-1.386-.553-1.902-.038z" />
+                </svg>
+              </div>
+              <div class="cp-info">
+                <span class="cp-name">LeetCode</span>
+                <span class="cp-stat">100+ problems solved</span>
+              </div>
+              <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a class="coding-profile-card" href="https://codeforces.com" target="_blank" rel="noopener">
+              <div class="cp-icon cp-cf">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9.5-5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V4c0-.828.672-1.5 1.5-1.5h3zm9.5 8c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V12c0-.828.672-1.5 1.5-1.5h3z" />
+                </svg>
+              </div>
+              <div class="cp-info">
+                <span class="cp-name">Codeforces</span>
+                <span class="cp-stat">Max Rating 1000</span>
+              </div>
+              <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a class="coding-profile-card" href="https://geeksforgeeks.org" target="_blank" rel="noopener">
+              <div class="cp-icon cp-gfg">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M21.45 14.315c-.143.28-.334.532-.565.745a3.691 3.691 0 0 1-1.104.695 4.51 4.51 0 0 1-3.116-.016 3.79 3.79 0 0 1-1.106-.705 3.882 3.882 0 0 1-.894-1.405H9.47c-.16.5-.43.97-.79 1.36-.36.39-.8.7-1.29.91a4.39 4.39 0 0 1-3.02.07 3.87 3.87 0 0 1-1.18-.67 3.514 3.514 0 0 1-.79-.99 4.343 4.343 0 0 1-.39-1.4H0v-1.24h2.01a4.11 4.11 0 0 1 .49-1.51 3.86 3.86 0 0 1 .99-1.12 4.21 4.21 0 0 1 1.31-.68 4.86 4.86 0 0 1 1.51-.23c.57 0 1.12.1 1.63.29.51.19.97.47 1.36.83.39.36.7.8.92 1.28h4.93c.22-.49.53-.93.93-1.3a4 4 0 0 1 1.36-.83 4.79 4.79 0 0 1 1.6-.27c.55 0 1.08.09 1.58.27.5.18.96.45 1.35.8.39.35.71.78.94 1.27.23.49.37 1.02.4 1.57H24v1.24h-2.01a4.4 4.4 0 0 1-.54 1.51z" />
+                </svg>
+              </div>
+              <div class="cp-info">
+                <span class="cp-name">GeeksforGeeks</span>
+                <span class="cp-stat">Active DSA practice</span>
+              </div>
+              <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a class="coding-profile-card" href="https://github.com/Piyush314159" target="_blank" rel="noopener">
+              <div class="cp-icon cp-gh">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                </svg>
+              </div>
+              <div class="cp-info">
+                <span class="cp-name">Striver A2Z Sheet</span>
+                <span class="cp-stat">GitHub · Python solutions</span>
+              </div>
+              <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="por-highlight-event">
-          <span class="por-highlight-icon">🚀</span>
+        <div class="journey-block">
+          <p class="journey-block-label">Goals</p>
+          <div class="jtools">
+            <span class="jtool">Solve 200+ problems on Striver A2Z</span>
+            <span class="jtool">Master core DS&amp;A patterns</span>
+            <span class="jtool">Crack software engineering interviews</span>
+            <span class="jtool">Sharpen algorithmic intuition for research</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ POR ═══════════════════ -->
+  <section class="content-section" id="por">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Leadership</span>
+        <h2 class="section-title">Positions of Responsibility</h2>
+        <p class="por-intro">Beyond research and coursework, I actively contribute to campus life — leading recruitment
+          drives, coordinating international relations, and driving creative outreach as part of IIT Hyderabad's Extra
+          Mural Lectures committee.</p>
+      </div>
+
+      <div class="por-grid">
+
+        <!-- POR 1: Placement Coordinator -->
+        <div class="por-card">
+          <div class="por-card-header">
+            <div class="por-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                <line x1="12" y1="12" x2="12" y2="16" />
+                <line x1="10" y1="14" x2="14" y2="14" />
+              </svg>
+            </div>
+            <div class="por-header-meta">
+              <span class="por-tenure">May 2026 — Present</span>
+              <span class="badge badge-active">Ongoing</span>
+            </div>
+          </div>
+          <h3 class="por-title">Placement Coordinator</h3>
+          <p class="por-org">Office of Career Services (OCS), IIT Hyderabad</p>
+          <p class="por-desc">Managing end-to-end campus recruitment drives as part of the OCS team — liaising with
+            recruiters, coordinating pre-placement talks, scheduling drives, and overseeing logistics for the student
+            body. Actively onboarded companies including <strong>IBM, Licious, HCL</strong>, and others to the IIT
+            Hyderabad placement portal.</p>
+          <div class="por-responsibilities">
+            <p class="por-resp-label">Key Responsibilities</p>
+            <ul class="por-resp-list">
+              <li>Industry liaison — reaching out to and onboarding new recruiting companies</li>
+              <li>Coordinating pre-placement talks, job description sharing, and test scheduling</li>
+              <li>Overseeing placement day logistics for both on-campus and virtual drives</li>
+              <li>Student communication and query resolution throughout the placement cycle</li>
+              <li>Maintaining placement data records and reports for the OCS committee</li>
+            </ul>
+          </div>
+          <div class="por-tags">
+            <span>Recruitment</span><span>Stakeholder Management</span><span>Event
+              Coordination</span><span>Leadership</span>
+          </div>
+        </div>
+
+        <!-- POR 2: EML Design Core -->
+        <div class="por-card por-card--highlight">
+          <div class="por-card-header">
+            <div class="por-icon-wrap por-icon-wrap--purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <div class="por-header-meta">
+              <span class="por-tenure">May 2026 — Present</span>
+              <span class="badge badge-active">Ongoing</span>
+            </div>
+          </div>
+          <h3 class="por-title">Design Core — Extra Mural Lectures (EML)</h3>
+          <p class="por-org">Student Activities Cell, IIT Hyderabad</p>
+          <p class="por-desc">Leading visual design and multimedia outreach for IIT Hyderabad's prestigious Extra Mural
+            Lectures series — creating promotional content, event branding, posters, and digital assets. A defining
+            highlight was co-hosting the EML event featuring <strong>Gp. Capt. Shubhanshu Shukla</strong>, Axiom-4
+            Mission Pilot &amp; India's first private astronaut, on July 13, 2026.</p>
+          <div class="por-responsibilities">
+            <p class="por-resp-label">Key Responsibilities</p>
+            <ul class="por-resp-list">
+              <li>Designing all promotional materials — posters, banners, and digital assets for EML events</li>
+              <li>Creating event branding identities for individual lectures and speaker campaigns</li>
+              <li>Managing social media outreach and content strategy for EML promotions</li>
+              <li>Coordinating with faculty, student clubs, and external guest liaison teams</li>
+              <li>Event day support — stage setup, AV coordination, and audience management</li>
+            </ul>
+          </div>
+          <div class="por-highlight-event">
+            <span class="por-highlight-icon">🚀</span>
+            <div>
+              <strong>Flagship Event:</strong> <em>India in Orbit — Space Through an Astronaut's Eyes</em>
+              <p>Co-hosted the EML talk by Gp. Capt. Shubhanshu Shukla (Axiom-4 Mission, ISS) — an inspiring evening on
+                spaceflight, microgravity science, and India's space future that drew packed audiences from across
+                campus.</p>
+            </div>
+          </div>
+          <div class="por-tags">
+            <span>Visual Design</span><span>Branding</span><span>Event
+              Management</span><span>Outreach</span><span>Multimedia</span>
+          </div>
+        </div>
+
+        <!-- POR 3: IR Cell -->
+        <div class="por-card">
+          <div class="por-card-header">
+            <div class="por-icon-wrap por-icon-wrap--blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <path
+                  d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+              </svg>
+            </div>
+            <div class="por-header-meta">
+              <span class="por-tenure">Sep 2025 — Present</span>
+              <span class="badge badge-active">Ongoing</span>
+            </div>
+          </div>
+          <h3 class="por-title">Inbound &amp; Logistics Management</h3>
+          <p class="por-org">International Relations Cell, IIT Hyderabad</p>
+          <p class="por-desc">Coordinating orientations, cultural immersion programs, and academic tours for
+            international exchange students arriving at IIT Hyderabad — primarily from partner universities in
+            <strong>Japan and the United States</strong>. Managing end-to-end logistics for visiting guests and faculty
+            delegations.</p>
+          <div class="por-responsibilities">
+            <p class="por-resp-label">Key Responsibilities</p>
+            <ul class="por-resp-list">
+              <li>Designing and facilitating orientation programs for incoming international exchange students</li>
+              <li>Planning and executing cultural immersion activities and campus tours</li>
+              <li>Managing accommodation, transport, and scheduling for international guests</li>
+              <li>Acting as the primary point of contact between international students and IITH administration</li>
+              <li>Building intercultural bridges between Indian and international student communities</li>
+            </ul>
+          </div>
+          <div class="por-tags">
+            <span>International
+              Relations</span><span>Logistics</span><span>Cross-cultural</span><span>Coordination</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section class="content-section alt-section" id="contact">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Connect</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+      <p class="contact-intro">Open to academic collaborations, research internships, and conversations about GNN-based
+        event reconstruction at Belle II, machine learning for physics, data science, and high-energy physics. Always
+        happy to discuss research ideas or potential opportunities.</p>
+      <div class="contact-row">
+        <a class="contact-card" href="mailto:ph25mscst11019@iith.ac.in">
+          <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m2 7 10 7 10-7" />
+            </svg></div>
           <div>
-            <strong>Flagship Event:</strong> <em>India in Orbit — Space Through an Astronaut's Eyes</em>
-            <p>Co-hosted the EML talk by Gp. Capt. Shubhanshu Shukla (Axiom-4 Mission, ISS) — an inspiring evening on spaceflight, microgravity science, and India's space future that drew packed audiences from across campus.</p>
+            <p class="contact-label">Email</p>
+            <p class="contact-value">ph25mscst11019@iith.ac.in</p>
           </div>
-        </div>
-        <div class="por-tags">
-          <span>Visual Design</span><span>Branding</span><span>Event Management</span><span>Outreach</span><span>Multimedia</span>
-        </div>
-      </div>
-
-      <!-- POR 3: IR Cell -->
-      <div class="por-card">
-        <div class="por-card-header">
-          <div class="por-icon-wrap por-icon-wrap--blue">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a class="contact-card" href="tel:+919330966439">
+          <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.8">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.82 19.79 19.79 0 01.02 4.18 2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+            </svg></div>
+          <div>
+            <p class="contact-label">Phone</p>
+            <p class="contact-value">+91 93309 66439</p>
           </div>
-          <div class="por-header-meta">
-            <span class="por-tenure">Sep 2025 — Present</span>
-            <span class="badge badge-active">Ongoing</span>
+          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a class="contact-card" href="https://github.com/Piyush314159" target="_blank" rel="noopener">
+          <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            </svg></div>
+          <div>
+            <p class="contact-label">GitHub</p>
+            <p class="contact-value">Piyush314159</p>
           </div>
-        </div>
-        <h3 class="por-title">Inbound &amp; Logistics Management</h3>
-        <p class="por-org">International Relations Cell, IIT Hyderabad</p>
-        <p class="por-desc">Coordinating orientations, cultural immersion programs, and academic tours for international exchange students arriving at IIT Hyderabad — primarily from partner universities in <strong>Japan and the United States</strong>. Managing end-to-end logistics for visiting guests and faculty delegations.</p>
-        <div class="por-responsibilities">
-          <p class="por-resp-label">Key Responsibilities</p>
-          <ul class="por-resp-list">
-            <li>Designing and facilitating orientation programs for incoming international exchange students</li>
-            <li>Planning and executing cultural immersion activities and campus tours</li>
-            <li>Managing accommodation, transport, and scheduling for international guests</li>
-            <li>Acting as the primary point of contact between international students and IITH administration</li>
-            <li>Building intercultural bridges between Indian and international student communities</li>
-          </ul>
-        </div>
-        <div class="por-tags">
-          <span>International Relations</span><span>Logistics</span><span>Cross-cultural</span><span>Coordination</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════ CONTACT ═══════════════════ -->
-<section class="content-section alt-section" id="contact">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label">Connect</span>
-      <h2 class="section-title">Get In Touch</h2>
-    </div>
-    <p class="contact-intro">Open to academic collaborations, research internships, and conversations about GNN-based event reconstruction at Belle II, machine learning for physics, data science, and high-energy physics. Always happy to discuss research ideas or potential opportunities.</p>
-    <div class="contact-row">
-      <a class="contact-card" href="mailto:ph25mscst11019@iith.ac.in">
-        <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg></div>
-        <div><p class="contact-label">Email</p><p class="contact-value">ph25mscst11019@iith.ac.in</p></div>
-        <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a class="contact-card" href="tel:+919330966439">
-        <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.82 19.79 19.79 0 01.02 4.18 2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-        <div><p class="contact-label">Phone</p><p class="contact-value">+91 93309 66439</p></div>
-        <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a class="contact-card" href="https://github.com/Piyush314159" target="_blank" rel="noopener">
-        <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
-        <div><p class="contact-label">GitHub</p><p class="contact-value">Piyush314159</p></div>
-        <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank" rel="noopener">
-        <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
-        <div><p class="contact-label">LinkedIn</p><p class="contact-value">Piyush Maji</p></div>
-        <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span class="footer-name">Piyush Maji</span>
-    <span class="footer-copy">© <span id="year"></span> · MSc Physics · IIT Hyderabad</span>
-  </div>
-</footer>
-
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
-</button>
-
-<!-- CV VIEWER MODAL -->
-<div class="cv-modal-overlay" id="cvModalOverlay">
-  <div class="cv-modal">
-    <div class="cv-modal-header">
-      <h3>Piyush Maji — CV</h3>
-      <div class="cv-modal-actions">
-        <a href="Piyush_CV.pdf" class="cv-modal-download" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Download</a>
-        <button class="cv-modal-close" id="cvModalClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/piyush-maji-769aa4228/" target="_blank"
+          rel="noopener">
+          <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg></div>
+          <div>
+            <p class="contact-label">LinkedIn</p>
+            <p class="contact-value">Piyush Maji</p>
+          </div>
+          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
       </div>
     </div>
-    <div class="cv-modal-body">
-      <iframe src="" id="cvIframe" title="Piyush Maji CV"></iframe>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">Piyush Maji</span>
+      <span class="footer-copy">© <span id="year"></span> · MSc Physics · IIT Hyderabad</span>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- CV VIEWER MODAL -->
+  <div class="cv-modal-overlay" id="cvModalOverlay">
+    <div class="cv-modal">
+      <div class="cv-modal-header">
+        <h3>Piyush Maji — CV</h3>
+        <div class="cv-modal-actions">
+          <a href="Piyush_CV.pdf" class="cv-modal-download" download><svg width="14" height="14" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </svg> Download</a>
+          <button class="cv-modal-close" id="cvModalClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg></button>
+        </div>
+      </div>
+      <div class="cv-modal-body">
+        <iframe src="" id="cvIframe" title="Piyush Maji CV"></iframe>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
