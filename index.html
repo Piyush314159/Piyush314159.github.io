@@ -31,6 +31,8 @@
         <a href="#experience" class="nav-item" data-nav="experience">Experience</a>
         <a href="#journeys" class="nav-item" data-nav="journeys">Journeys</a>
         <a href="#por" class="nav-item" data-nav="por">POR</a>
+        <a href="#certifications" class="nav-item" data-nav="certifications">Certs</a>
+        <a href="#competitions" class="nav-item" data-nav="competitions">Awards</a>
         <a href="#contact" class="nav-item" data-nav="contact">Contact</a>
       </nav>
       <div class="cv-dropdown" id="cvDropdown">
@@ -63,6 +65,8 @@
       <a href="#experience" class="mob-nav-item" data-nav="experience">Experience</a>
       <a href="#journeys" class="mob-nav-item" data-nav="journeys">Journeys</a>
       <a href="#por" class="mob-nav-item" data-nav="por">POR</a>
+      <a href="#certifications" class="mob-nav-item" data-nav="certifications">Certifications</a>
+      <a href="#competitions" class="mob-nav-item" data-nav="competitions">Competitions</a>
       <a href="#contact" class="mob-nav-item" data-nav="contact">Contact</a>
     </nav>
     <div class="mob-cv-actions">
@@ -86,7 +90,7 @@
           <div class="halo-orb halo-orb-3"></div>
         </div>
         <div class="hero-stats">
-          <div class="stat-item"><span class="stat-number">GraFEI</span><span class="stat-label">Belle II · HEP</span>
+          <div class="stat-item"><span class="stat-number">BayesOpt</span><span class="stat-label">Belle II · KEK</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item"><span class="stat-number">GNN</span><span class="stat-label">ML Research</span></div>
@@ -97,9 +101,9 @@
       </div>
       <div class="hero-content">
         <p class="hero-desc">I work at the intersection of <strong>high-energy physics</strong> and <strong>machine
-            learning</strong> — training graph neural networks for inclusive full event reconstruction at the Belle II
-          experiment (KEK, Japan) using the GraFEI framework, while building practical ML systems spanning fraud
-          detection, NLP, and epidemic modeling.</p>
+            learning</strong> — implementing Bayesian Optimization for accelerator parameter tuning at the Belle II
+          experiment (KEK, Japan), while building practical ML systems spanning GNN-based fraud
+          detection, NLP, and time-series forecasting.</p>
         <p class="hero-desc">Currently pursuing an MSc in Physics at IIT Hyderabad under Prof. Sourav Sandilya, with
           active coursework in ML for Physical Sciences, ML for High-Energy Physics, Statistical Mechanics, and
           Computational Physics.</p>
@@ -156,35 +160,35 @@
               stroke="currentColor" stroke-width="2">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
               <circle cx="12" cy="7" r="4" />
-            </svg>Prof. Sourav Sandilya, Dept. of Physics, IIT Hyderabad</span>
+            </svg>Prof. Sourav Sandilya, Belle II Collaboration, IIT Hyderabad</span>
         </div>
-        <h3 class="research-title">GNN-Based Full Event Interpretation (GraFEI) at Belle II, KEK</h3>
+        <h3 class="research-title">Bayesian Optimization for Accelerator Parameter Tuning | Belle II Experiment, KEK, Japan</h3>
         <div class="research-body">
           <div class="research-block">
             <h4>Overview</h4>
-            <p>Studying ML-driven <em>inclusive</em> event reconstruction for the Belle II experiment at KEK, Japan,
-              using the GraFEI framework — a graph neural network approach that reconstructs full decay topologies from
-              final-state particles alone, without prior assumptions on decay chain structure. Belle II probes CP
-              violation and rare decays from Υ(4S) → BB̄ collisions.</p>
+            <p>Addressing the challenge of tuning multi-parameter accelerator systems under noisy, black-box objectives
+              by implementing a <em>Bayesian Optimization</em> framework, motivated by injection-tuning methods at
+              <em>SuperKEKB</em> (KEK, Japan). The Belle II experiment operates at the SuperKEKB electron-positron
+              collider, where precise accelerator parameter tuning is critical for optimal luminosity and data quality.</p>
           </div>
           <div class="research-block">
             <h4>Methodology</h4>
-            <p>Building detector-level graph representations with <em>PyTorch Geometric</em> — each reconstructed
-              particle is a graph node with kinematic features (momentum, DOCA, cos θ, particle ID). The model learns
-              the Lowest Common Ancestor Stage (LCAS) matrix encoding the full decay hierarchy: Υ(4S) → B → D* → K π π,
-              etc., from data alone.</p>
+            <p>Engineering a <em>Gaussian Process-based optimizer</em> with <em>EI/UCB acquisition functions</em>,
+              incorporating <em>segmented region search</em>, step-by-step parameter constraints, and <em>proximal
+              biasing</em> to safely navigate noisy, non-convex parameter spaces. The framework enables systematic
+              exploration of high-dimensional accelerator configurations while respecting operational safety constraints.</p>
           </div>
           <div class="research-block">
-            <h4>Training &amp; Evaluation</h4>
-            <p>Training stacked MetaLayer GNNs (EdgeLayer + NodeLayer + GlobalLayer) to jointly predict particle mass
-              hypotheses and the LCAS matrix via combined cross-entropy loss L = L<sub>LCA</sub> + αL<sub>Masses</sub>.
-              Evaluating with Perfect LCA, Perfect Masses, and Perfect Event metrics within the <em>basf2</em> analysis
-              software framework used at Belle II.</p>
+            <h4>Benchmarking &amp; Analysis</h4>
+            <p>Benchmarking against <em>random &amp; grid search</em> and <em>Nelder-Mead</em> on simulated objectives,
+              using <em>SHAP</em> (SHapley Additive exPlanations) to quantify per-parameter contribution to optimization
+              outcomes. Evaluating convergence speed, sample efficiency, and robustness across different noise levels
+              and parameter dimensionalities.</p>
           </div>
         </div>
-        <div class="project-stack"><span>Python</span><span>PyTorch
-            Geometric</span><span>GNN</span><span>basf2</span><span>HEP</span><span>Belle
-            II</span><span>LCAS</span><span>MetaLayer</span></div>
+        <div class="project-stack"><span>Python</span><span>Gaussian
+            Processes</span><span>Bayesian Optimization</span><span>SHAP</span><span>HEP</span><span>Belle
+            II</span><span>SuperKEKB</span><span>Acquisition Functions</span></div>
       </div>
     </div>
   </section>
@@ -227,7 +231,7 @@
           <div class="project-body">
             <div class="project-top">
               <h3>Retail Demand Forecasting &amp; Inventory Optimization</h3><span
-                class="badge badge-done">Completed</span>
+                class="badge badge-active">Ongoing</span>
             </div>
             <p>Solved the problem of <em>retail demand forecasting</em> by building a scalable <em>SKU-level sales
                 prediction pipeline</em> using <em>LightGBM</em>, enabling accurate inventory planning across multiple
@@ -259,7 +263,8 @@
               the train split to prevent data leakage on an 86.6% class-imbalanced dataset.</p>
             <p>Hand-coded binary cross-entropy loss and gradient descent with real-time loss convergence plots.
               Evaluated both models via precision, recall, F1, and ROC/AUC (computed using the trapezoidal rule).
-              Performed threshold sensitivity analysis (0.3–0.7) to map out the full precision-recall tradeoff curve.
+              Achieved <strong>94.9% F1-score</strong> and <strong>0.982 AUC</strong> on the UCI SMS Spam Collection,
+              demonstrating strong performance through threshold optimization and comparative model analysis.
             </p>
             <div class="project-stack"><span>Python</span><span>NumPy</span><span>NLP</span><span>Naive
                 Bayes</span><span>Logistic Regression</span><span>TF-IDF</span><span>BoW</span></div>
@@ -390,9 +395,15 @@
               </div>
             </div>
             <div class="skill-row">
-              <div class="skill-info"><span>Git / GitHub</span><span class="skill-pct">72%</span></div>
+              <div class="skill-info"><span>SQL / Git / GitHub</span><span class="skill-pct">72%</span></div>
               <div class="skill-track">
                 <div class="skill-fill" style="width:72%"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-info"><span>LightGBM / XGBoost</span><span class="skill-pct">70%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" style="width:70%"></div>
               </div>
             </div>
             <div class="skill-row">
@@ -410,8 +421,10 @@
             <span class="skill-chip highlight">Machine Learning</span>
             <span class="skill-chip highlight">High-Energy Physics</span>
             <span class="skill-chip highlight">Data Science</span>
+            <span class="skill-chip highlight">A/B Testing &amp; Experimentation</span>
             <span class="skill-chip">Scientific Computing</span>
             <span class="skill-chip">Statistical Inference</span>
+            <span class="skill-chip">Time Series Forecasting</span>
             <span class="skill-chip">ODE / PDE Modeling</span>
             <span class="skill-chip">Stochastic Simulation</span>
             <span class="skill-chip">NLP &amp; Text Classification</span>
@@ -435,12 +448,12 @@
       <div class="research-interests-full">
         <h3 class="skills-heading" style="margin-top:2.5rem">Research Interests</h3>
         <div class="interest-list">
-          <div class="interest-item"><span class="interest-dot"></span><span>Belle II — GraFEI Full Event Interpretation
-              &amp; Inclusive Reconstruction</span></div>
-          <div class="interest-item"><span class="interest-dot"></span><span>GNN-based Decay Topology Reconstruction in
-              High-Energy Physics</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>Bayesian Optimization for Accelerator
+              Parameter Tuning at Belle II / SuperKEKB</span></div>
           <div class="interest-item"><span class="interest-dot"></span><span>Graph Neural Networks for Fraud Detection
               &amp; Anomaly Detection</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>GNN-based Decay Topology Reconstruction in
+              High-Energy Physics</span></div>
           <div class="interest-item"><span class="interest-dot"></span><span>NLP &amp; Text Classification from
               Mathematical First Principles</span></div>
           <div class="interest-item"><span class="interest-dot"></span><span>Computational &amp; Statistical Physics —
@@ -481,13 +494,12 @@
           <div class="tl-content">
             <div class="tl-meta"><span class="tl-year">2025 — Present</span><span class="tl-badge">Active
                 Research</span></div>
-            <h3>GraFEI Research — HEP &amp; Machine Learning</h3>
-            <p class="tl-org">Under Prof. Sourav Sandilya, Dept. of Physics, IIT Hyderabad</p>
-            <p>Studying state-of-the-art inclusive event reconstruction in high-energy physics using the Graph-based
-              Full Event Interpretation (GraFEI) framework at Belle II (KEK, Japan). Building detector-level graph
-              representations with PyTorch Geometric, training stacked MetaLayer GNNs for joint mass hypothesis and LCAS
-              matrix prediction, and benchmarking evaluation metrics (Perfect LCA, Perfect Masses, Perfect Event) within
-              the <em>basf2</em> framework.</p>
+            <h3>Bayesian Optimization Research — HEP &amp; Machine Learning</h3>
+            <p class="tl-org">Under Prof. Sourav Sandilya, Belle II Collaboration, IIT Hyderabad</p>
+            <p>Implementing a Bayesian Optimization framework for accelerator parameter tuning at Belle II (KEK, Japan).
+              Engineering a Gaussian Process-based optimizer with EI/UCB acquisition functions, segmented region search,
+              and proximal biasing to navigate noisy, non-convex parameter spaces. Benchmarking against random & grid
+              search and Nelder-Mead, using SHAP for per-parameter contribution analysis.</p>
           </div>
         </div>
 
@@ -858,6 +870,70 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CERTIFICATIONS ═══════════════════ -->
+  <section class="content-section alt-section" id="certifications">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Credentials</span>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+      <div class="certifications-grid">
+        <div class="cert-card">
+          <div class="cert-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" />
+            </svg>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Machine Learning Specialization</h3>
+            <p class="cert-issuer">DeepLearning.AI / Coursera</p>
+            <p class="cert-desc">Comprehensive specialization covering supervised learning, advanced learning algorithms,
+              and unsupervised learning — including neural networks, decision trees, recommender systems, and
+              reinforcement learning foundations.</p>
+            <div class="project-stack"><span>Supervised Learning</span><span>Neural Networks</span><span>Decision
+                Trees</span><span>Clustering</span><span>Recommender Systems</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ COMPETITIONS ═══════════════════ -->
+  <section class="content-section" id="competitions">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Achievements</span>
+        <h2 class="section-title">Competitions</h2>
+      </div>
+      <div class="competitions-grid">
+        <article class="competition-card">
+          <div class="competition-header">
+            <div class="competition-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M6 9H4.5a2.5 2.5 0 010-5H6" />
+                <path d="M18 9h1.5a2.5 2.5 0 000-5H18" />
+                <path d="M4 22h16" />
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 19.24 7 20h10c0-.76-.85-1.25-2.03-1.79C14.47 17.98 14 17.55 14 17v-2.34" />
+                <path d="M18 2H6v7a6 6 0 0012 0V2z" />
+              </svg>
+            </div>
+            <div class="competition-meta">
+              <span class="badge badge-active">Selected Finalist</span>
+              <span class="competition-year">2026</span>
+            </div>
+          </div>
+          <h3 class="competition-title">Accenture Innovation Challenge 2026</h3>
+          <p class="competition-desc">Designed a <em>GNN-based digital twin</em> for vehicle assembly line optimization,
+            modeling stations and workflow dependencies as graph structures to predict bottlenecks and throughput issues,
+            applying graph representation learning techniques from concurrent Belle II / GNN-FraudNet research.</p>
+          <div class="project-stack"><span>Graph Neural Networks</span><span>Digital Twin</span><span>Assembly Line
+              Optimization</span><span>Graph Representation Learning</span></div>
+        </article>
       </div>
     </div>
   </section>

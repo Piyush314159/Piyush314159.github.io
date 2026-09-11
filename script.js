@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (yr) yr.textContent = new Date().getFullYear();
 
   var typingEl = document.querySelector('.typing-text');
-  var words = ['GNN-Based Event Reconstruction','ML for High-Energy Physics','Graph Neural Networks','GraFEI at Belle II','Computational Physics','Data Science & Analysis'];
+  var words = ['Bayesian Optimization','ML for High-Energy Physics','Graph Neural Networks','Belle II at KEK','Computational Physics','Data Science & Analysis'];
   var wi = 0, ci = 0, deleting = false, speed = 100;
   function type() {
     if (!typingEl) return;
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (btt) btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
   var navItems = document.querySelectorAll('.nav-item');
-  var sectionIds = ['about','gallery','research','projects','skills','experience','journeys','por','contact'];
+  var sectionIds = ['about','gallery','research','projects','skills','experience','journeys','por','certifications','competitions','contact'];
   function updateNav() {
     var current = 'about';
     sectionIds.forEach(function(id) {
