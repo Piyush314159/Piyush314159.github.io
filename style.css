@@ -306,7 +306,7 @@ p:last-child { margin-bottom:0; }
   box-shadow:0 2px 12px rgba(0,0,0,0.05);
 }
 .stat-item { flex:1; text-align:center; min-width: 0; }
-.stat-number { display:block; font-family:'Playfair Display',Georgia,serif; font-size:1.5rem; font-weight:500; color:var(--ink); line-height:1.2; overflow: hidden; text-overflow: ellipsis; }
+.stat-number { display:block; font-family:'Playfair Display',Georgia,serif; font-size:1.3rem; font-weight:500; color:var(--ink); line-height:1.2; white-space:nowrap; }
 .stat-label { display:block; font-size:0.7rem; color:var(--ink-3); text-transform:uppercase; letter-spacing:0.8px; margin-top:0.2rem; }
 .stat-divider { width:1px; height:36px; background:var(--border); flex-shrink:0; }
 
