@@ -93,7 +93,8 @@
           <div class="stat-item"><span class="stat-number">SuperKEKB</span><span class="stat-label">KEK · Japan</span>
           </div>
           <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-number">AI/ML</span><span class="stat-label">Research & GNN</span></div>
+          <div class="stat-item"><span class="stat-number">AI/ML</span><span class="stat-label">Research & GNN</span>
+          </div>
           <div class="stat-divider"></div>
           <div class="stat-item"><span class="stat-number">200+</span><span class="stat-label">DSA Problems</span>
           </div>
@@ -162,21 +163,24 @@
               <circle cx="12" cy="7" r="4" />
             </svg>Prof. Sourav Sandilya, Belle II Collaboration, IIT Hyderabad</span>
         </div>
-        <h3 class="research-title">Bayesian Optimization for Accelerator Parameter Tuning | Belle II Experiment, KEK, Japan</h3>
+        <h3 class="research-title">Bayesian Optimization for Accelerator Parameter Tuning | Belle II Experiment, KEK,
+          Japan</h3>
         <div class="research-body">
           <div class="research-block">
             <h4>Overview</h4>
             <p>Addressing the challenge of tuning multi-parameter accelerator systems under noisy, black-box objectives
               by implementing a <em>Bayesian Optimization</em> framework, motivated by injection-tuning methods at
               <em>SuperKEKB</em> (KEK, Japan). The Belle II experiment operates at the SuperKEKB electron-positron
-              collider, where precise accelerator parameter tuning is critical for optimal luminosity and data quality.</p>
+              collider, where precise accelerator parameter tuning is critical for optimal luminosity and data quality.
+            </p>
           </div>
           <div class="research-block">
             <h4>Methodology</h4>
             <p>Engineering a <em>Gaussian Process-based optimizer</em> with <em>EI/UCB acquisition functions</em>,
               incorporating <em>segmented region search</em>, step-by-step parameter constraints, and <em>proximal
-              biasing</em> to safely navigate noisy, non-convex parameter spaces. The framework enables systematic
-              exploration of high-dimensional accelerator configurations while respecting operational safety constraints.</p>
+                biasing</em> to safely navigate noisy, non-convex parameter spaces. The framework enables systematic
+              exploration of high-dimensional accelerator configurations while respecting operational safety
+              constraints.</p>
           </div>
           <div class="research-block">
             <h4>Benchmarking &amp; Analysis</h4>
@@ -206,20 +210,21 @@
           <div class="project-number">01</div>
           <div class="project-body">
             <div class="project-top">
-              <h3>GNN-FraudNet — Graph-based Financial Fraud Detection</h3><span
+              <h3>FraudNet — AI-Powered Fraud Detection &amp; Investigation Platform</h3><span
                 class="badge badge-done">Completed</span>
             </div>
-            <p>Addressed the challenge of detecting <em>fraudulent Bitcoin transactions</em>, where traditional ML
-              models ignore transaction relationships, by developing a <em>Graph Neural Network</em> pipeline that
-              leverages graph connectivity for node classification. Engineered a graph learning workflow on the
-              <em>Elliptic Bitcoin Dataset</em> (203K+ transactions, 234K+ edges) using <em>GraphSAGE</em> and <em>Graph
-                Attention Networks (GAT)</em>, with preprocessing, class balancing, and explainability through
-              <em>SHAP</em> and <em>GNNExplainer</em>.
-            </p>
-            <p>Built a production-ready inference pipeline by exposing fraud predictions through a <em>FastAPI</em> REST
-              API and containerizing the application with <em>Docker</em> for scalable deployment.</p>
+            <p>Developed an end-to-end <em>fraud detection and investigation platform</em> combining <em>Graph Neural
+                Networks</em> with LLM-powered reporting on the Elliptic Bitcoin Dataset. Built an agentic workflow
+              using <em>LangGraph</em> that predicts fraud with <em>GraphSAGE/GAT</em>, explains decisions using
+              <em>SHAP</em> and <em>GNNExplainer</em>, and retrieves context via a <em>RAG</em> pipeline powered by
+              <em>ChromaDB</em>.</p>
+            <p>Integrated <em>Google Gemini</em> to generate natural-language investigation reports, exposing the full
+              pipeline through a <em>FastAPI</em> REST API containerized with <em>Docker</em> and deployed on <em>AWS
+                EC2</em>.</p>
             <div class="project-stack"><span>Python</span><span>PyTorch
-                Geometric</span><span>GraphSAGE</span><span>GAT</span><span>FastAPI</span><span>XGBoost</span><span>Docker</span><span>SHAP</span><span>GNNExplainer</span>
+                Geometric</span><span>LangGraph</span><span>Google
+                Gemini</span><span>RAG</span><span>ChromaDB</span><span>FastAPI</span><span>Docker</span><span>AWS
+                EC2</span><span>SHAP</span><span>GNNExplainer</span>
             </div>
             <a href="https://github.com/Piyush314159/GNN-FraudNet" target="_blank" rel="noopener"
               class="project-link">github.com/Piyush314159/GNN-FraudNet →</a>
@@ -363,74 +368,17 @@
       <div class="skills-layout">
         <div class="skills-col">
           <h3 class="skills-heading">Languages &amp; Frameworks</h3>
-          <div class="skill-bars">
-            <div class="skill-row">
-              <div class="skill-info"><span>Python</span><span class="skill-pct">85%</span></div>
-              <div class="skill-track">
-                <div class="skill-fill" style="width:85%"></div>
-              </div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-info"><span>NumPy / Pandas / Matplotlib</span><span class="skill-pct">82%</span></div>
-              <div class="skill-track">
-                <div class="skill-fill" style="width:82%"></div>
-              </div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-info"><span>PyTorch / PyTorch Geometric</span><span class="skill-pct">76%</span></div>
-              <div class="skill-track">
-                <div class="skill-fill" style="width:76%"></div>
-              </div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-info"><span>Scikit-Learn</span><span class="skill-pct">78%</span></div>
-              <div class="skill-track">
-                <div class="skill-fill" style="width:78%"></div>
-              </div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-info"><span>SciPy / basf2 (Belle II)</span><span class="skill-pct">75%</span></div>
-              <div class="skill-track">
-                <div class="skill-fill" style="width:75%"></div>
-              </div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-info"><span>SQL / Git / GitHub</span><span class="skill-pct">72%</span></div>
-              <div class="skill-track">
-                <div class="skill-fill" style="width:72%"></div>
-              </div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-info"><span>LightGBM / XGBoost</span><span class="skill-pct">70%</span></div>
-              <div class="skill-track">
-                <div class="skill-fill" style="width:70%"></div>
-              </div>
-            </div>
-            <div class="skill-row">
-              <div class="skill-info"><span>DSA — Striver A2Z (Python)</span><span class="skill-pct">55%</span></div>
-              <div class="skill-track">
-                <div class="skill-fill" style="width:55%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="skills-col">
-          <h3 class="skills-heading">Domain Expertise</h3>
           <div class="tag-cloud">
-            <span class="skill-chip highlight2">Graph Neural Networks</span>
-            <span class="skill-chip highlight">Machine Learning</span>
-            <span class="skill-chip highlight">High-Energy Physics</span>
-            <span class="skill-chip highlight">Data Science</span>
-            <span class="skill-chip highlight">A/B Testing &amp; Experimentation</span>
-            <span class="skill-chip">Scientific Computing</span>
-            <span class="skill-chip">Statistical Inference</span>
-            <span class="skill-chip">Time Series Forecasting</span>
-            <span class="skill-chip">ODE / PDE Modeling</span>
-            <span class="skill-chip">Stochastic Simulation</span>
-            <span class="skill-chip">NLP &amp; Text Classification</span>
-            <span class="skill-chip">Data Structures &amp; Algorithms</span>
-            <span class="skill-chip">Scientific Writing</span>
-            <span class="skill-chip">Research Documentation</span>
+            <span class="skill-chip highlight">PyTorch &amp; PyTorch Geometric</span>
+            <span class="skill-chip highlight">LangGraph, LLMs &amp; ChromaDB</span>
+            <span class="skill-chip highlight">Scikit-Learn</span>
+            <span class="skill-chip highlight">LightGBM &amp; XGBoost</span>
+            <span class="skill-chip highlight">Python</span>
+            <span class="skill-chip">NumPy, Pandas, Matplotlib</span>
+            <span class="skill-chip">SciPy &amp; basf2 (Belle II)</span>
+            <span class="skill-chip highlight">FastAPI, Docker &amp; AWS</span>
+            <span class="skill-chip">SQL, Git &amp; GitHub</span>
+            <span class="skill-chip">DSA — Striver A2Z</span>
           </div>
           <h3 class="skills-heading" style="margin-top:2.5rem">Relevant Courses</h3>
           <div class="tag-cloud">
@@ -442,6 +390,33 @@
             <span class="skill-chip">Data Science &amp; Analysis</span>
             <span class="skill-chip">Classical Mechanics</span>
             <span class="skill-chip">Quantum Mechanics</span>
+          </div>
+        </div>
+        <div class="skills-col">
+          <h3 class="skills-heading">Domain Expertise</h3>
+          <div class="tag-cloud">
+            <span class="skill-chip highlight2">Graph Neural Networks</span>
+            <span class="skill-chip highlight2">GraphSAGE &amp; GAT</span>
+            <span class="skill-chip highlight">Deep Learning</span>
+            <span class="skill-chip highlight">Machine Learning</span>
+            <span class="skill-chip highlight">Agentic AI &amp; LLMs</span>
+            <span class="skill-chip highlight">RAG &amp; LangGraph</span>
+            <span class="skill-chip highlight">High-Energy Physics</span>
+            <span class="skill-chip highlight">Data Science</span>
+            <span class="skill-chip highlight">A/B Testing</span>
+            <span class="skill-chip">Explainable AI</span>
+            <span class="skill-chip highlight">Cloud Deployment (AWS)</span>
+            <span class="skill-chip highlight">Docker &amp; FastAPI</span>
+            <span class="skill-chip">Feature Engineering</span>
+            <span class="skill-chip">Model Evaluation</span>
+            <span class="skill-chip">Time Series Forecasting</span>
+            <span class="skill-chip">Scientific Computing</span>
+            <span class="skill-chip">Statistical Inference</span>
+            <span class="skill-chip">ODE / PDE Modeling</span>
+            <span class="skill-chip">Stochastic Simulation</span>
+            <span class="skill-chip">NLP &amp; Text Classification</span>
+            <span class="skill-chip">Data Structures &amp; Algorithms</span>
+            <span class="skill-chip">Object-Oriented Programming (OOP)</span>
           </div>
         </div>
       </div>
@@ -510,11 +485,9 @@
             </div>
             <h3>Placement Coordinator</h3>
             <p class="tl-org">Office of Career Services (OCS), IIT Hyderabad</p>
-            <p>Managing end-to-end campus recruitment operations as part of the OCS team — reaching out to and
-              onboarding industry recruiters, coordinating pre-placement talks, managing job descriptions, scheduling
-              aptitude tests and interview drives, and handling student query resolution. Successfully onboarded
-              companies including <em>IBM, Licious, HCL</em>, and several others to the IIT Hyderabad placement
-              ecosystem.</p>
+            <p>Engaged prospective recruiters and facilitated their participation in campus recruitment, connecting
+              companies with students throughout the placement process. Hosted and coordinated major recruitment events,
+              including <em>Japan Career Day 2026</em> and <em>Career Fair 2026</em>.</p>
           </div>
         </div>
 
@@ -525,10 +498,9 @@
             </div>
             <h3>Inbound &amp; Logistics Management — International Relations Cell</h3>
             <p class="tl-org">IIT Hyderabad</p>
-            <p>Coordinating orientations, cultural programs, and academic tours for international exchange students from
-              partner universities in <em>Japan and the United States</em>. Managing end-to-end logistics for visiting
-              international guests and faculty delegations. Acting as a primary bridge between international scholars
-              and the IITH administration.</p>
+            <p>Hosted and coordinated visits for students from Japanese universities, including <em>Kyoto, UTokyo,
+                Shimane, Nagoya, Ehime, Osaka, Tohoku, and Hokkaido University</em>. Facilitated interactions and visits
+              involving corporate officials from <em>DNP, Mitsubishi</em>, and other organizations.</p>
           </div>
         </div>
 
@@ -767,18 +739,17 @@
           </div>
           <h3 class="por-title">Placement Coordinator</h3>
           <p class="por-org">Office of Career Services (OCS), IIT Hyderabad</p>
-          <p class="por-desc">Managing end-to-end campus recruitment drives as part of the OCS team — liaising with
-            recruiters, coordinating pre-placement talks, scheduling drives, and overseeing logistics for the student
-            body. Actively onboarded companies including <strong>IBM, Licious, HCL</strong>, and others to the IIT
-            Hyderabad placement portal.</p>
+          <p class="por-desc">Engaged prospective recruiters and facilitated their participation in campus recruitment,
+            connecting companies with students throughout the placement process. Hosted and coordinated major
+            recruitment events, including <strong>Japan Career Day 2026</strong> and <strong>Career Fair 2026</strong>.
+          </p>
           <div class="por-responsibilities">
             <p class="por-resp-label">Key Responsibilities</p>
             <ul class="por-resp-list">
-              <li>Industry liaison — reaching out to and onboarding new recruiting companies</li>
-              <li>Coordinating pre-placement talks, job description sharing, and test scheduling</li>
-              <li>Overseeing placement day logistics for both on-campus and virtual drives</li>
-              <li>Student communication and query resolution throughout the placement cycle</li>
-              <li>Maintaining placement data records and reports for the OCS committee</li>
+              <li>Engaging prospective recruiters and facilitating their participation in campus recruitment</li>
+              <li>Connecting companies with students throughout the placement process</li>
+              <li>Hosting and coordinating major recruitment events including Japan Career Day 2026</li>
+              <li>Managing placement day logistics for both on-campus and virtual drives</li>
             </ul>
           </div>
           <div class="por-tags">
@@ -849,19 +820,18 @@
           </div>
           <h3 class="por-title">Inbound &amp; Logistics Management</h3>
           <p class="por-org">International Relations Cell, IIT Hyderabad</p>
-          <p class="por-desc">Coordinating orientations, cultural immersion programs, and academic tours for
-            international exchange students arriving at IIT Hyderabad — primarily from partner universities in
-            <strong>Japan and the United States</strong>. Managing end-to-end logistics for visiting guests and faculty
-            delegations.
+          <p class="por-desc">Hosted and coordinated visits for students from Japanese universities, including
+            <strong>Kyoto, UTokyo, Shimane, Nagoya, Ehime, Osaka, Tohoku, and Hokkaido University</strong>. Facilitated
+            interactions and visits involving corporate officials from <strong>DNP, Mitsubishi</strong>, and other
+            organizations.
           </p>
           <div class="por-responsibilities">
             <p class="por-resp-label">Key Responsibilities</p>
             <ul class="por-resp-list">
-              <li>Designing and facilitating orientation programs for incoming international exchange students</li>
-              <li>Planning and executing cultural immersion activities and campus tours</li>
+              <li>Hosting and coordinating visits for students from top Japanese universities</li>
+              <li>Facilitating interactions and visits involving international corporate officials</li>
               <li>Managing accommodation, transport, and scheduling for international guests</li>
-              <li>Acting as the primary point of contact between international students and IITH administration</li>
-              <li>Building intercultural bridges between Indian and international student communities</li>
+              <li>Acting as the primary point of contact between international delegates and IITH administration</li>
             </ul>
           </div>
           <div class="por-tags">
@@ -892,7 +862,8 @@
           <div class="cert-body">
             <h3 class="cert-title">Machine Learning Specialization</h3>
             <p class="cert-issuer">DeepLearning.AI / Coursera</p>
-            <p class="cert-desc">Comprehensive specialization covering supervised learning, advanced learning algorithms,
+            <p class="cert-desc">Comprehensive specialization covering supervised learning, advanced learning
+              algorithms,
               and unsupervised learning — including neural networks, decision trees, recommender systems, and
               reinforcement learning foundations.</p>
             <div class="project-stack"><span>Supervised Learning</span><span>Neural Networks</span><span>Decision
@@ -918,18 +889,20 @@
                 <path d="M6 9H4.5a2.5 2.5 0 010-5H6" />
                 <path d="M18 9h1.5a2.5 2.5 0 000-5H18" />
                 <path d="M4 22h16" />
-                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 19.24 7 20h10c0-.76-.85-1.25-2.03-1.79C14.47 17.98 14 17.55 14 17v-2.34" />
+                <path
+                  d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 19.24 7 20h10c0-.76-.85-1.25-2.03-1.79C14.47 17.98 14 17.55 14 17v-2.34" />
                 <path d="M18 2H6v7a6 6 0 0012 0V2z" />
               </svg>
             </div>
             <div class="competition-meta">
-              <span class="badge badge-active">Cleared 3 Rounds</span>
+              <span class="badge badge-active">Selected</span>
               <span class="competition-year">2026</span>
             </div>
           </div>
           <h3 class="competition-title">Accenture Innovation Challenge 2026</h3>
           <p class="competition-desc">Designed a <em>GNN-based digital twin</em> for vehicle assembly line optimization,
-            modeling stations and workflow dependencies as graph structures to predict bottlenecks and throughput issues,
+            modeling stations and workflow dependencies as graph structures to predict bottlenecks and throughput
+            issues,
             applying graph representation learning techniques from concurrent Belle II / GNN-FraudNet research.</p>
           <div class="project-stack"><span>Graph Neural Networks</span><span>Digital Twin</span><span>Assembly Line
               Optimization</span><span>Graph Representation Learning</span></div>
