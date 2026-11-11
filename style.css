@@ -264,6 +264,18 @@ p:last-child { margin-bottom:0; }
   animation: haloFloat 8s ease-in-out infinite;
 }
 
+.hero-doodle {
+  position:absolute;
+  inset:4%;
+  z-index:1;
+  width:92%;
+  height:92%;
+  object-fit:contain;
+  opacity:0.9;
+  pointer-events:none;
+  user-select:none;
+}
+
 .halo-orb-1 {
   width: 80%;
   height: 70%;
