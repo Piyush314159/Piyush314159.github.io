@@ -330,6 +330,38 @@ p:last-child { margin-bottom:0; }
 .stat-divider { width:1px; height:36px; background:var(--border); flex-shrink:0; }
 
 /* SECTIONS */
+.hero::before,
+.content-section::before,
+.site-footer::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background-image:url("assets/research-background-doodles.png");
+  background-repeat:repeat;
+  background-size:1180px 1180px;
+  background-position:center -80px;
+  opacity:0.065;
+  pointer-events:none;
+}
+.hero::before { opacity:0.03; background-position:calc(50% + 100px) -60px; }
+.content-section:nth-of-type(2n)::before { background-position:calc(50% + 180px) -260px; }
+.content-section:nth-of-type(3n)::before { background-position:calc(50% - 150px) -520px; }
+.site-footer::before { opacity:0.04; background-position:center -340px; }
+
+@media (max-width:640px) {
+  .hero::before,
+  .content-section::before,
+  .site-footer::before { background-size:760px 760px; }
+  .content-section::before { opacity:0.045; }
+}
+
+@media print {
+  .hero::before,
+  .content-section::before,
+  .site-footer::before { display:none; }
+}
+
 .content-section { position:relative; z-index:1; padding:7rem 0; background:var(--bg-white); }
 .alt-section { background:var(--bg); }
 .section-inner { max-width:var(--max-w); margin:0 auto; padding:0 2rem; }
