@@ -6,10 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Piyush Maji — Physics &amp; ML Research · IIT Hyderabad</title>
   <meta name="description"
-    content="Piyush Maji — MSc Physics student at IIT Hyderabad, working on GNN-based full event reconstruction at Belle II (GraFEI), graph neural networks for fraud detection, and computational physics.">
+    content="Piyush Maji — MSc Physics student at IIT Hyderabad researching Bayesian optimization for accelerator tuning, with projects in graph-based fraud investigation, retail forecasting, and hydraulic condition monitoring.">
   <meta name="author" content="Piyush Maji">
   <meta property="og:title" content="Piyush Maji — Physics &amp; ML Research">
-  <meta property="og:description" content="MSc Physics · IIT Hyderabad · GraFEI · GNN · Belle II">
+  <meta property="og:description" content="MSc Physics · IIT Hyderabad · Bayesian Optimization · FraudNet · DemandCast · DigitalTwinAI">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://piyushmaji314.me/">
+  <meta property="og:locale" content="en_IN">
+  <link rel="canonical" href="https://piyushmaji314.me/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -23,7 +27,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <a href="#about" class="wordmark">PM</a>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Main navigation">
         <a href="#about" class="nav-item active" data-nav="about">About</a>
         <a href="#research" class="nav-item" data-nav="research">Research</a>
         <a href="#projects" class="nav-item" data-nav="projects">Projects</a>
@@ -36,7 +40,7 @@
         <a href="#contact" class="nav-item" data-nav="contact">Contact</a>
       </nav>
       <div class="cv-dropdown" id="cvDropdown">
-        <button class="nav-cta" id="cvDropdownBtn">CV <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+        <button class="nav-cta" id="cvDropdownBtn" aria-expanded="false" aria-controls="cvDropdownMenu">CV <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="3" style="margin-left:4px">
             <path d="M6 9l6 6 6-6" />
           </svg></button>
@@ -52,12 +56,12 @@
             </svg> Download CV</a>
         </div>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <nav>
+  <div class="mobile-menu" id="mobileMenu" inert>
+    <nav aria-label="Mobile navigation">
       <a href="#about" class="mob-nav-item" data-nav="about">About</a>
       <a href="#research" class="mob-nav-item" data-nav="research">Research</a>
       <a href="#projects" class="mob-nav-item" data-nav="projects">Projects</a>
@@ -81,7 +85,7 @@
       <div class="hero-intro">
         <div class="hero-badge">IIT Hyderabad · Expected 2027</div>
         <h1 class="hero-name">Piyush<br><em>Maji</em></h1>
-        <p class="hero-tagline"><span class="typing-text"></span></p>
+        <p class="hero-tagline" aria-label="Bayesian Optimization, Machine Learning &amp; Scientific Computing"><span class="typing-text" aria-hidden="true">Bayesian Optimization</span></p>
       </div>
       <div class="hero-right">
         <div class="gradient-halo">
@@ -90,25 +94,24 @@
           <div class="halo-orb halo-orb-3"></div>
         </div>
         <div class="hero-stats">
-          <div class="stat-item"><span class="stat-number">SuperKEKB</span><span class="stat-label">KEK · Japan</span>
+          <div class="stat-item"><span class="stat-number">SuperKEKB</span><span class="stat-label">Research Context</span>
           </div>
           <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-number">AI/ML</span><span class="stat-label">Research & GNN</span>
+          <div class="stat-item"><span class="stat-number">AI/ML</span><span class="stat-label">Models &amp; Systems</span>
           </div>
           <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-number">200+</span><span class="stat-label">DSA Problems</span>
+          <div class="stat-item"><span class="stat-number">2027</span><span class="stat-label">MSc · IIT Hyderabad</span>
           </div>
         </div>
       </div>
       <div class="hero-content">
-        <p class="hero-desc">I work at the intersection of <strong>high-energy physics</strong> and <strong>machine
-            learning</strong> — implementing Bayesian Optimization for accelerator parameter tuning at the Belle II
-          experiment (KEK, Japan), while building practical ML systems spanning GNN-based fraud
-          detection, NLP, and time-series forecasting.</p>
-        <p class="hero-desc">Currently pursuing an MSc in Physics at IIT Hyderabad. Doing his project work under Prof.
-          Sourav Sandilya, with
-          active coursework in ML for Physical Sciences, ML for High-Energy Physics, Statistical Mechanics, and
-          Computational Physics.</p>
+        <p class="hero-desc">I work at the intersection of <strong>physics</strong> and <strong>machine learning</strong> —
+          researching Bayesian optimization for accelerator parameter tuning, and building ML applications for
+          graph-based fraud investigation, retail sales forecasting, and hydraulic condition monitoring.</p>
+        <p class="hero-desc">I am pursuing an MSc in Physics at IIT Hyderabad, with graduation expected in 2027.
+          Under Prof. Sourav Sandilya, I develop and benchmark optimization methods on simulated objectives motivated
+          by SuperKEKB injection tuning. My projects connect model development with APIs, SQL databases, dashboards,
+          and reproducible evaluation.</p>
         <div class="hero-actions">
           <a href="#research" class="btn-primary">View Research</a>
           <a href="#contact" class="btn-ghost">Get in Touch</a>
@@ -136,7 +139,7 @@
             </svg>
             Email
           </a>
-          <a href="https://piyush314159.github.io" target="_blank" rel="noopener" class="social-link">
+          <a href="https://piyushmaji314.me/" class="social-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <circle cx="12" cy="12" r="10" />
               <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
@@ -164,8 +167,7 @@
               <circle cx="12" cy="7" r="4" />
             </svg>Prof. Sourav Sandilya, Belle II Collaboration, IIT Hyderabad</span>
         </div>
-        <h3 class="research-title">Bayesian Optimization for Accelerator Parameter Tuning | Belle II Experiment, KEK,
-          Japan</h3>
+        <h3 class="research-title">Bayesian Optimization for Accelerator Parameter Tuning — SuperKEKB / Belle II</h3>
         <div class="research-body">
           <div class="research-block">
             <h4>Overview</h4>
@@ -177,18 +179,17 @@
           </div>
           <div class="research-block">
             <h4>Methodology</h4>
-            <p>Engineering a <em>Gaussian Process-based optimizer</em> with <em>EI/UCB acquisition functions</em>,
+            <p>Developed a <em>Gaussian Process-based optimizer</em> with <em>EI/UCB acquisition functions</em>,
               incorporating <em>segmented region search</em>, step-by-step parameter constraints, and <em>proximal
-                biasing</em> to safely navigate noisy, non-convex parameter spaces. The framework enables systematic
-              exploration of high-dimensional accelerator configurations while respecting operational safety
-              constraints.</p>
+              biasing</em> to explore noisy, non-convex parameter spaces. Parameter constraints limit each proposed
+              update within the simulated tuning workflow.</p>
           </div>
           <div class="research-block">
             <h4>Benchmarking &amp; Analysis</h4>
-            <p>Benchmarking against <em>random &amp; grid search</em> and <em>Nelder-Mead</em> on simulated objectives,
+            <p>Benchmarked against <em>random &amp; grid search</em> and <em>Nelder-Mead</em> on simulated objectives,
               using <em>SHAP</em> (SHapley Additive exPlanations) to quantify per-parameter contribution to optimization
-              outcomes. Evaluating convergence speed, sample efficiency, and robustness across different noise levels
-              and parameter dimensionalities.</p>
+              outcomes. The ongoing work examines convergence, sample efficiency, and robustness to noise; results
+              describe simulation studies rather than deployment on the operating accelerator.</p>
           </div>
         </div>
         <div class="project-stack"><span>Python</span><span>Gaussian
@@ -214,19 +215,19 @@
               <h3>FraudNet — AI-Powered Fraud Detection &amp; Investigation Platform</h3><span
                 class="badge badge-done">Completed</span>
             </div>
-            <p>Developed an end-to-end <em>fraud detection and investigation platform</em> combining <em>Graph Neural
-                Networks</em> with LLM-powered reporting on the Elliptic Bitcoin Dataset. Built an agentic workflow
-              using <em>LangGraph</em> that predicts fraud with <em>GraphSAGE/GAT</em>, explains decisions using
-              <em>SHAP</em> and <em>GNNExplainer</em>, and retrieves context via a <em>RAG</em> pipeline powered by
-              <em>ChromaDB</em>.
+            <p>Built a graph-based investigation platform on <em>203,769 Bitcoin transactions</em> and
+              <em>234,355 edges</em>. Benchmarked GraphSAGE and GAT against linear and tree-based models on a random
+              70/15/15 split of labelled nodes: <strong>XGBoost achieved 0.954 illicit-class F1 and 0.987 PR-AUC</strong>;
+              GraphSAGE achieved 0.739 F1 and 0.917 PR-AUC. These scores measure classification under that split,
+              rather than future-transaction performance or report accuracy.
             </p>
-            <p>Integrated <em>Google Gemini</em> to generate natural-language investigation reports, exposing the full
-              pipeline through a <em>FastAPI</em> REST API containerized with <em>Docker</em> and deployed on <em>AWS
-                EC2</em>.</p>
+            <p>Orchestrated prediction, <em>SHAP/GNNExplainer</em>, neighbourhood analysis, <em>ChromaDB retrieval</em>,
+              and <em>Groq/Gemini</em> report generation with <em>LangGraph</em>. Investigation context hides dataset
+              answers by default. Served the workflow through <em>FastAPI</em>, Docker, and an Nginx reverse proxy
+              on <em>AWS EC2</em>, with pytest checks and GitHub Actions CI.</p>
             <div class="project-stack"><span>Python</span><span>PyTorch
-                Geometric</span><span>LangGraph</span><span>Google
-                Gemini</span><span>RAG</span><span>ChromaDB</span><span>FastAPI</span><span>Docker</span><span>AWS
-                EC2</span><span>SHAP</span><span>GNNExplainer</span>
+                Geometric</span><span>LangGraph</span><span>Groq &amp; Gemini</span><span>RAG</span><span>ChromaDB</span><span>FastAPI</span><span>Docker</span><span>AWS
+                EC2</span><span>Nginx</span><span>SHAP</span><span>GNNExplainer</span><span>pytest / CI</span>
             </div>
             <a href="https://github.com/Piyush314159/GNN-FraudNet" target="_blank" rel="noopener"
               class="project-link">github.com/Piyush314159/GNN-FraudNet →</a>
@@ -237,24 +238,23 @@
           <div class="project-number">02</div>
           <div class="project-body">
             <div class="project-top">
-              <h3>Retail Demand Forecasting &amp; Inventory Optimization</h3><span
+              <h3>DemandCast — Retail Forecasting &amp; Inventory Planning</h3><span
                 class="badge badge-active">Ongoing</span>
             </div>
-            <p>Solved the problem of <em>retail demand forecasting</em> by building a scalable <em>SKU-level sales
-                prediction pipeline</em> using <em>LightGBM</em>, enabling accurate inventory planning across multiple
-              stores. Designed advanced time-series features including <em>lag, rolling-window, calendar,
-                promotion</em>, and <em>holiday</em> variables, and benchmarked the model against <em>SARIMA</em> and
-              <em>Prophet</em> baselines using time-aware cross-validation.
+            <p>Built a configurable <em>Rossmann store-sales forecasting pipeline</em> with LightGBM, SARIMA,
+              Prophet, a seasonal baseline, and an optional <em>attention GRU</em>. Added calendar-day lag and rolling
+              features, training-only preprocessing, <em>MySQL storage</em>, and bottom-up aggregation across available
+              hierarchy levels. A <em>Next.js dashboard</em> explores exported predictions, data checks, and model outputs.
             </p>
-            <p>Implemented <em>hierarchical forecast reconciliation</em> to maintain consistency across SKU, store, and
-              regional forecasts — improving the usability of predictions for supply chain and inventory
-              decision-making.</p>
+            <p>The GRU uses 56 days of history to forecast 14 days. On one fixed-origin historical evaluation across
+              <em>1,115 stores / 15,610 observations</em>, it achieved <strong>20.134% WMAPE</strong> versus 20.920% for
+              a matched weekly seasonal baseline. Broader backtesting remains ongoing. The inventory planner is an
+              assumptions-based calculator; measured replenishment savings have not been established.</p>
             <div class="project-stack">
-              <span>Python</span><span>LightGBM</span><span>SARIMA</span><span>Prophet</span><span>Time Series
-                Forecasting</span><span>Feature Engineering</span><span>Hierarchical Reconciliation</span>
+              <span>Python</span><span>PyTorch / GRU</span><span>LightGBM</span><span>SARIMA</span><span>Prophet</span><span>MySQL</span><span>SQLAlchemy</span><span>Next.js</span><span>Bottom-Up Aggregation</span>
             </div>
-            <a href="https://github.com/Piyush314159" target="_blank" rel="noopener"
-              class="project-link">github.com/Piyush314159 →</a>
+            <a href="https://github.com/Piyush314159/DemandCast-Retail_demand_forcasting-Inventory_optimization" target="_blank" rel="noopener"
+              class="project-link">View DemandCast on GitHub →</a>
           </div>
         </article>
 
@@ -262,26 +262,66 @@
           <div class="project-number">03</div>
           <div class="project-body">
             <div class="project-top">
-              <h3>Spam Classifier from Scratch — NLP &amp; ML</h3><span class="badge badge-done">Completed</span>
+              <h3>DigitalTwinAI — Hydraulic Condition Monitoring</h3><span class="badge badge-active">Ongoing</span>
             </div>
-            <p>Implemented <em>Multinomial Naive Bayes</em> (MLE + Laplace smoothing) and <em>Logistic Regression</em>
-              (gradient descent) entirely from scratch in NumPy on the UCI SMS Spam Collection (5,574 messages). Built
-              both TF-IDF and Bag-of-Words feature pipelines without sklearn, with vocabulary constructed strictly on
-              the train split to prevent data leakage on an 86.6% class-imbalanced dataset.</p>
-            <p>Hand-coded binary cross-entropy loss and gradient descent with real-time loss convergence plots.
-              Evaluated both models via precision, recall, F1, and ROC/AUC (computed using the trapezoidal rule).
-              Achieved <strong>94.9% F1-score</strong> and <strong>0.982 AUC</strong> on the UCI SMS Spam Collection,
-              demonstrating strong performance through threshold optimization and comparative model analysis.
-            </p>
-            <div class="project-stack"><span>Python</span><span>NumPy</span><span>NLP</span><span>Naive
-                Bayes</span><span>Logistic Regression</span><span>TF-IDF</span><span>BoW</span></div>
-            <a href="https://github.com/Piyush314159" target="_blank" rel="noopener"
-              class="project-link">github.com/Piyush314159 →</a>
+            <p>Built a <em>Flask dashboard</em> around <em>2,205 recorded hydraulic test-rig cycles</em> and
+              <em>14 physical sensor channels</em>. A compact multirate <em>temporal convolutional network (TCN)</em>
+              combines sensor sequences with 140 summary features to estimate cooler, valve, pump, and accumulator
+              conditions. The workspace supports cycle replay, measured traces, confusion matrices, and CSV/JSON exports.</p>
+            <p>The 12,558-parameter TCN achieved <strong>0.9449 mean component macro F1</strong> across three grouped
+              research folds, versus 0.8957 for the matched linear baseline. The dashboard checkpoint was subsequently
+              fitted on all UCI cycles; independent-machine evaluation remains future work. Source fingerprints,
+              separate reference labels, and missing-data checks keep displayed estimates traceable to recorded inputs.</p>
+            <div class="project-stack"><span>Python</span><span>PyTorch</span><span>TCN</span><span>Flask</span><span>NumPy</span><span>JavaScript</span><span>Grouped Evaluation</span><span>Sensor Analysis</span></div>
+            <a href="https://github.com/Piyush314159/DigitalTwinAI" target="_blank" rel="noopener"
+              class="project-link">github.com/Piyush314159/DigitalTwinAI →</a>
           </div>
         </article>
 
         <article class="project-card">
           <div class="project-number">04</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>FinRAG Lab — Financial Reasoning from Scratch</h3><span class="badge badge-active">Ongoing</span>
+            </div>
+            <p>Developing an experimental <em>retrieval-to-program pipeline</em> for financial questions.
+              <em>BM25 retrieval</em> selects report text and table rows; a small, randomly initialized
+              <em>Transformer</em> generates bounded arithmetic programs using pointers to evidence numbers.
+              A <em>Decimal arithmetic executor</em> produces a calculation alongside its supporting evidence.</p>
+            <p>Implemented local training with <em>Apple MLX</em>, a training-fitted vocabulary, and custom
+              report-disjoint evaluation based on FinQA. The experiment compares retrieved, gold, and no-evidence
+              conditions, with held-out execution accuracy, operand coverage, and rejection counts used to assess
+              reasoning. Model and data experiments remain ongoing.</p>
+            <div class="project-stack"><span>Python</span><span>MLX</span><span>Transformers</span><span>BM25</span><span>FinQA</span><span>Program Generation</span><span>RAG</span><span>Evaluation</span></div>
+            <a href="#contact" class="project-link">Ask about this research →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">05</div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>Spam Classifier from Scratch — NLP &amp; ML</h3><span class="badge badge-done">Completed</span>
+            </div>
+            <p>Implemented <em>Multinomial Naive Bayes</em> (MLE + Laplace smoothing) and <em>Logistic Regression</em>
+              (gradient descent) entirely from scratch in NumPy on the UCI SMS Spam Collection (5,572 messages). Built
+              both TF-IDF and Bag-of-Words feature pipelines without sklearn, with vocabulary constructed strictly on
+              the train split to prevent data leakage on an 86.6% class-imbalanced dataset.</p>
+            <p>Added validation-based early stopping and threshold selection, custom ROC evaluation, and
+              <em>SQLite-backed experiment tracking</em> with per-message predictions and an error-analysis view.
+              Under the corrected evaluation protocol, Naive Bayes achieved <strong>0.9286 F1 / 0.9771 ROC-AUC</strong>
+              and logistic regression achieved 0.8442 F1 / 0.9811 ROC-AUC. The historical test set had been inspected
+              in earlier experiments; independent data is needed to confirm generalization.
+            </p>
+            <div class="project-stack"><span>Python</span><span>NumPy</span><span>NLP</span><span>Naive
+                Bayes</span><span>Logistic Regression</span><span>TF-IDF</span><span>BoW</span><span>SQLite</span></div>
+            <a href="https://github.com/Piyush314159/Spam-sentiment_classifier" target="_blank" rel="noopener"
+              class="project-link">github.com/Piyush314159/Spam-sentiment_classifier →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">06</div>
           <div class="project-body">
             <div class="project-top">
               <h3>COVID-19 Epidemic Modeling — SIR / SEIR / SUTRA</h3><span class="badge badge-done">Completed</span>
@@ -308,7 +348,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-number">05</div>
+          <div class="project-number">07</div>
           <div class="project-body">
             <div class="project-top">
               <h3>Diffraction Pattern Analysis — Wavelength Estimation</h3><span
@@ -332,7 +372,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-number">06</div>
+          <div class="project-number">08</div>
           <div class="project-body">
             <div class="project-top">
               <h3>Brownian Motion — Stochastic Simulation &amp; MSD Analysis</h3><span
@@ -373,13 +413,18 @@
           <div class="tag-cloud">
             <span class="skill-chip highlight">PyTorch &amp; PyTorch Geometric</span>
             <span class="skill-chip highlight">LangGraph, LLMs &amp; ChromaDB</span>
+            <span class="skill-chip">Apple MLX &amp; Transformers</span>
             <span class="skill-chip highlight">Scikit-Learn</span>
             <span class="skill-chip highlight">LightGBM &amp; XGBoost</span>
             <span class="skill-chip highlight">Python</span>
+            <span class="skill-chip">JavaScript, HTML &amp; CSS</span>
+            <span class="skill-chip">Bash</span>
             <span class="skill-chip">NumPy, Pandas, Matplotlib</span>
             <span class="skill-chip">SciPy &amp; basf2 (Belle II)</span>
             <span class="skill-chip highlight">FastAPI, Docker &amp; AWS</span>
-            <span class="skill-chip">SQL, Git &amp; GitHub</span>
+            <span class="skill-chip">SQL, MySQL &amp; SQLite</span>
+            <span class="skill-chip">Flask &amp; Next.js</span>
+            <span class="skill-chip">Git, GitHub Actions &amp; pytest</span>
             <span class="skill-chip">DSA — Striver A2Z</span>
           </div>
           <h3 class="skills-heading" style="margin-top:2.5rem">Relevant Courses</h3>
@@ -403,9 +448,11 @@
             <span class="skill-chip highlight">Machine Learning</span>
             <span class="skill-chip highlight">Agentic AI &amp; LLMs</span>
             <span class="skill-chip highlight">RAG &amp; LangGraph</span>
+            <span class="skill-chip">BM25 &amp; Program-Based Reasoning</span>
             <span class="skill-chip highlight">High-Energy Physics</span>
             <span class="skill-chip highlight">Data Science</span>
-            <span class="skill-chip highlight">A/B Testing</span>
+            <span class="skill-chip highlight">Grouped &amp; Temporal Evaluation</span>
+            <span class="skill-chip">GRUs &amp; Temporal Convolutional Networks</span>
             <span class="skill-chip">Explainable AI</span>
             <span class="skill-chip highlight">Cloud Deployment (AWS)</span>
             <span class="skill-chip highlight">Docker &amp; FastAPI</span>
@@ -429,8 +476,8 @@
               Parameter Tuning at Belle II / SuperKEKB</span></div>
           <div class="interest-item"><span class="interest-dot"></span><span>Graph Neural Networks for Fraud Detection
               &amp; Anomaly Detection</span></div>
-          <div class="interest-item"><span class="interest-dot"></span><span>GNN-based Decay Topology Reconstruction in
-              High-Energy Physics</span></div>
+          <div class="interest-item"><span class="interest-dot"></span><span>Sensor Time-Series Modeling &amp;
+              Hydraulic Condition Monitoring</span></div>
           <div class="interest-item"><span class="interest-dot"></span><span>NLP &amp; Text Classification from
               Mathematical First Principles</span></div>
           <div class="interest-item"><span class="interest-dot"></span><span>Computational &amp; Statistical Physics —
@@ -460,8 +507,9 @@
             <p class="tl-org">Indian Institute of Technology, Hyderabad (IIT Hyderabad)</p>
             <p>Rigorous postgraduate program in physics with a strong research orientation. Key coursework includes
               <em>ML for Physical Sciences, ML for High-Energy Physics, Statistical Mechanics, Linear Algebra,
-                Computational Physics,</em> and <em>Data Science Analysis</em>. Research project on GNN-based event
-              reconstruction at the Belle II experiment under Prof. Sourav Sandilya forms the core of the degree.
+                Computational Physics,</em> and <em>Data Science &amp; Analysis</em>. Research under Prof. Sourav
+              Sandilya focuses on Bayesian optimization for accelerator tuning, using simulation studies motivated
+              by SuperKEKB and the Belle II experiment.
             </p>
           </div>
         </div>
@@ -473,10 +521,10 @@
                 Research</span></div>
             <h3>Bayesian Optimization Research — HEP &amp; Machine Learning</h3>
             <p class="tl-org">Under Prof. Sourav Sandilya, Belle II Collaboration, IIT Hyderabad</p>
-            <p>Implementing a Bayesian Optimization framework for accelerator parameter tuning at Belle II (KEK, Japan).
-              Engineering a Gaussian Process-based optimizer with EI/UCB acquisition functions, segmented region search,
-              and proximal biasing to navigate noisy, non-convex parameter spaces. Benchmarking against random & grid
-              search and Nelder-Mead, using SHAP for per-parameter contribution analysis.</p>
+            <p>Developed a Gaussian Process-based optimization framework with EI/UCB acquisition functions,
+              segmented region search, parameter constraints, and proximal biasing. Benchmarked simulated objectives
+              against random/grid search and Nelder-Mead, with SHAP for parameter attribution. The ongoing work is
+              motivated by SuperKEKB injection tuning.</p>
           </div>
         </div>
 
@@ -511,13 +559,11 @@
           <div class="tl-content">
             <div class="tl-meta"><span class="tl-year">May 2026 — Present</span><span class="tl-badge">Design &amp;
                 Outreach</span></div>
-            <h3>Design Core — Extra Mural Lectures (EML)</h3>
+            <h3>Coordinator — Extra Mural Lectures (EML)</h3>
             <p class="tl-org">Student Activities Cell, IIT Hyderabad</p>
-            <p>Leading visual design and multimedia outreach for IIT Hyderabad's prestigious Extra Mural Lectures series
-              — creating promotional posters, event branding, and social media content for high-profile speaker events.
-              Defining highlight: co-hosted the EML event featuring <em>Gp. Capt. Shubhanshu Shukla</em> (Axiom-4
-              Mission Pilot &amp; India's first private astronaut) on July 13, 2026, drawing packed audiences from
-              across campus.</p>
+            <p>Led visual design, event branding, budgets of <em>₹100K+</em>, and event logistics for the Extra Mural
+              Lectures series. Hosted distinguished speakers including <em>Gp. Capt. Shubhanshu Shukla, Axiom-4
+              mission pilot</em>, and <em>Ericsson's CTO</em>, coordinating outreach and event delivery.</p>
           </div>
         </div>
 
@@ -531,7 +577,7 @@
             <p>Three-year undergraduate honours program in Physics with strong foundations in mathematical physics,
               classical &amp; quantum mechanics, electrodynamics, thermodynamics, optics, and laboratory
               instrumentation. Developed an early interest in data-driven and computational approaches to physical
-              problems — the foundation for current research in GNN-based HEP reconstruction.</p>
+              problems — the foundation for my current work in optimization and machine learning for physics.</p>
           </div>
         </div>
 
@@ -546,12 +592,12 @@
         <span class="section-label">Learning</span>
         <h2 class="section-title">Journeys</h2>
       </div>
-      <div class="journeys-tabs">
-        <button class="journey-tab active" data-journey="ml">🤖 ML Journey</button>
-        <button class="journey-tab" data-journey="dsa">⚡ DSA Journey</button>
+      <div class="journeys-tabs" role="tablist" aria-label="Learning journeys">
+        <button class="journey-tab active" id="tab-ml" data-journey="ml" role="tab" aria-selected="true" aria-controls="journey-ml">🤖 ML Journey</button>
+        <button class="journey-tab" id="tab-dsa" data-journey="dsa" role="tab" aria-selected="false" aria-controls="journey-dsa" tabindex="-1">⚡ DSA Journey</button>
       </div>
 
-      <div class="journey-panel" id="journey-ml">
+      <div class="journey-panel" id="journey-ml" role="tabpanel" aria-labelledby="tab-ml" tabindex="0">
         <div class="journey-meta">
           <div class="journey-chips">
             <span class="jchip jchip-blue">Python</span><span class="jchip jchip-orange">Scikit-Learn</span><span
@@ -562,12 +608,12 @@
         </div>
         <div class="journey-block">
           <p class="journey-block-label">What I'm learning</p>
-          <p class="journey-simple-text">Following a structured ML roadmap from mathematical fundamentals to
-            production-grade systems — covering supervised and unsupervised learning, deep learning with PyTorch, graph
-            neural networks, and reinforcement learning with Gymnasium. Currently working through classification,
-            regression, ensemble methods, model evaluation, and feature engineering. The goal is to apply these
-            rigorously to physics-motivated problems: from GNN-based event reconstruction at Belle II to practical
-            systems like fraud detection pipelines and NLP classifiers built from mathematical first principles.</p>
+          <p class="journey-simple-text">Connecting mathematical foundations with working ML applications: NumPy
+            classifiers, GraphSAGE-based fraud investigation, attention GRUs for retail forecasting, and temporal
+            convolutional networks for sensor data. My current focus is reliable evaluation — training-only
+            preprocessing, validation-based model selection, grouped and chronological splits, and reproducible
+            results — alongside APIs, SQL storage, dashboards, and deployment. Bayesian optimization connects this
+            engineering practice with my physics research.</p>
         </div>
         <div class="journey-block">
           <p class="journey-block-label">Topics &amp; Modules</p>
@@ -594,18 +640,18 @@
         </div>
       </div>
 
-      <div class="journey-panel" id="journey-dsa" style="display:none">
+      <div class="journey-panel" id="journey-dsa" role="tabpanel" aria-labelledby="tab-dsa" tabindex="0" hidden>
         <div class="journey-meta">
           <div class="journey-chips">
             <span class="jchip jchip-blue">Python</span><span class="jchip jchip-green">DSA Practice</span><span
               class="jchip jchip-orange">Interview Prep</span>
           </div>
-          <p class="journey-desc">Striver A2Z DSA Sheet · structured roadmap in Python · 455 problems</p>
+          <p class="journey-desc">Striver A2Z DSA Sheet · structured practice in Python · personal progress tracker</p>
         </div>
         <div class="journey-block">
           <p class="journey-block-label">What I'm learning</p>
-          <p class="journey-simple-text">Working through the Striver A2Z DSA sheet — a comprehensive structured
-            455-problem roadmap covering all major data structures and algorithms, practised in Python. Progressing from
+          <p class="journey-simple-text">Working through the Striver A2Z DSA sheet — a structured roadmap covering
+            major data structures and algorithms, practised in Python. Progressing from
             basics (arrays, strings, sorting) through intermediate topics (recursion, trees, heaps) to advanced areas
             (graphs, dynamic programming, bit manipulation). The goal is to build rigorous algorithmic thinking for both
             research-level problem solving and software engineering interviews.</p>
@@ -628,7 +674,7 @@
           </div>
         </div>
         <div class="journey-block">
-          <p class="journey-block-label">Coding Profiles</p>
+          <p class="journey-block-label">Practice Resources &amp; My Tracker</p>
           <div class="coding-profiles">
             <a class="coding-profile-card" href="https://leetcode.com" target="_blank" rel="noopener">
               <div class="cp-icon cp-lc">
@@ -639,7 +685,7 @@
               </div>
               <div class="cp-info">
                 <span class="cp-name">LeetCode</span>
-                <span class="cp-stat">100+ problems solved</span>
+                <span class="cp-stat">Problem-solving practice</span>
               </div>
               <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
@@ -655,7 +701,7 @@
               </div>
               <div class="cp-info">
                 <span class="cp-name">Codeforces</span>
-                <span class="cp-stat">Max Rating 1000</span>
+                <span class="cp-stat">Contests &amp; problem sets</span>
               </div>
               <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
@@ -671,14 +717,14 @@
               </div>
               <div class="cp-info">
                 <span class="cp-name">GeeksforGeeks</span>
-                <span class="cp-stat">Active DSA practice</span>
+                <span class="cp-stat">Algorithms &amp; reference</span>
               </div>
               <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <a class="coding-profile-card" href="https://github.com/Piyush314159" target="_blank" rel="noopener">
+            <a class="coding-profile-card" href="https://github.com/Piyush314159/dsa_tracker" target="_blank" rel="noopener">
               <div class="cp-icon cp-gh">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <path
@@ -686,8 +732,8 @@
                 </svg>
               </div>
               <div class="cp-info">
-                <span class="cp-name">Striver A2Z Sheet</span>
-                <span class="cp-stat">GitHub · Python solutions</span>
+                <span class="cp-name">My DSA Tracker</span>
+                <span class="cp-stat">GitHub · Python solutions &amp; tracker</span>
               </div>
               <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
@@ -718,7 +764,7 @@
         <h2 class="section-title">Positions of Responsibility</h2>
         <p class="por-intro">Beyond research and coursework, I actively contribute to campus life — leading recruitment
           drives, coordinating international relations, and driving creative outreach as part of IIT Hyderabad's Extra
-          Mural Lectures committee.</p>
+          Mural Lectures committee, including event budgets and logistics.</p>
       </div>
 
       <div class="por-grid">
@@ -774,20 +820,19 @@
               <span class="badge badge-active">Ongoing</span>
             </div>
           </div>
-          <h3 class="por-title">Design Core — Extra Mural Lectures (EML)</h3>
+          <h3 class="por-title">Coordinator — Extra Mural Lectures (EML)</h3>
           <p class="por-org">Student Activities Cell, IIT Hyderabad</p>
-          <p class="por-desc">Leading visual design and multimedia outreach for IIT Hyderabad's prestigious Extra Mural
-            Lectures series — creating promotional content, event branding, posters, and digital assets. A defining
-            highlight was co-hosting the EML event featuring <strong>Gp. Capt. Shubhanshu Shukla</strong>, Axiom-4
-            Mission Pilot &amp; India's first private astronaut, on July 13, 2026.</p>
+          <p class="por-desc">Led visual design and event branding for IIT Hyderabad's Extra Mural Lectures series,
+            managed <strong>₹100K+ budgets and logistics</strong>, and hosted distinguished speakers including
+            <strong>Gp. Capt. Shubhanshu Shukla</strong>, Axiom-4 mission pilot, and <strong>Ericsson's CTO</strong>.</p>
           <div class="por-responsibilities">
             <p class="por-resp-label">Key Responsibilities</p>
             <ul class="por-resp-list">
-              <li>Designing all promotional materials — posters, banners, and digital assets for EML events</li>
+              <li>Designing promotional materials — posters, banners, and digital assets for EML events</li>
               <li>Creating event branding identities for individual lectures and speaker campaigns</li>
               <li>Managing social media outreach and content strategy for EML promotions</li>
               <li>Coordinating with faculty, student clubs, and external guest liaison teams</li>
-              <li>Event day support — stage setup, AV coordination, and audience management</li>
+              <li>Managing event budgets, logistics, stage setup, AV coordination, and audience support</li>
             </ul>
           </div>
           <div class="por-highlight-event">
@@ -902,10 +947,10 @@
             </div>
           </div>
           <h3 class="competition-title">Accenture Innovation Challenge 2026</h3>
-          <p class="competition-desc">Designed a <em>GNN-based digital twin</em> for vehicle assembly line optimization,
-            modeling stations and workflow dependencies as graph structures to predict bottlenecks and throughput
-            issues,
-            applying graph representation learning techniques from concurrent Belle II / GNN-FraudNet research.</p>
+          <p class="competition-desc">Selected with a <em>GNN-based digital twin proposal</em> for vehicle assembly-line
+            optimization. Designed a graph representation of stations and workflow dependencies to investigate
+            bottlenecks and throughput. This competition concept is distinct from the hydraulic condition-monitoring
+            application developed in DigitalTwinAI.</p>
           <div class="project-stack"><span>Graph Neural Networks</span><span>Digital Twin</span><span>Assembly Line
               Optimization</span><span>Graph Representation Learning</span></div>
         </article>
@@ -920,9 +965,10 @@
         <span class="section-label">Connect</span>
         <h2 class="section-title">Get In Touch</h2>
       </div>
-      <p class="contact-intro">Open to academic collaborations, research internships, and conversations about GNN-based
-        event reconstruction at Belle II, machine learning for physics, data science, and high-energy physics. Always
-        happy to discuss research ideas or potential opportunities.</p>
+      <p class="contact-intro">Open to research collaborations, internships, and graduate opportunities in machine
+        learning, data science, and software engineering. I am especially interested in Bayesian optimization,
+        graph-based learning, time-series modeling, and ML applications grounded in physics. Get in touch to
+        discuss a project or opportunity.</p>
       <div class="contact-row">
         <a class="contact-card" href="mailto:ph25mscst11019@iith.ac.in">
           <div class="contact-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -1001,23 +1047,23 @@
   </button>
 
   <!-- CV VIEWER MODAL -->
-  <div class="cv-modal-overlay" id="cvModalOverlay">
-    <div class="cv-modal">
+  <div class="cv-modal-overlay" id="cvModalOverlay" inert>
+    <div class="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" tabindex="-1">
       <div class="cv-modal-header">
-        <h3>Piyush Maji — CV</h3>
+        <h3 id="cvModalTitle">Piyush Maji — CV</h3>
         <div class="cv-modal-actions">
           <a href="Piyush_CV.pdf" class="cv-modal-download" download><svg width="14" height="14" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
             </svg> Download</a>
-          <button class="cv-modal-close" id="cvModalClose"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+          <button class="cv-modal-close" id="cvModalClose" aria-label="Close CV"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2">
               <path d="M18 6L6 18M6 6l12 12" />
             </svg></button>
         </div>
       </div>
       <div class="cv-modal-body">
-        <iframe src="" id="cvIframe" title="Piyush Maji CV"></iframe>
+        <iframe id="cvIframe" title="Piyush Maji CV"></iframe>
       </div>
     </div>
   </div>
